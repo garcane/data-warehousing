@@ -1,0 +1,435 @@
+--==============================================================================
+-- STEP #1: Create new database,
+--          and load the original dataset into the staging table
+--==============================================================================
+-- Create new database
+USE master
+GO
+DROP DATABASE IF EXISTS DW_Superstore_Manual
+GO
+CREATE DATABASE DW_Superstore_Manual
+GO
+ALTER AUTHORIZATION ON DATABASE::DW_Superstore_Manual TO SA
+GO
+USE DW_Superstore_Manual
+GO
+
+
+-- BULK INSERT requires table to be created
+-- Create staging table
+CREATE TABLE SuperstoreStaging(
+	Row_ID        BIGINT        NOT NULL,
+	Order_ID      nvarchar(50)  NOT NULL,
+	Order_Date    DATE          NOT NULL,
+	Ship_Date     datetime2(7)  NOT NULL,
+	Ship_Mode     VARCHAR(14)   NOT NULL,
+	Customer_ID   CHAR(8)       NOT NULL,
+	Customer_Name nvarchar(50)  NOT NULL,
+	Segment       nvarchar(50)  NOT NULL,
+	Country       nvarchar(50)  NOT NULL,
+	City          VARCHAR(17)   NOT NULL,
+	State         nvarchar(50)  NOT NULL,
+	Postal_Code   CHAR(5)       NOT NULL,
+	Region        nvarchar(50)  NOT NULL,
+	Product_ID    CHAR(15)      NOT NULL,
+	Category      nvarchar(50)  NOT NULL,
+	Sub_Category  nvarchar(50)  NOT NULL,
+	Product_Name  VARCHAR(127)  NOT NULL,
+	Sales         FLOAT         NOT NULL,
+	Quantity      INT           NOT NULL,
+	Discount      FLOAT         NOT NULL,
+	Profit        FLOAT         NOT NULL
+)
+GO
+
+-- How to Check Database Owner?
+SELECT name AS DW_Superstore_Manual, SUSER_SNAME(owner_sid) AS Owner
+FROM sys.databases;
+
+
+-- BULK INSERT command for this input file
+-- requires a bit of tweaking:
+-- Set proper date format...
+SET DATEFORMAT dmy
+GO
+
+-- ...and load the dataset
+BULK INSERT SuperstoreStaging
+FROM 'C:\\Superstore.csv'
+WITH (Format = 'CSV', -- MS SQL 2017+ only
+      RowTerminator = '\n',
+      FirstRow = 2
+     )
+GO
+
+-- Check that all the records have been imported (should be 9994):
+SELECT COUNT(*) FROM SuperstoreStaging
+-- Preview the imported dataset:
+SELECT TOP 10 * FROM SuperstoreStaging
+
+--==============================================================================
+-- STEP #2: Create dim tables
+--==============================================================================
+USE DW_Superstore_Manual
+GO
+
+-- Drop all the dim tables first
+DROP TABLE IF EXISTS FACTOrderItem
+DROP TABLE IF EXISTS dimShipMode
+DROP TABLE IF EXISTS dimGeog
+DROP TABLE IF EXISTS dimProduct
+DROP TABLE IF EXISTS dimCustomer
+GO
+
+
+
+------------------------------------------------------------
+-- TASK 1
+------------------------------------------------------------
+-- Attempt to build the following dim tables:
+-- dimShipMode, dimGeog (Geography), dimProduct, dimCustomer
+--
+-- No need to populate tables at this stage - we'll do it later
+--
+-- Hints
+-- Create Surrogate Key for every table
+-- Table dimCustomer must contain Segment field (yes, this is against 3NF)
+--
+-- Total number of fields in these tables should be:
+-- dimShipMode: 2, dimGeog: 6, dimProduct: 5, dimCustomer: 4
+-- (these numbers include SK fields)
+
+select * from SuperstoreStaging
+
+--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+-- dimShipMode
+--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+SELECT DISTINCT Ship_Mode
+FROM SuperstoreStaging
+
+SELECT MAX(LEN(Ship_Mode)) FROM SuperstoreStaging
+
+CREATE TABLE dimShipMode(
+  ShipMode_SK BIGINT      NOT NULL IDENTITY(1,1) PRIMARY KEY,
+  ShipMode    VARCHAR(14) NOT NULL
+)
+GO
+--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+-- dimGeog
+--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+-- Which 5 fields did you select for this table?
+
+SELECT MIN(LEN(Country)),     MAX(LEN(Country))     FROM SuperstoreStaging
+SELECT MIN(LEN(Region)),      MAX(LEN(Region))      FROM SuperstoreStaging
+SELECT MIN(LEN(State)),       MAX(LEN(State))       FROM SuperstoreStaging
+SELECT MIN(LEN(City)),        MAX(LEN(City))        FROM SuperstoreStaging
+SELECT MIN(LEN(Postal_Code)), MAX(LEN(Postal_Code)) FROM SuperstoreStaging
+
+SELECT DISTINCT Country FROM SuperstoreStaging
+
+CREATE TABLE dimGeog(
+  Geog_SK    BIGINT      NOT NULL IDENTITY(1,1) PRIMARY KEY,
+  Country    CHAR(13)    NOT NULL,
+  Region     VARCHAR(7)  NOT NULL,
+  State      VARCHAR(20) NOT NULL,
+  City       VARCHAR(17) NOT NULL,
+  PostalCode VARCHAR(5)     NOT NULL
+)
+GO
+
+SELECT * FROM SuperstoreStaging
+
+
+--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+-- dimProduct
+--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+-- Which 4 fields did you select for this table?
+
+SELECT MIN(LEN(Product_ID)),   MAX(LEN(Product_ID))   FROM SuperstoreStaging
+SELECT MIN(LEN(Product_Name)), MAX(LEN(Product_Name)) FROM SuperstoreStaging
+SELECT MIN(LEN(Category)),     MAX(LEN(Category))     FROM SuperstoreStaging
+SELECT MIN(LEN(Sub_Category)), MAX(LEN(Sub_Category)) FROM SuperstoreStaging
+
+
+CREATE TABLE dimProduct(
+  Product_SK         BIGINT       NOT NULL IDENTITY(1,1) PRIMARY KEY,
+  ProductId          CHAR(15)     NOT NULL,
+  ProductName        VARCHAR(127) NOT NULL,
+  ProductCategory    VARCHAR(15)  NOT NULL,
+  ProductSubCategory VARCHAR(11)  NOT NULL
+)
+GO
+
+
+--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+-- dimCustomer
+--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+-- Which 3 fields did you select for this table?
+
+SELECT MIN(LEN(Customer_ID)), MAX(LEN(Customer_ID)) FROM SuperstoreStaging
+SELECT MAX(LEN(Customer_Name)) FROM SuperstoreStaging
+SELECT MAX(LEN(Segment))       FROM SuperstoreStaging
+
+CREATE TABLE dimCustomer(
+  Customer_SK     BIGINT      NOT NULL IDENTITY(1,1) PRIMARY KEY,
+  CustomerId      CHAR(8)     NOT NULL,
+  CustomerName    VARCHAR(22) NOT NULL,
+  CustomerSegment VARCHAR(11) NOT NULL
+)
+GO
+
+--==============================================================================
+-- END OF STEP #2
+--==============================================================================
+
+--==============================================================================
+-- STEP #3: Populate dim tables
+--==============================================================================
+USE DW_Superstore_Manual
+GO
+
+-- Empty the tables before we start
+TRUNCATE TABLE dimShipMode
+TRUNCATE TABLE dimGeog
+TRUNCATE TABLE dimProduct
+TRUNCATE TABLE dimCustomer
+
+
+
+------------------------------------------------------------
+-- TASK 2
+------------------------------------------------------------
+-- Attempt to populate the following dim tables:
+-- dimShipMode, dimGeog, dimProduct, dimCustomer
+
+-- Notice number of records in each table, you should get:
+-- 4, 632, 1894, 794
+--Shipmode
+INSERT INTO dimShipMode(ShipMode)
+SELECT DISTINCT Ship_Mode
+FROM SuperstoreStaging
+ORDER BY Ship_Mode
+
+select * from dimGeog
+
+--Geog
+INSERT INTO dimGeog
+SELECT DISTINCT Country, Region, State, City, Postal_Code
+FROM SuperstoreStaging
+ORDER BY Country,Postal_Code, City
+
+--Product
+INSERT INTO dimProduct
+SELECT DISTINCT Product_ID, Product_Name, Category, Sub_Category
+FROM SuperstoreStaging
+ORDER BY Product_ID, Product_Name
+
+-- Customer
+INSERT INTO dimCustomer(CustomerId, CustomerName, CustomerSegment)
+SELECT DISTINCT Customer_ID, Customer_Name, Segment
+FROM SuperstoreStaging
+ORDER BY Customer_ID, Customer_Name
+
+
+
+-- Final check before moving to the next step
+SELECT COUNT(*) FROM SuperstoreStaging -- must be 9994
+SELECT COUNT(*) FROM dimShipMode       -- must be 4
+SELECT COUNT(*) FROM dimGeog           -- must be 632
+SELECT COUNT(*) FROM dimProduct        -- must be 1894
+SELECT COUNT(*) FROM dimCustomer       -- must be 794
+
+--==============================================================================
+-- END OF STEP #3
+--==============================================================================
+
+--==============================================================================
+-- STEP #4: Create and populate dimDate table
+--==============================================================================
+USE DW_Superstore_Manual
+GO
+
+--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+-- Create table dimDate
+--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+-- Create table
+DROP TABLE IF EXISTS FACTOrderItem
+DROP TABLE IF EXISTS dimDate
+GO
+CREATE TABLE dimDate(
+  Date_SK   BIGINT   NOT NULL IDENTITY(1,1) PRIMARY KEY, -- e.g. 3
+  DateValue DATE     NOT NULL,                           -- e.g. 5 Jan 2014 (05/01/2014 or 2014-01-05)
+  [Day]     TINYINT  NOT NULL,                           -- e.g. 5
+  [Week]    TINYINT  NOT NULL,                           -- e.g. 1 or 2
+  [Month]   TINYINT  NOT NULL,                           -- e.g. 1
+  [Quarter] TINYINT  NOT NULL,                           -- e.g. 1
+  [Year]    SMALLINT NOT NULL                            -- e.g. 2014
+)
+GO
+
+--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+-- But why on Earth do we need it?
+--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+-- Consider the simplest yearly report (based on field Order_Date):
+SELECT YEAR(Order_Date) AS Year,
+       SUM(Quantity)    AS Total_Qty,
+       SUM(Sales)       AS Total_Sales
+FROM SuperstoreStaging
+WHERE    YEAR(Order_Date) > 2014 -- using index on Order_Date is not possible because of the function
+GROUP BY YEAR(Order_Date)        -- using index on Order_Date is not possible because of the function
+ORDER BY YEAR(Order_Date)        -- using index on Order_Date is not possible because of the function
+
+SELECT *
+FROM SuperstoreStaging
+WHERE Order_Date = '2014-01-10'
+
+CREATE INDEX i1 ON SuperstoreStaging(Order_Date)
+
+DROP   INDEX i1 ON SuperstoreStaging
+
+
+--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+-- Populate table dimDate
+--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+-- First of all, get the range of Order_Date dates...
+SELECT MIN(Order_Date) AS Min_Order_Date,
+       MAX(Order_Date) AS Max_Order_Date
+FROM SuperstoreStaging
+
+SELECT COUNT(DISTINCT Order_Date) FROM SuperstoreStaging
+
+
+
+--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+-- The rest of the code MUST be executed as a single batch
+-- This is where you will start loving Transact-SQL (T-SQL)
+--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+-- declare variables to hold the start and end date
+DECLARE @StartDate DATE
+DECLARE @EndDate   DATE
+SET @StartDate = (SELECT MIN(Order_Date) AS Min_Order_Date FROM SuperstoreStaging)
+SET @EndDate   = (SELECT MAX(Order_Date) AS Max_Order_Date FROM SuperstoreStaging)
+
+-- see what's inside
+SELECT @StartDate
+SELECT @EndDate
+
+-- initialise loop variable
+DECLARE @LoopDate DATE
+SET @LoopDate = @StartDate
+
+
+-- using a while loop,
+-- increment from the start to the end date:
+WHILE @LoopDate <= @EndDate
+BEGIN
+   -- add a record into the dimDate table for that particular date
+   INSERT INTO dimDate(DateValue, [Day], [Week], [Month], [Quarter], [Year])
+   VALUES (@LoopDate,
+           DAY(@LoopDate),
+           DATEPART(WEEK, @LoopDate),
+           MONTH(@LoopDate),
+           CASE WHEN Month(@LoopDate) IN (1, 2, 3) THEN 1
+                WHEN Month(@LoopDate) IN (4, 5, 6) THEN 2
+                WHEN Month(@LoopDate) IN (7, 8, 9) THEN 3
+                WHEN Month(@LoopDate) IN (10, 11, 12) THEN 4
+           END,
+           YEAR(@LoopDate)
+          )
+
+-- increment the LoopDate by 1 day,
+-- and start another iteration for the next day
+   SET @LoopDate = DATEADD(d, 1, @LoopDate)
+END
+--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+-- End of the batch
+--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+SELECT * FROM dimDate
+Order by Date_SK
+
+select count(*) from dimdate
+
+drop table dimDate
+
+SELECT COUNT(*) FROM SuperstoreStaging -- must be 9994
+SELECT COUNT(*) FROM dimShipMode       -- must be 4
+SELECT COUNT(*) FROM dimGeog           -- must be 632
+SELECT COUNT(*) FROM dimProduct        -- must be 1894
+SELECT COUNT(*) FROM dimCustomer       -- must be 794
+SELECT COUNT(*) FROM dimDate           -- must be 1458
+
+--==============================================================================
+-- STEP #5: Create and populate FACTs table
+--==============================================================================
+
+SELECT TOP 18 *
+FROM SuperstoreStaging
+Order by Order_Id, Row_Id
+
+SELECT COUNT (DISTINCT ORDER_ID) FROM SuperstoreStaging
+SELECT COUNT (DISTINCT Row_ID) FROM SuperstoreStaging
+
+SELECT MIN(LEN(ORDER_ID)), MAX(LEN(ORDER_ID))
+FROM SuperstoreStaging
+
+SELECT DISTINCT(CAST(Ship_Date AS TIME))
+FROM SuperstoreStaging
+
+SELECT DISTINCT(Discount)
+FROM SuperstoreStaging
+Order by Discount
+
+DROP TABLE IF EXISTS FACTOrderItem
+GO
+CREATE TABLE FACTOrderItem(
+FACT_SK   BIGINT   NOT NULL IDENTITY(1,1) PRIMARY KEY,
+ROW_Id	  INT		NOT NULL,
+Order_Id  CHAR(14)	NOT NULL,
+Customer_SK  BIGINT  NOT NULL FOREIGN KEY REFERENCES dimCustomer(Customer_SK),
+Product_SK  BIGINT  NOT NULL FOREIGN KEY REFERENCES dimProduct(Product_SK),
+ShipMode_SK  BIGINT  NOT NULL FOREIGN KEY REFERENCES dimShipMode(ShipMode_SK),
+Geog_SK		BIGINT  NOT NULL FOREIGN KEY REFERENCES dimGeog(Geog_SK),
+OrderDate_SK  BIGINT  NOT NULL FOREIGN KEY REFERENCES dimDate(Date_SK),
+ShipDate	DATE NOT NULL,
+Sales		FLOAT NOT NULL,
+QTY			INT  NOT NULL,
+Discount	DECIMAL(3,2)  NOT NULL,
+Profit		FLOAT  NOT NULL
+)
+GO
+
+SELECT * from FactOrderItem
+SELECT * FROM SuperstoreStaging
+
+INSERT INTO FACTOrderItem
+SELECT
+	   a.Row_ID,
+       a.Order_ID,
+       c.Customer_SK,
+       p.Product_SK,
+       s.ShipMode_SK,
+       g.Geog_SK,
+       d.Date_SK AS OrderDate_SK,
+       a.Ship_Date, a.Sales, a.Quantity, a.Discount, a.Profit
+FROM SuperstoreStaging a
+     JOIN dimCustomer  c ON a.Customer_ID = c.CustomerId
+     JOIN dimProduct   p ON a.Product_ID  = p.ProductId AND a.Product_Name = p.ProductName
+     JOIN dimShipMode  s ON a.Ship_Mode   = s.ShipMode
+     JOIN dimGeog      g ON a.Postal_Code = g.PostalCode AND a.City = g.City
+     JOIN dimDate      d ON a.Order_Date  = d.DateValue
+ORDER BY a.Order_Date, a.Row_ID
+
+
+
+SELECT COUNT(*) FROM FACTOrderItem
+
+
+
+
+
+
+
+
