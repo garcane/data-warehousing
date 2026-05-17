@@ -11,7 +11,7 @@ This repository collects reusable SQL code, data modeling notes, ETL patterns, a
 - `sql/` — Reusable query snippets, aggregation patterns, and performance tips.
 - `docs/` — Design notes, modeling guidelines, and runbooks.
 
-> Language composition: primarily SQL and T-SQL (procedural extensions for SQL Server).
+> **Language composition:** 95.7% SQL, 4.3% T-SQL (procedural extensions for SQL Server).
 
 ## Goals
 
@@ -21,23 +21,27 @@ This repository collects reusable SQL code, data modeling notes, ETL patterns, a
 
 ## Architecture & Patterns
 
-A canonical layered architecture used by the assets here:
+### Canonical Layered Architecture
 
-1. Raw ingestion (landing/staging): minimal transformation, preserve source fidelity.
-2. Staging: apply light cleansing, type conversions, and surrogate key lookups.
-3. Conformed dimension & facts: canonical dimensional models (star schema).
-4. Aggregate & reporting layer: materialized aggregates, views, and export-ready tables.
+The assets in this repository follow a proven four-layer architecture:
 
-Recommended patterns included in the repo:
+1. **Raw ingestion (landing/staging):** Minimal transformation, preserve source fidelity.
+2. **Staging:** Light cleansing, type conversions, and surrogate key lookups.
+3. **Conformed dimensions & facts:** Canonical dimensional models (star schema).
+4. **Aggregate & reporting layer:** Materialized aggregates, views, and export-ready tables.
 
-- Slowly Changing Dimensions (SCD) Type 1 / Type 2 examples.
-- Merge-based upserts using `MERGE` or idempotent `INSERT`/`UPDATE` flows.
-- Date/time dimension generation and time-windowed incremental loading.
-- Error handling patterns using audit/error tables and consistent logging.
+### Recommended Patterns
 
-## Example snippets
+This repository includes implementations of:
 
-DDL (dimension table example):
+- **Slowly Changing Dimensions (SCD)** — Type 1 and Type 2 examples
+- **Merge-based upserts** — Using `MERGE` or idempotent `INSERT`/`UPDATE` flows
+- **Date/time dimensions** — Generation and time-windowed incremental loading
+- **Error handling** — Audit/error tables and consistent logging patterns
+
+## Quick Examples
+
+### Dimension Table DDL
 
 ```sql
 CREATE TABLE dim_customer (
@@ -52,7 +56,7 @@ CREATE TABLE dim_customer (
 );
 ```
 
-Merge/upsert example (T-SQL):
+### Merge/Upsert Pattern (T-SQL)
 
 ```sql
 MERGE INTO dbo.dim_customer AS target
@@ -65,7 +69,7 @@ WHEN NOT MATCHED BY TARGET
        VALUES (src.customer_id, src.customer_name, src.email, CONVERT(date, SYSUTCDATETIME()), SYSUTCDATETIME());
 ```
 
-Incremental load pattern (pseudo):
+### Incremental Load Workflow
 
 ```sql
 -- 1) Get max loaded watermark from control table
@@ -75,47 +79,64 @@ Incremental load pattern (pseudo):
 -- 5) Update watermark and write load audit record
 ```
 
-## How to use this repo
+## Getting Started
+
+### Local Setup
+
+1. **Create a local SQL Server instance** (or use Docker):
+   ```bash
+   docker run -e 'ACCEPT_EULA=Y' -e 'SA_PASSWORD=YourPassword123' \
+     -p 1433:1433 -d mcr.microsoft.com/mssql/server
+   ```
+
+2. **Run the provided DDL** from `ddl/` to create schemas and tables.
+
+3. **Load sample data** from CSV files into staging and run ETL scripts in `etl/`.
+
+### Using Examples in Your Projects
 
 - Browse `ddl/` and `etl/` for runnable examples you can adapt to your environment.
 - Copy proven patterns into your CI/CD pipelines; prefer idempotent scripts for safe re-runs.
-- Use the `docs/` folder for design decisions and runbooks before and after major changes.
+- Refer to `docs/` for design decisions and runbooks before and after major changes.
 
-Quick start (run a local test):
+## Testing & Validation
 
-1. Create a local SQL Server instance (or use Docker). Example Docker image: `mcr.microsoft.com/mssql/server`.
-2. Run the provided DDL from `ddl/` to create schemas and tables.
-3. Load sample CSVs into staging and run the ETL scripts in `etl/`.
-
-## Testing and CI
-
-- Keep SQL scripts idempotent so CI can apply them repeatedly.
-- Add unit tests for SQL where possible (tSQLt for SQL Server).
-- Add data validation checks and row-count assertions in pipeline tests.
+- **Keep scripts idempotent** — CI should apply them repeatedly without errors.
+- **Add unit tests** — Use tSQLt for SQL Server testing.
+- **Validate data quality** — Include row-count assertions and data validation checks in pipeline tests.
 
 ## Contributing
 
-Contributions are welcome. Please follow these guidelines:
+Contributions are welcome! Please follow these guidelines:
 
-1. Open an issue describing your proposed change or addition.
-2. Create a topic branch and open a pull request with a clear description and test instructions.
-3. Keep examples small and environment-agnostic; avoid including production credentials or data.
-
-When adding examples, prefer:
-- Clear DDL and sample data for reproduction
-- Comments explaining assumptions and environment requirements
-- Minimal reliance on vendor-specific features unless documented
+1. **Open an issue** describing your proposed change or addition.
+2. **Create a topic branch** and open a pull request with:
+   - A clear description of the change
+   - Test instructions and validation steps
+3. **Keep examples small and portable:**
+   - Include clear DDL and sample data for reproduction
+   - Add comments explaining assumptions and environment requirements
+   - Minimize vendor-specific features; document if required
 
 ## Security & Data Sensitivity
 
-This repository should not contain production data or credentials. Treat any sample data as synthetic. If you add scripts that connect to databases, ensure credentials are sourced from secure secrets managers and not checked into the repo.
+⚠️ **Important:** This repository should not contain:
+- Production data or credentials
+- Sensitive information or customer data
+- Database connection strings or secrets
+
+All sample data must be synthetic. If you add scripts that connect to databases, ensure credentials are sourced from secure secrets management tools.
 
 ## License
 
-No license is specified in this repository. Add a LICENSE file to declare usage terms.
+No license is currently specified. A LICENSE file should be added to declare usage terms. Consider using an open-source license like MIT, Apache 2.0, or GPL.
 
-## Contact
+## Contact & Requests
 
-Maintainer: @garcane
+**Maintainer:** [@garcane](https://github.com/garcane)
 
-If you'd like specific examples (SCD2 implementation, full ETL pipeline, or CI pipeline examples), tell me which target engine (e.g., SQL Server T-SQL, PostgreSQL, BigQuery) and I will add tailored examples.
+Have a specific request? Please open an issue with details about:
+- **Target engine:** SQL Server T-SQL, PostgreSQL, BigQuery, etc.
+- **Use case:** SCD2 implementation, full ETL pipeline, CI/CD pipeline examples, etc.
+
+Looking forward to your contributions!
