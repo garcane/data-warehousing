@@ -1,0 +1,745 @@
+RowId	dateSold	productSold	unitsSold	salesChannel	Region	custId	custName	productId	productName	stdCost	stdPrice	Country
+1	2012-08-09 00:00:00.000	SUPA101	117	Online	Unknown	23262	Candice Levy	SUPA101	Super Soft - Product Sample	0.3	0	Unknown
+4	2012-08-05 00:00:00.000	SUPA104	14	Online	Sub-Saharan Africa	23265	Uriel Benton	SUPA104	Super Soft - 1 Litre	5	9.99	South Africa
+5	2012-08-11 00:00:00.000	PURA200	170	Retail	Sub-Saharan Africa	23266	Celeste Pugh	PURA200	Pure Soft Detergent - 200ml	2	3.99	Gabon
+6	2012-07-11 00:00:00.000	PURA100	129	Online	Unknown	23267	Vance Campos	PURA100	Pure Soft Detergent - 100ml	1.5	3	Unknown
+8	2012-06-03 00:00:00.000	PURA100	116	Direct	Europe	23269	Jane Hernandez	PURA100	Pure Soft Detergent - 100ml	1.5	3	Macedonia
+9	2012-06-07 00:00:00.000	SUPA103	67	Online	Asia	23270	Wanda Garza	SUPA103	Super Soft - 500ml	3.5	6.99	Kyrgyzstan
+10	2012-07-27 00:00:00.000	SUPA103	125	Retail	Unknown	23271	Athena Fitzpatrick	SUPA103	Super Soft - 500ml	3.5	6.99	Unknown
+12	2012-08-13 00:00:00.000	SUPA104	22	Online	Unknown	23273	Isaac Cooper	SUPA104	Super Soft - 1 Litre	5	9.99	Unknown
+13	2012-08-22 00:00:00.000	PURA100	153	Retail	Europe	23274	Asher Weber	PURA100	Pure Soft Detergent - 100ml	1.5	3	Macedonia
+15	2012-08-01 00:00:00.000	PURA500	65	Online	Asia	23276	Hayes Rollins	PURA500	Pure Soft Detergent - 500ml	3.5	6.5	Nepal
+16	2012-07-12 00:00:00.000	SUPA101	157	Online	Middle East and North Africa	23277	MacKenzie Moss	SUPA101	Super Soft - Product Sample	0.3	0	Oman
+17	2012-08-24 00:00:00.000	SUPA105	197	Online	Sub-Saharan Africa	23278	Aphrodite Brennan	SUPA105	Super Soft Bulk - 2 Litres	8	14.5	Malawi
+18	2012-06-21 00:00:00.000	PURA100	10	Online	Europe	23279	Angela Wise	PURA100	Pure Soft Detergent - 100ml	1.5	3	Moldova 
+19	2012-06-03 00:00:00.000	SUPA103	30	Online	Sub-Saharan Africa	23280	James Spencer	SUPA103	Super Soft - 500ml	3.5	6.99	Burkina Faso
+20	2012-07-13 00:00:00.000	SUPA102	134	Online	Unknown	23281	Adria Kaufman	SUPA102	Super Soft - 250ml	2.5	4.5	Unknown
+22	2012-06-24 00:00:00.000	SUPA105	142	Retail	Australia and Oceania	23283	Lani Sweet	SUPA105	Super Soft Bulk - 2 Litres	8	14.5	Vanuatu
+23	2012-06-17 00:00:00.000	PURA250	135	Online	Australia and Oceania	23284	Clark Weaver	PURA250	Pure Soft Detergent - 250ml	2.3	4.5	Palau
+24	2012-07-24 00:00:00.000	SUPA102	9	Retail	Sub-Saharan Africa	23285	Leonard Cardenas	SUPA102	Super Soft - 250ml	2.5	4.5	Madagascar
+26	2012-06-17 00:00:00.000	PURA250	189	Online	Unknown	23287	Joy Vazquez	PURA250	Pure Soft Detergent - 250ml	2.3	4.5	Unknown
+27	2012-06-14 00:00:00.000	SUPA104	141	Retail	Unknown	23288	Ingrid Bush	SUPA104	Super Soft - 1 Litre	5	9.99	Unknown
+28	2012-08-02 00:00:00.000	SUPA105	166	Direct	Asia	23289	Deacon Craig	SUPA105	Super Soft Bulk - 2 Litres	8	14.5	Mongolia
+31	2012-07-03 00:00:00.000	SUPA105	73	Online	Australia and Oceania	23292	Liberty Mcbride	SUPA105	Super Soft Bulk - 2 Litres	8	14.5	Fiji
+32	2012-06-30 00:00:00.000	SUPA101	117	Retail	Sub-Saharan Africa	23293	Britanni Bender	SUPA101	Super Soft - Product Sample	0.3	0	Angola
+34	2012-06-09 00:00:00.000	SUPA101	45	Retail	Australia and Oceania	23295	Shad Delacruz	SUPA101	Super Soft - Product Sample	0.3	0	Solomon Islands
+35	2012-06-08 00:00:00.000	SUPA105	37	Direct	Europe	23296	India Gilbert	SUPA105	Super Soft Bulk - 2 Litres	8	14.5	Denmark
+37	2012-07-28 00:00:00.000	PURA250	12	Online	Unknown	23298	Ryder Conner	PURA250	Pure Soft Detergent - 250ml	2.3	4.5	Unknown
+38	2012-06-27 00:00:00.000	PURA200	104	Retail	Sub-Saharan Africa	23299	Germaine Kidd	PURA200	Pure Soft Detergent - 200ml	2	3.99	Niger
+39	2012-07-07 00:00:00.000	SUPA104	167	Retail	Unknown	23300	Rhona Clarke	SUPA104	Super Soft - 1 Litre	5	9.99	Unknown
+40	2012-07-19 00:00:00.000	SUPA103	108	Online	Unknown	23301	Maxwell Parker	SUPA103	Super Soft - 500ml	3.5	6.99	Unknown
+41	2012-07-27 00:00:00.000	PURA500	105	Retail	Central America and the Caribbean	23302	Isaac Wolf	PURA500	Pure Soft Detergent - 500ml	3.5	6.5	Panama
+42	2012-08-17 00:00:00.000	SUPA105	176	Online	Unknown	23303	Guinevere Key	SUPA105	Super Soft Bulk - 2 Litres	8	14.5	Unknown
+43	2012-06-01 00:00:00.000	PURA200	131	Direct	Australia and Oceania	23304	Deanna Santana	PURA200	Pure Soft Detergent - 200ml	2	3.99	Solomon Islands
+47	2012-07-09 00:00:00.000	PURA100	112	Retail	Unknown	23308	Dara Cunningham	PURA100	Pure Soft Detergent - 100ml	1.5	3	Unknown
+48	2012-06-23 00:00:00.000	PURA200	201	Retail	Sub-Saharan Africa	23309	Buckminster Hopkins	PURA200	Pure Soft Detergent - 200ml	2	3.99	Sierra Leone
+49	2012-06-17 00:00:00.000	SUPA104	41	Retail	North America	23310	Kenyon Joyce	SUPA104	Super Soft - 1 Litre	5	9.99	Canada
+50	2012-06-12 00:00:00.000	SUPA105	18	Retail	Unknown	23311	Forrest Macdonald	SUPA105	Super Soft Bulk - 2 Litres	8	14.5	Unknown
+51	2012-07-06 00:00:00.000	PURA200	28	Retail	Unknown	23312	Thomas Barnes	PURA200	Pure Soft Detergent - 200ml	2	3.99	Unknown
+52	2012-07-15 00:00:00.000	SUPA101	137	Online	Unknown	23313	Cruz Pacheco	SUPA101	Super Soft - Product Sample	0.3	0	Unknown
+53	2012-08-10 00:00:00.000	SUPA104	95	Retail	Central America and the Caribbean	23314	Maxine Gentry	SUPA104	Super Soft - 1 Litre	5	9.99	Panama
+54	2012-07-12 00:00:00.000	PURA250	109	Online	Sub-Saharan Africa	23315	Anika Tillman	PURA250	Pure Soft Detergent - 250ml	2.3	4.5	Burkina Faso
+55	2012-06-01 00:00:00.000	PURA200	137	Retail	Unknown	23316	Robert Juarez	PURA200	Pure Soft Detergent - 200ml	2	3.99	Unknown
+56	2012-07-17 00:00:00.000	PURA250	196	Online	Europe	23317	Kay Buckley	PURA250	Pure Soft Detergent - 250ml	2.3	4.5	Malta
+58	2012-08-03 00:00:00.000	SUPA101	4	Online	Unknown	23319	Sylvester Roy	SUPA101	Super Soft - Product Sample	0.3	0	Unknown
+60	2012-08-13 00:00:00.000	SUPA101	211	Online	Unknown	23321	Kareem Mays	SUPA101	Super Soft - Product Sample	0.3	0	Unknown
+61	2012-06-10 00:00:00.000	PURA100	20	Online	Asia	23322	Arsenio Knowles	PURA100	Pure Soft Detergent - 100ml	1.5	3	Malaysia
+62	2012-08-29 00:00:00.000	PURA100	135	Direct	Middle East and North Africa	23323	Colby Knapp	PURA100	Pure Soft Detergent - 100ml	1.5	3	Pakistan
+63	2012-08-13 00:00:00.000	SUPA104	193	Retail	Sub-Saharan Africa	23324	Noble Warner	SUPA104	Super Soft - 1 Litre	5	9.99	Burkina Faso
+65	2012-08-21 00:00:00.000	SUPA102	126	Online	Europe	23326	Katelyn Joseph	SUPA102	Super Soft - 250ml	2.5	4.5	Slovenia
+67	2012-07-15 00:00:00.000	SUPA105	102	Online	Unknown	23328	Keaton Wolfe	SUPA105	Super Soft Bulk - 2 Litres	8	14.5	Unknown
+68	2012-07-23 00:00:00.000	PURA250	203	Retail	Unknown	23329	Melinda Cobb	PURA250	Pure Soft Detergent - 250ml	2.3	4.5	Unknown
+69	2012-08-04 00:00:00.000	SUPA101	177	Retail	Europe	23330	Aurelia Flores	SUPA101	Super Soft - Product Sample	0.3	0	United Kingdom
+70	2012-08-04 00:00:00.000	SUPA101	51	Online	Unknown	23331	Bevis Mcdonald	SUPA101	Super Soft - Product Sample	0.3	0	Unknown
+71	2012-07-11 00:00:00.000	PURA250	203	Retail	Asia	23332	Yael Carter	PURA250	Pure Soft Detergent - 250ml	2.3	4.5	Malaysia
+72	2012-08-05 00:00:00.000	PURA250	106	Retail	Europe	23333	Sawyer Stokes	PURA250	Pure Soft Detergent - 250ml	2.3	4.5	Malta
+73	2012-08-17 00:00:00.000	PURA100	14	Direct	Unknown	23334	Silas Battle	PURA100	Pure Soft Detergent - 100ml	1.5	3	Unknown
+75	2012-07-01 00:00:00.000	SUPA102	7	Retail	Middle East and North Africa	23336	Petra Mckenzie	SUPA102	Super Soft - 250ml	2.5	4.5	Morocco
+76	2012-07-07 00:00:00.000	SUPA103	82	Online	Sub-Saharan Africa	23337	Bell Prince	SUPA103	Super Soft - 500ml	3.5	6.99	Guinea
+77	2012-08-12 00:00:00.000	PURA250	178	Online	Unknown	23338	George Best	PURA250	Pure Soft Detergent - 250ml	2.3	4.5	Unknown
+79	2012-07-05 00:00:00.000	SUPA102	85	Retail	Central America and the Caribbean	23340	Lael Gould	SUPA102	Super Soft - 250ml	2.5	4.5	El Salvador
+80	2012-06-27 00:00:00.000	PURA100	77	Online	Unknown	23341	Noel Key	PURA100	Pure Soft Detergent - 100ml	1.5	3	Unknown
+81	2012-06-28 00:00:00.000	PURA200	122	Online	Unknown	23342	Paul Duke	PURA200	Pure Soft Detergent - 200ml	2	3.99	Unknown
+82	2012-08-23 00:00:00.000	SUPA104	42	Online	Asia	23343	Josiah Yates	SUPA104	Super Soft - 1 Litre	5	9.99	Bangladesh
+84	2012-08-29 00:00:00.000	SUPA105	208	Online	Europe	23345	Devin Abbott	SUPA105	Super Soft Bulk - 2 Litres	8	14.5	France
+85	2012-07-29 00:00:00.000	SUPA104	13	Retail	Unknown	23346	Aretha Patton	SUPA104	Super Soft - 1 Litre	5	9.99	Unknown
+87	2012-08-25 00:00:00.000	SUPA104	163	Online	Europe	23348	Tad Mack	SUPA104	Super Soft - 1 Litre	5	9.99	Iceland
+90	2012-08-03 00:00:00.000	PURA200	151	Online	Unknown	23351	Nyssa Quinn	PURA200	Pure Soft Detergent - 200ml	2	3.99	Unknown
+92	2012-06-10 00:00:00.000	SUPA105	168	Retail	North America	23353	Zahir Fields	SUPA105	Super Soft Bulk - 2 Litres	8	14.5	Canada
+93	2012-08-03 00:00:00.000	SUPA103	84	Retail	Sub-Saharan Africa	23354	Gwendolyn Mccarty	SUPA103	Super Soft - 500ml	3.5	6.99	Madagascar
+94	2012-06-27 00:00:00.000	PURA250	16	Online	Australia and Oceania	23355	Victoria Solis	PURA250	Pure Soft Detergent - 250ml	2.3	4.5	Palau
+95	2012-06-21 00:00:00.000	PURA200	80	Direct	Unknown	23356	Colette Sargent	PURA200	Pure Soft Detergent - 200ml	2	3.99	Unknown
+97	2012-06-11 00:00:00.000	SUPA104	41	Online	Australia and Oceania	23358	Joel Rivers	SUPA104	Super Soft - 1 Litre	5	9.99	Australia
+98	2012-07-11 00:00:00.000	SUPA101	19	Online	Sub-Saharan Africa	23359	Kyra Harding	SUPA101	Super Soft - Product Sample	0.3	0	Cameroon
+99	2012-06-13 00:00:00.000	SUPA103	37	Retail	Unknown	23360	Barrett Mckinney	SUPA103	Super Soft - 500ml	3.5	6.99	Unknown
+100	2012-07-07 00:00:00.000	SUPA103	184	Retail	Sub-Saharan Africa	23361	Benedict Byrd	SUPA103	Super Soft - 500ml	3.5	6.99	Mauritania
+101	2012-08-18 00:00:00.000	PURA100	179	Online	Unknown	23362	Jerry Alvarado	PURA100	Pure Soft Detergent - 100ml	1.5	3	Unknown
+102	2012-07-20 00:00:00.000	SUPA101	190	Direct	Unknown	23363	Lesley Aguilar	SUPA101	Super Soft - Product Sample	0.3	0	Unknown
+104	2012-07-09 00:00:00.000	SUPA102	165	Retail	Central America and the Caribbean	23365	Gwendolyn Walton	SUPA102	Super Soft - 250ml	2.5	4.5	Cuba
+105	2012-06-19 00:00:00.000	SUPA101	178	Retail	Europe	23366	Zia Mcmillan	SUPA101	Super Soft - Product Sample	0.3	0	Denmark
+106	2012-06-24 00:00:00.000	PURA250	10	Retail	Middle East and North Africa	23367	Roary Dixon	PURA250	Pure Soft Detergent - 250ml	2.3	4.5	Saudi Arabia
+107	2012-08-25 00:00:00.000	SUPA102	150	Retail	Unknown	23368	Emerson Beard	SUPA102	Super Soft - 250ml	2.5	4.5	Unknown
+108	2012-07-02 00:00:00.000	PURA500	77	Online	Unknown	23369	Ivor Mclaughlin	PURA500	Pure Soft Detergent - 500ml	3.5	6.5	Unknown
+109	2012-06-29 00:00:00.000	PURA100	63	Online	Asia	23370	Clark Orr	PURA100	Pure Soft Detergent - 100ml	1.5	3	Indonesia
+110	2012-08-15 00:00:00.000	SUPA103	204	Retail	Central America and the Caribbean	23371	Doris Williams	SUPA103	Super Soft - 500ml	3.5	6.99	Trinidad and Tobago
+111	2012-08-12 00:00:00.000	PURA500	22	Online	Sub-Saharan Africa	23372	Phillip Perkins	PURA500	Pure Soft Detergent - 500ml	3.5	6.5	Nigeria
+113	2012-08-14 00:00:00.000	PURA200	57	Online	Sub-Saharan Africa	23374	Ebony Mercer	PURA200	Pure Soft Detergent - 200ml	2	3.99	Cape Verde
+114	2012-06-30 00:00:00.000	SUPA103	5	Retail	Australia and Oceania	23375	Brittany Burris	SUPA103	Super Soft - 500ml	3.5	6.99	Palau
+115	2012-07-23 00:00:00.000	SUPA103	85	Online	Sub-Saharan Africa	23376	Imogene Bradshaw	SUPA103	Super Soft - 500ml	3.5	6.99	Niger
+116	2012-06-15 00:00:00.000	PURA500	43	Retail	Sub-Saharan Africa	23377	Eleanor Hopper	PURA500	Pure Soft Detergent - 500ml	3.5	6.5	Madagascar
+117	2012-06-18 00:00:00.000	SUPA105	157	Retail	Europe	23378	Brynne Mcgowan	SUPA105	Super Soft Bulk - 2 Litres	8	14.5	Finland
+118	2012-08-27 00:00:00.000	PURA200	65	Online	Unknown	23379	Desirae Perkins	PURA200	Pure Soft Detergent - 200ml	2	3.99	Unknown
+119	2012-07-22 00:00:00.000	PURA500	95	Online	Australia and Oceania	23380	Ivory Chang	PURA500	Pure Soft Detergent - 500ml	3.5	6.5	Tonga
+120	2012-07-22 00:00:00.000	SUPA103	159	Online	Sub-Saharan Africa	23381	Gwendolyn David	SUPA103	Super Soft - 500ml	3.5	6.99	Cape Verde
+122	2012-07-18 00:00:00.000	SUPA103	39	Online	Unknown	23383	Rosalyn Lopez	SUPA103	Super Soft - 500ml	3.5	6.99	Unknown
+123	2012-07-28 00:00:00.000	PURA200	9	Retail	Europe	23384	Basil Bates	PURA200	Pure Soft Detergent - 200ml	2	3.99	Portugal
+124	2012-06-08 00:00:00.000	PURA100	50	Online	Europe	23385	Adrian Alvarez	PURA100	Pure Soft Detergent - 100ml	1.5	3	Monaco
+126	2012-06-18 00:00:00.000	SUPA104	118	Online	Unknown	23387	Ashely Macdonald	SUPA104	Super Soft - 1 Litre	5	9.99	Unknown
+128	2012-08-02 00:00:00.000	SUPA101	126	Retail	Unknown	23389	Cynthia Gilliam	SUPA101	Super Soft - Product Sample	0.3	0	Unknown
+129	2012-06-27 00:00:00.000	PURA100	176	Online	Middle East and North Africa	23390	Tanner Turner	PURA100	Pure Soft Detergent - 100ml	1.5	3	Yemen
+132	2012-08-23 00:00:00.000	SUPA105	113	Retail	Asia	23393	Odette Logan	SUPA105	Super Soft Bulk - 2 Litres	8	14.5	Malaysia
+133	2012-07-31 00:00:00.000	SUPA105	105	Retail	Sub-Saharan Africa	23394	Garrett May	SUPA105	Super Soft Bulk - 2 Litres	8	14.5	Malawi
+135	2012-06-29 00:00:00.000	PURA250	116	Online	Sub-Saharan Africa	23396	Katelyn Adams	PURA250	Pure Soft Detergent - 250ml	2.3	4.5	Guinea
+136	2012-07-10 00:00:00.000	SUPA101	208	Retail	Middle East and North Africa	23397	Moses Huff	SUPA101	Super Soft - Product Sample	0.3	0	Turkey
+137	2012-07-24 00:00:00.000	PURA500	45	Direct	Unknown	23398	Susan Schultz	PURA500	Pure Soft Detergent - 500ml	3.5	6.5	Unknown
+138	2012-06-19 00:00:00.000	SUPA102	193	Online	Europe	23399	Leah Golden	SUPA102	Super Soft - 250ml	2.5	4.5	Norway
+139	2012-06-05 00:00:00.000	SUPA101	108	Direct	Europe	23400	Ina Montgomery	SUPA101	Super Soft - Product Sample	0.3	0	Romania
+140	2012-07-29 00:00:00.000	SUPA104	205	Retail	Europe	23401	Maia Mitchell	SUPA104	Super Soft - 1 Litre	5	9.99	Switzerland
+142	2012-06-28 00:00:00.000	SUPA103	46	Retail	Europe	23403	Molly Crane	SUPA103	Super Soft - 500ml	3.5	6.99	Armenia
+143	2012-08-03 00:00:00.000	SUPA101	73	Retail	Europe	23404	Cedric Rivera	SUPA101	Super Soft - Product Sample	0.3	0	Albania
+145	2012-07-22 00:00:00.000	PURA500	202	Online	Central America and the Caribbean	23406	Linda Morales	PURA500	Pure Soft Detergent - 500ml	3.5	6.5	Saint Lucia
+147	2012-07-31 00:00:00.000	PURA200	48	Retail	Unknown	23408	Fatima Case	PURA200	Pure Soft Detergent - 200ml	2	3.99	Unknown
+149	2012-06-30 00:00:00.000	PURA250	202	Retail	Unknown	23410	Cooper Brooks	PURA250	Pure Soft Detergent - 250ml	2.3	4.5	Unknown
+150	2012-08-06 00:00:00.000	PURA200	138	Retail	Middle East and North Africa	23411	Reagan Leach	PURA200	Pure Soft Detergent - 200ml	2	3.99	Pakistan
+153	2012-07-08 00:00:00.000	SUPA105	114	Online	Unknown	23414	Arden Conrad	SUPA105	Super Soft Bulk - 2 Litres	8	14.5	Unknown
+154	2012-08-02 00:00:00.000	PURA500	170	Retail	Asia	23415	Colleen Huff	PURA500	Pure Soft Detergent - 500ml	3.5	6.5	Singapore
+155	2012-08-04 00:00:00.000	SUPA102	116	Online	Sub-Saharan Africa	23416	Isadora Ford	SUPA102	Super Soft - 250ml	2.5	4.5	Zambia
+156	2012-06-21 00:00:00.000	PURA500	100	Online	Sub-Saharan Africa	23417	Heidi Pennington	PURA500	Pure Soft Detergent - 500ml	3.5	6.5	Zimbabwe
+158	2012-08-27 00:00:00.000	SUPA101	193	Retail	Australia and Oceania	23419	Donovan Noel	SUPA101	Super Soft - Product Sample	0.3	0	Nauru
+159	2012-06-21 00:00:00.000	SUPA102	57	Online	Unknown	23420	Joseph Potts	SUPA102	Super Soft - 250ml	2.5	4.5	Unknown
+161	2012-08-28 00:00:00.000	PURA500	153	Retail	Europe	23422	Leo Osborne	PURA500	Pure Soft Detergent - 500ml	3.5	6.5	Hungary
+162	2012-07-27 00:00:00.000	PURA250	29	Retail	Middle East and North Africa	23423	Ima Jensen	PURA250	Pure Soft Detergent - 250ml	2.3	4.5	Iraq
+163	2012-07-28 00:00:00.000	PURA100	38	Direct	Europe	23424	Norman Dale	PURA100	Pure Soft Detergent - 100ml	1.5	3	Spain
+164	2012-07-28 00:00:00.000	SUPA102	3	Online	Unknown	23425	Dana Cobb	SUPA102	Super Soft - 250ml	2.5	4.5	Unknown
+166	2012-07-25 00:00:00.000	SUPA105	53	Retail	Europe	23427	Ivy Wells	SUPA105	Super Soft Bulk - 2 Litres	8	14.5	Andorra
+167	2012-08-14 00:00:00.000	PURA100	153	Direct	Unknown	23428	Sigourney Bullock	PURA100	Pure Soft Detergent - 100ml	1.5	3	Unknown
+168	2012-06-16 00:00:00.000	SUPA104	144	Retail	Unknown	23429	Lacota Hinton	SUPA104	Super Soft - 1 Litre	5	9.99	Unknown
+170	2012-06-11 00:00:00.000	PURA250	7	Retail	Unknown	23431	Cynthia Underwood	PURA250	Pure Soft Detergent - 250ml	2.3	4.5	Unknown
+171	2012-07-24 00:00:00.000	PURA200	110	Retail	Unknown	23432	Edward Pope	PURA200	Pure Soft Detergent - 200ml	2	3.99	Unknown
+172	2012-08-04 00:00:00.000	PURA200	209	Online	Middle East and North Africa	23433	Tara Mckinney	PURA200	Pure Soft Detergent - 200ml	2	3.99	Israel
+173	2012-06-17 00:00:00.000	SUPA102	203	Retail	Unknown	23434	Ryder Riddle	SUPA102	Super Soft - 250ml	2.5	4.5	Unknown
+174	2012-06-19 00:00:00.000	PURA200	29	Retail	Sub-Saharan Africa	23435	Holmes Graves	PURA200	Pure Soft Detergent - 200ml	2	3.99	Mauritania
+176	2012-06-21 00:00:00.000	PURA100	15	Retail	Unknown	23437	Gillian Santiago	PURA100	Pure Soft Detergent - 100ml	1.5	3	Unknown
+177	2012-08-02 00:00:00.000	SUPA104	102	Online	Unknown	23438	Kevin Spears	SUPA104	Super Soft - 1 Litre	5	9.99	Unknown
+180	2012-06-20 00:00:00.000	SUPA102	129	Direct	Middle East and North Africa	23441	Britanni Weeks	SUPA102	Super Soft - 250ml	2.5	4.5	United Arab Emirates
+181	2012-08-26 00:00:00.000	PURA500	95	Online	Europe	23442	Timon Kline	PURA500	Pure Soft Detergent - 500ml	3.5	6.5	Liechtenstein
+182	2012-08-11 00:00:00.000	PURA100	58	Online	Europe	23443	Raphael Casey	PURA100	Pure Soft Detergent - 100ml	1.5	3	Hungary
+183	2012-06-17 00:00:00.000	PURA200	160	Online	Middle East and North Africa	23444	Aline Leonard	PURA200	Pure Soft Detergent - 200ml	2	3.99	Saudi Arabia
+184	2012-08-23 00:00:00.000	SUPA102	163	Retail	Middle East and North Africa	23445	Macy Stafford	SUPA102	Super Soft - 250ml	2.5	4.5	Turkey
+186	2012-06-01 00:00:00.000	SUPA103	147	Online	Europe	23447	Lewis Lester	SUPA103	Super Soft - 500ml	3.5	6.99	Andorra
+187	2012-08-20 00:00:00.000	SUPA103	211	Online	Australia and Oceania	23448	Garrett Aguirre	SUPA103	Super Soft - 500ml	3.5	6.99	Samoa 
+189	2012-07-16 00:00:00.000	SUPA101	100	Retail	Europe	23450	Lewis Hall	SUPA101	Super Soft - Product Sample	0.3	0	Denmark
+190	2012-06-27 00:00:00.000	SUPA102	123	Retail	Europe	23451	Caesar Mcgowan	SUPA102	Super Soft - 250ml	2.5	4.5	Albania
+191	2012-06-01 00:00:00.000	PURA250	176	Online	Asia	23452	Simon Carlson	PURA250	Pure Soft Detergent - 250ml	2.3	4.5	Uzbekistan
+194	2012-06-09 00:00:00.000	PURA200	62	Online	Asia	23455	Abraham Mcguire	PURA200	Pure Soft Detergent - 200ml	2	3.99	Japan
+195	2012-06-07 00:00:00.000	PURA100	33	Online	Unknown	23456	Urielle Michael	PURA100	Pure Soft Detergent - 100ml	1.5	3	Unknown
+197	2012-07-09 00:00:00.000	SUPA101	69	Online	Middle East and North Africa	23458	Dominique Oneill	SUPA101	Super Soft - Product Sample	0.3	0	Qatar
+198	2012-07-17 00:00:00.000	PURA200	121	Online	Asia	23459	Jordan Gordon	PURA200	Pure Soft Detergent - 200ml	2	3.99	Sri Lanka
+199	2012-08-24 00:00:00.000	SUPA102	112	Direct	Middle East and North Africa	23460	Fuller Hamilton	SUPA102	Super Soft - 250ml	2.5	4.5	Egypt
+201	2012-04-28 00:00:00.000	SUPA105	60	Online	Unknown	23462	Skyler Carson	SUPA105	Super Soft Bulk - 2 Litres	8	14.5	Unknown
+202	2012-05-25 00:00:00.000	PURA500	202	Online	Australia and Oceania	23463	Blaine Terry	PURA500	Pure Soft Detergent - 500ml	3.5	6.5	Nauru
+203	2012-04-09 00:00:00.000	SUPA105	181	Retail	Unknown	23464	Zorita Hodge	SUPA105	Super Soft Bulk - 2 Litres	8	14.5	Unknown
+207	2012-05-15 00:00:00.000	SUPA105	41	Retail	Asia	23468	Maxwell Hoffman	SUPA105	Super Soft Bulk - 2 Litres	8	14.5	Japan
+208	2012-04-08 00:00:00.000	PURA250	5	Retail	Unknown	23469	Minerva Mcguire	PURA250	Pure Soft Detergent - 250ml	2.3	4.5	Unknown
+209	2012-05-06 00:00:00.000	PURA200	129	Online	Middle East and North Africa	23470	Herrod Byers	PURA200	Pure Soft Detergent - 200ml	2	3.99	Jordan
+210	2012-04-05 00:00:00.000	PURA100	210	Online	Sub-Saharan Africa	23471	Yetta Weaver	PURA100	Pure Soft Detergent - 100ml	1.5	3	Comoros
+211	2012-05-28 00:00:00.000	SUPA104	209	Retail	Europe	23472	Zia Ayala	SUPA104	Super Soft - 1 Litre	5	9.99	Bosnia and Herzegovina
+214	2012-05-15 00:00:00.000	SUPA102	16	Online	Central America and the Caribbean	23475	Cadman Wilkinson	SUPA102	Super Soft - 250ml	2.5	4.5	Antigua and Barbuda 
+215	2012-04-21 00:00:00.000	SUPA103	29	Online	Unknown	23476	Brielle Love	SUPA103	Super Soft - 500ml	3.5	6.99	Unknown
+216	2012-05-13 00:00:00.000	SUPA104	164	Online	Unknown	23477	Lani Floyd	SUPA104	Super Soft - 1 Litre	5	9.99	Unknown
+217	2012-04-29 00:00:00.000	SUPA102	173	Online	Sub-Saharan Africa	23478	Keelie Johns	SUPA102	Super Soft - 250ml	2.5	4.5	Gabon
+218	2012-04-27 00:00:00.000	PURA200	119	Direct	Europe	23479	Quinn Frederick	PURA200	Pure Soft Detergent - 200ml	2	3.99	Bosnia and Herzegovina
+219	2012-05-11 00:00:00.000	PURA100	111	Online	Unknown	23480	Ralph Ayala	PURA100	Pure Soft Detergent - 100ml	1.5	3	Unknown
+220	2012-05-09 00:00:00.000	SUPA103	20	Online	Asia	23481	Gray Ortega	SUPA103	Super Soft - 500ml	3.5	6.99	Sri Lanka
+221	2012-04-06 00:00:00.000	PURA250	197	Online	Sub-Saharan Africa	23482	Jameson Hunter	PURA250	Pure Soft Detergent - 250ml	2.3	4.5	Botswana
+222	2012-05-22 00:00:00.000	SUPA101	122	Direct	Asia	23483	Boris Maynard	SUPA101	Super Soft - Product Sample	0.3	0	Nepal
+223	2012-05-26 00:00:00.000	SUPA102	51	Retail	Central America and the Caribbean	23484	Vaughan Bender	SUPA102	Super Soft - 250ml	2.5	4.5	Antigua and Barbuda 
+224	2012-05-07 00:00:00.000	SUPA105	38	Online	Middle East and North Africa	23485	Ebony Kirk	SUPA105	Super Soft Bulk - 2 Litres	8	14.5	Somalia
+225	2012-05-19 00:00:00.000	SUPA105	206	Direct	Europe	23486	Rajah Castillo	SUPA105	Super Soft Bulk - 2 Litres	8	14.5	Denmark
+227	2012-04-11 00:00:00.000	SUPA102	134	Online	Asia	23488	Geoffrey Browning	SUPA102	Super Soft - 250ml	2.5	4.5	Sri Lanka
+228	2012-04-25 00:00:00.000	SUPA105	101	Online	Unknown	23489	Nichole Vinson	SUPA105	Super Soft Bulk - 2 Litres	8	14.5	Unknown
+229	2012-04-13 00:00:00.000	SUPA102	173	Retail	Europe	23490	Dustin Meyer	SUPA102	Super Soft - 250ml	2.5	4.5	Moldova 
+230	2012-04-29 00:00:00.000	SUPA103	87	Online	Unknown	23491	Oscar Clay	SUPA103	Super Soft - 500ml	3.5	6.99	Unknown
+231	2012-05-03 00:00:00.000	PURA100	6	Online	Unknown	23492	Alisa Kemp	PURA100	Pure Soft Detergent - 100ml	1.5	3	Unknown
+232	2012-05-08 00:00:00.000	SUPA101	176	Retail	Sub-Saharan Africa	23493	Mohammad Mills	SUPA101	Super Soft - Product Sample	0.3	0	Comoros
+233	2012-04-05 00:00:00.000	PURA250	77	Online	Europe	23494	Kay Dixon	PURA250	Pure Soft Detergent - 250ml	2.3	4.5	Georgia
+234	2012-05-16 00:00:00.000	SUPA101	192	Online	Middle East and North Africa	23495	Chava Hunt	SUPA101	Super Soft - Product Sample	0.3	0	Yemen
+235	2012-04-06 00:00:00.000	SUPA103	143	Retail	Sub-Saharan Africa	23496	Herrod Huff	SUPA103	Super Soft - 500ml	3.5	6.99	Burundi
+237	2012-05-28 00:00:00.000	SUPA105	178	Direct	Europe	23498	Madeson Baker	SUPA105	Super Soft Bulk - 2 Litres	8	14.5	Armenia
+238	2012-05-19 00:00:00.000	PURA100	116	Retail	Sub-Saharan Africa	23499	Eve Perry	PURA100	Pure Soft Detergent - 100ml	1.5	3	Mozambique
+239	2012-05-12 00:00:00.000	SUPA105	8	Online	Unknown	23500	Kimberley Daniel	SUPA105	Super Soft Bulk - 2 Litres	8	14.5	Unknown
+240	2012-05-16 00:00:00.000	PURA100	204	Direct	Central America and the Caribbean	23501	Louis Hubbard	PURA100	Pure Soft Detergent - 100ml	1.5	3	Saint Lucia
+241	2012-05-12 00:00:00.000	PURA100	123	Online	Unknown	23502	Doris Castillo	PURA100	Pure Soft Detergent - 100ml	1.5	3	Unknown
+242	2012-04-10 00:00:00.000	PURA100	111	Online	Unknown	23503	Ina Faulkner	PURA100	Pure Soft Detergent - 100ml	1.5	3	Unknown
+243	2012-05-17 00:00:00.000	PURA500	88	Direct	Unknown	23504	Lysandra Erickson	PURA500	Pure Soft Detergent - 500ml	3.5	6.5	Unknown
+244	2012-04-30 00:00:00.000	SUPA104	189	Online	Unknown	23505	Tarik Barber	SUPA104	Super Soft - 1 Litre	5	9.99	Unknown
+245	2012-04-12 00:00:00.000	SUPA102	83	Retail	Sub-Saharan Africa	23506	Kieran Mckinney	SUPA102	Super Soft - 250ml	2.5	4.5	Cape Verde
+246	2012-05-28 00:00:00.000	SUPA103	211	Online	Europe	23507	Martena Hunt	SUPA103	Super Soft - 500ml	3.5	6.99	Ireland
+247	2012-04-17 00:00:00.000	PURA100	34	Online	Middle East and North Africa	23508	Vera Turner	PURA100	Pure Soft Detergent - 100ml	1.5	3	Morocco
+248	2012-04-17 00:00:00.000	SUPA105	195	Online	Asia	23509	Briar Clayton	SUPA105	Super Soft Bulk - 2 Litres	8	14.5	Nepal
+251	2012-05-01 00:00:00.000	PURA100	154	Online	Middle East and North Africa	23512	Slade Russell	PURA100	Pure Soft Detergent - 100ml	1.5	3	Turkey
+252	2012-05-16 00:00:00.000	PURA500	78	Direct	Sub-Saharan Africa	23513	Baker Johnson	PURA500	Pure Soft Detergent - 500ml	3.5	6.5	Chad
+254	2012-04-21 00:00:00.000	SUPA102	191	Retail	Central America and the Caribbean	23515	Patience Grant	SUPA102	Super Soft - 250ml	2.5	4.5	Belize
+255	2012-05-29 00:00:00.000	SUPA105	4	Online	Middle East and North Africa	23516	Denton Mcintosh	SUPA105	Super Soft Bulk - 2 Litres	8	14.5	Turkey
+256	2012-05-17 00:00:00.000	PURA100	144	Online	Unknown	23517	Florence Hutchinson	PURA100	Pure Soft Detergent - 100ml	1.5	3	Unknown
+257	2012-05-02 00:00:00.000	SUPA103	2	Retail	Europe	23518	Ginger Boyd	SUPA103	Super Soft - 500ml	3.5	6.99	Estonia
+259	2012-04-29 00:00:00.000	PURA200	133	Online	Unknown	23520	Alea Long	PURA200	Pure Soft Detergent - 200ml	2	3.99	Unknown
+261	2012-05-13 00:00:00.000	SUPA102	105	Online	Europe	23522	Nissim Bruce	SUPA102	Super Soft - 250ml	2.5	4.5	Ireland
+263	2012-05-22 00:00:00.000	PURA250	115	Online	Australia and Oceania	23524	Haley Tucker	PURA250	Pure Soft Detergent - 250ml	2.3	4.5	Vanuatu
+264	2012-05-07 00:00:00.000	PURA500	167	Online	Unknown	23525	Sara Beck	PURA500	Pure Soft Detergent - 500ml	3.5	6.5	Unknown
+265	2012-05-27 00:00:00.000	SUPA103	44	Retail	Unknown	23526	Jason Hoffman	SUPA103	Super Soft - 500ml	3.5	6.99	Unknown
+266	2012-05-12 00:00:00.000	SUPA104	124	Retail	Central America and the Caribbean	23527	Brielle Gonzalez	SUPA104	Super Soft - 1 Litre	5	9.99	El Salvador
+267	2012-04-20 00:00:00.000	PURA200	41	Direct	Middle East and North Africa	23528	Serena Buckner	PURA200	Pure Soft Detergent - 200ml	2	3.99	Algeria
+268	2012-05-24 00:00:00.000	SUPA104	160	Direct	Europe	23529	Autumn Hobbs	SUPA104	Super Soft - 1 Litre	5	9.99	Malta
+269	2012-05-30 00:00:00.000	PURA500	160	Retail	Unknown	23530	Maia Warner	PURA500	Pure Soft Detergent - 500ml	3.5	6.5	Unknown
+270	2012-04-08 00:00:00.000	PURA100	7	Direct	Sub-Saharan Africa	23531	Danielle Hardy	PURA100	Pure Soft Detergent - 100ml	1.5	3	Chad
+271	2012-04-14 00:00:00.000	SUPA105	151	Online	Unknown	23532	Lysandra Hunter	SUPA105	Super Soft Bulk - 2 Litres	8	14.5	Unknown
+272	2012-04-20 00:00:00.000	SUPA103	155	Online	Unknown	23533	Serina Moody	SUPA103	Super Soft - 500ml	3.5	6.99	Unknown
+274	2012-05-20 00:00:00.000	SUPA104	159	Retail	Unknown	23535	Mia Ferguson	SUPA104	Super Soft - 1 Litre	5	9.99	Unknown
+275	2012-04-21 00:00:00.000	SUPA102	86	Retail	Europe	23536	Francesca Bolton	SUPA102	Super Soft - 250ml	2.5	4.5	Belarus
+278	2012-04-29 00:00:00.000	PURA250	172	Online	Unknown	23539	Gemma Rodriguez	PURA250	Pure Soft Detergent - 250ml	2.3	4.5	Unknown
+280	2012-05-10 00:00:00.000	PURA200	127	Retail	Middle East and North Africa	23541	Mason Garner	PURA200	Pure Soft Detergent - 200ml	2	3.99	Somalia
+281	2012-04-24 00:00:00.000	SUPA102	123	Direct	Sub-Saharan Africa	23542	Kendall Harmon	SUPA102	Super Soft - 250ml	2.5	4.5	South Africa
+282	2012-05-06 00:00:00.000	SUPA101	137	Retail	Middle East and North Africa	23543	Celeste Ochoa	SUPA101	Super Soft - Product Sample	0.3	0	Tunisia 
+285	2012-05-02 00:00:00.000	PURA500	109	Retail	Sub-Saharan Africa	23546	Zorita Petty	PURA500	Pure Soft Detergent - 500ml	3.5	6.5	Ethiopia
+286	2012-05-29 00:00:00.000	PURA100	28	Retail	Asia	23547	Lana Norris	PURA100	Pure Soft Detergent - 100ml	1.5	3	Myanmar
+287	2012-04-01 00:00:00.000	PURA500	6	Retail	Europe	23548	Breanna Pacheco	PURA500	Pure Soft Detergent - 500ml	3.5	6.5	Sweden
+289	2012-04-20 00:00:00.000	SUPA103	128	Online	Sub-Saharan Africa	23550	Alea Sawyer	SUPA103	Super Soft - 500ml	3.5	6.99	Mauritius 
+290	2012-04-12 00:00:00.000	SUPA102	17	Retail	Sub-Saharan Africa	23551	Graiden Avery	SUPA102	Super Soft - 250ml	2.5	4.5	Liberia
+291	2012-04-19 00:00:00.000	PURA250	162	Online	Central America and the Caribbean	23552	Bruno Miles	PURA250	Pure Soft Detergent - 250ml	2.3	4.5	Trinidad and Tobago
+292	2012-04-16 00:00:00.000	PURA200	90	Online	Unknown	23553	Britanni Hebert	PURA200	Pure Soft Detergent - 200ml	2	3.99	Unknown
+295	2012-05-28 00:00:00.000	PURA250	121	Online	Europe	23556	Guinevere Simpson	PURA250	Pure Soft Detergent - 250ml	2.3	4.5	Slovakia
+296	2012-05-28 00:00:00.000	SUPA104	45	Online	Europe	23557	Amir Solomon	SUPA104	Super Soft - 1 Litre	5	9.99	Hungary
+297	2012-05-15 00:00:00.000	SUPA104	164	Online	Europe	23558	Rogan Garner	SUPA104	Super Soft - 1 Litre	5	9.99	Austria
+298	2012-04-09 00:00:00.000	SUPA103	76	Retail	Unknown	23559	Jesse Austin	SUPA103	Super Soft - 500ml	3.5	6.99	Unknown
+299	2012-05-02 00:00:00.000	SUPA101	212	Retail	Central America and the Caribbean	23560	Doris Mccormick	SUPA101	Super Soft - Product Sample	0.3	0	Panama
+300	2012-05-02 00:00:00.000	SUPA104	91	Online	Sub-Saharan Africa	23561	Cade Alvarado	SUPA104	Super Soft - 1 Litre	5	9.99	Angola
+301	2012-04-26 00:00:00.000	PURA100	198	Online	Unknown	23562	Hollee Lowe	PURA100	Pure Soft Detergent - 100ml	1.5	3	Unknown
+302	2012-04-24 00:00:00.000	PURA100	202	Online	Unknown	23563	Morgan Talley	PURA100	Pure Soft Detergent - 100ml	1.5	3	Unknown
+303	2012-04-21 00:00:00.000	PURA100	136	Retail	Sub-Saharan Africa	23564	Harrison Barker	PURA100	Pure Soft Detergent - 100ml	1.5	3	Liberia
+305	2012-05-21 00:00:00.000	PURA500	95	Retail	Central America and the Caribbean	23566	Lois Compton	PURA500	Pure Soft Detergent - 500ml	3.5	6.5	Guatemala
+306	2012-04-11 00:00:00.000	SUPA103	150	Online	Unknown	23567	Karina Buckley	SUPA103	Super Soft - 500ml	3.5	6.99	Unknown
+307	2012-04-21 00:00:00.000	SUPA104	146	Online	Australia and Oceania	23568	Harding Larson	SUPA104	Super Soft - 1 Litre	5	9.99	Tonga
+308	2012-04-14 00:00:00.000	PURA200	9	Retail	Asia	23569	Donna Jacobson	PURA200	Pure Soft Detergent - 200ml	2	3.99	Singapore
+309	2012-04-05 00:00:00.000	PURA100	68	Online	Sub-Saharan Africa	23570	Kiara Lucas	PURA100	Pure Soft Detergent - 100ml	1.5	3	Mauritius 
+310	2012-05-14 00:00:00.000	SUPA104	71	Online	Unknown	23571	Lois Abbott	SUPA104	Super Soft - 1 Litre	5	9.99	Unknown
+312	2012-05-09 00:00:00.000	SUPA102	67	Retail	Unknown	23573	Nora Carroll	SUPA102	Super Soft - 250ml	2.5	4.5	Unknown
+313	2012-05-14 00:00:00.000	PURA200	33	Retail	Middle East and North Africa	23574	Griffin Gray	PURA200	Pure Soft Detergent - 200ml	2	3.99	United Arab Emirates
+315	2012-05-21 00:00:00.000	PURA250	199	Online	Sub-Saharan Africa	23576	Nicole Heath	PURA250	Pure Soft Detergent - 250ml	2.3	4.5	Liberia
+316	2012-04-06 00:00:00.000	SUPA101	62	Retail	Europe	23577	Harper Zimmerman	SUPA101	Super Soft - Product Sample	0.3	0	San Marino
+317	2012-05-10 00:00:00.000	SUPA101	119	Retail	Unknown	23578	Sigourney Riddle	SUPA101	Super Soft - Product Sample	0.3	0	Unknown
+318	2012-04-04 00:00:00.000	PURA200	50	Online	Sub-Saharan Africa	23579	Marcia Everett	PURA200	Pure Soft Detergent - 200ml	2	3.99	Mauritania
+320	2012-05-12 00:00:00.000	PURA200	75	Online	Sub-Saharan Africa	23581	William Hale	PURA200	Pure Soft Detergent - 200ml	2	3.99	Ethiopia
+321	2012-05-12 00:00:00.000	PURA100	146	Retail	Unknown	23582	Griffin Grimes	PURA100	Pure Soft Detergent - 100ml	1.5	3	Unknown
+323	2012-04-24 00:00:00.000	SUPA102	11	Retail	Unknown	23584	Brittany Fletcher	SUPA102	Super Soft - 250ml	2.5	4.5	Unknown
+326	2012-04-06 00:00:00.000	SUPA104	102	Retail	Sub-Saharan Africa	23587	Sandra Clay	SUPA104	Super Soft - 1 Litre	5	9.99	Cape Verde
+327	2012-05-15 00:00:00.000	PURA250	59	Direct	Sub-Saharan Africa	23588	Lois Weber	PURA250	Pure Soft Detergent - 250ml	2.3	4.5	Senegal
+329	2012-05-12 00:00:00.000	SUPA104	148	Online	Middle East and North Africa	23590	Charles Boyle	SUPA104	Super Soft - 1 Litre	5	9.99	Kuwait
+331	2012-04-11 00:00:00.000	PURA250	4	Online	Europe	23592	Zane Hopkins	PURA250	Pure Soft Detergent - 250ml	2.3	4.5	Finland
+332	2012-04-03 00:00:00.000	PURA500	202	Retail	Unknown	23593	Cassady Perkins	PURA500	Pure Soft Detergent - 500ml	3.5	6.5	Unknown
+333	2012-04-10 00:00:00.000	SUPA104	60	Online	Central America and the Caribbean	23594	Drake Williamson	SUPA104	Super Soft - 1 Litre	5	9.99	Honduras
+335	2012-04-28 00:00:00.000	PURA200	111	Online	Unknown	23596	Sopoline Pace	PURA200	Pure Soft Detergent - 200ml	2	3.99	Unknown
+336	2012-04-13 00:00:00.000	PURA250	175	Retail	Unknown	23597	Aurora Dyer	PURA250	Pure Soft Detergent - 250ml	2.3	4.5	Unknown
+337	2012-04-12 00:00:00.000	SUPA103	190	Online	Europe	23598	Brock Howell	SUPA103	Super Soft - 500ml	3.5	6.99	Macedonia
+338	2012-05-01 00:00:00.000	PURA500	41	Retail	North America	23599	Kelsie Joseph	PURA500	Pure Soft Detergent - 500ml	3.5	6.5	Canada
+339	2012-04-15 00:00:00.000	SUPA105	28	Direct	Sub-Saharan Africa	23600	Daria Mcneil	SUPA105	Super Soft Bulk - 2 Litres	8	14.5	Niger
+340	2012-05-19 00:00:00.000	SUPA105	44	Direct	Australia and Oceania	23601	Keith Velez	SUPA105	Super Soft Bulk - 2 Litres	8	14.5	Nauru
+341	2012-05-23 00:00:00.000	PURA500	107	Retail	Middle East and North Africa	23602	Wendy Hull	PURA500	Pure Soft Detergent - 500ml	3.5	6.5	Somalia
+344	2012-05-07 00:00:00.000	SUPA101	79	Retail	Unknown	23605	Noble Diaz	SUPA101	Super Soft - Product Sample	0.3	0	Unknown
+345	2012-04-19 00:00:00.000	SUPA105	17	Retail	Unknown	23606	Emily Hogan	SUPA105	Super Soft Bulk - 2 Litres	8	14.5	Unknown
+347	2012-04-13 00:00:00.000	SUPA101	116	Direct	Sub-Saharan Africa	23608	Ainsley Chan	SUPA101	Super Soft - Product Sample	0.3	0	Zimbabwe
+348	2012-05-01 00:00:00.000	PURA250	131	Direct	Asia	23609	Charlotte Mcdonald	PURA250	Pure Soft Detergent - 250ml	2.3	4.5	China
+349	2012-04-25 00:00:00.000	SUPA103	144	Retail	Middle East and North Africa	23610	Thane Hood	SUPA103	Super Soft - 500ml	3.5	6.99	Saudi Arabia
+350	2012-05-28 00:00:00.000	PURA200	102	Online	Sub-Saharan Africa	23611	Curran Kane	PURA200	Pure Soft Detergent - 200ml	2	3.99	Eritrea
+352	2012-05-23 00:00:00.000	SUPA101	191	Direct	Middle East and North Africa	23613	Zeus Barr	SUPA101	Super Soft - Product Sample	0.3	0	Lebanon
+353	2012-04-02 00:00:00.000	PURA100	172	Online	Unknown	23614	Shay Larson	PURA100	Pure Soft Detergent - 100ml	1.5	3	Unknown
+354	2012-05-05 00:00:00.000	PURA250	27	Online	Sub-Saharan Africa	23615	Mannix Le	PURA250	Pure Soft Detergent - 250ml	2.3	4.5	Swaziland
+355	2012-04-30 00:00:00.000	SUPA104	36	Direct	Sub-Saharan Africa	23616	Grant Gilbert	SUPA104	Super Soft - 1 Litre	5	9.99	Nigeria
+356	2012-04-05 00:00:00.000	SUPA104	191	Retail	Unknown	23617	Noelle Rasmussen	SUPA104	Super Soft - 1 Litre	5	9.99	Unknown
+358	2012-04-01 00:00:00.000	SUPA104	61	Online	Europe	23619	Flynn Robinson	SUPA104	Super Soft - 1 Litre	5	9.99	Denmark
+359	2012-04-19 00:00:00.000	PURA200	197	Direct	Europe	23620	Bradley Fowler	PURA200	Pure Soft Detergent - 200ml	2	3.99	Denmark
+360	2012-05-06 00:00:00.000	PURA500	34	Retail	Europe	23621	Indigo Mullins	PURA500	Pure Soft Detergent - 500ml	3.5	6.5	Poland
+361	2012-05-06 00:00:00.000	SUPA102	37	Retail	Australia and Oceania	23622	Fulton Francis	SUPA102	Super Soft - 250ml	2.5	4.5	Kiribati
+362	2012-04-04 00:00:00.000	PURA200	181	Online	Unknown	23623	Joel Gallegos	PURA200	Pure Soft Detergent - 200ml	2	3.99	Unknown
+363	2012-05-10 00:00:00.000	SUPA103	1	Retail	North America	23624	Briar Kennedy	SUPA103	Super Soft - 500ml	3.5	6.99	Canada
+365	2012-04-08 00:00:00.000	SUPA104	17	Online	Unknown	23626	Robert Snow	SUPA104	Super Soft - 1 Litre	5	9.99	Unknown
+366	2012-04-06 00:00:00.000	PURA100	141	Online	Australia and Oceania	23627	Armando Pruitt	PURA100	Pure Soft Detergent - 100ml	1.5	3	Tonga
+367	2012-05-07 00:00:00.000	PURA500	169	Online	Europe	23628	Erich Little	PURA500	Pure Soft Detergent - 500ml	3.5	6.5	Macedonia
+368	2012-05-15 00:00:00.000	SUPA104	79	Direct	Sub-Saharan Africa	23629	Serina Hall	SUPA104	Super Soft - 1 Litre	5	9.99	Mali
+369	2012-05-14 00:00:00.000	PURA200	55	Direct	Middle East and North Africa	23630	Hunter Kirkland	PURA200	Pure Soft Detergent - 200ml	2	3.99	Tunisia 
+371	2012-04-20 00:00:00.000	PURA100	75	Online	Australia and Oceania	23632	Sophia Palmer	PURA100	Pure Soft Detergent - 100ml	1.5	3	Solomon Islands
+372	2012-05-11 00:00:00.000	SUPA103	58	Online	Australia and Oceania	23633	Azalia Ramos	SUPA103	Super Soft - 500ml	3.5	6.99	Palau
+373	2012-04-23 00:00:00.000	SUPA102	60	Retail	Unknown	23634	Hedley Lott	SUPA102	Super Soft - 250ml	2.5	4.5	Unknown
+374	2012-05-13 00:00:00.000	SUPA101	115	Online	Unknown	23635	Amela Fowler	SUPA101	Super Soft - Product Sample	0.3	0	Unknown
+375	2012-04-30 00:00:00.000	PURA100	108	Retail	Europe	23636	Carol Mckenzie	PURA100	Pure Soft Detergent - 100ml	1.5	3	Belarus
+376	2012-05-11 00:00:00.000	SUPA101	63	Retail	Australia and Oceania	23637	Penelope Baker	SUPA101	Super Soft - Product Sample	0.3	0	Solomon Islands
+381	2012-05-02 00:00:00.000	PURA250	152	Online	Asia	23642	Hilda Noble	PURA250	Pure Soft Detergent - 250ml	2.3	4.5	Tajikistan
+382	2012-04-19 00:00:00.000	PURA100	11	Online	Europe	23643	Naida Wilkerson	PURA100	Pure Soft Detergent - 100ml	1.5	3	Macedonia
+383	2012-04-14 00:00:00.000	PURA100	158	Retail	Unknown	23644	Sandra Whitfield	PURA100	Pure Soft Detergent - 100ml	1.5	3	Unknown
+384	2012-05-24 00:00:00.000	SUPA104	1	Online	Europe	23645	Lucius James	SUPA104	Super Soft - 1 Litre	5	9.99	Portugal
+386	2012-04-30 00:00:00.000	PURA200	148	Online	Europe	23647	Walker Sweeney	PURA200	Pure Soft Detergent - 200ml	2	3.99	Belgium
+387	2012-05-11 00:00:00.000	SUPA104	153	Retail	Europe	23648	Bree Hammond	SUPA104	Super Soft - 1 Litre	5	9.99	Bosnia and Herzegovina
+388	2012-04-23 00:00:00.000	SUPA103	125	Retail	Sub-Saharan Africa	23649	Tyler Gordon	SUPA103	Super Soft - 500ml	3.5	6.99	Namibia
+389	2012-04-23 00:00:00.000	SUPA101	162	Online	Unknown	23650	Ursa Strickland	SUPA101	Super Soft - Product Sample	0.3	0	Unknown
+391	2012-04-02 00:00:00.000	SUPA101	191	Retail	Unknown	23652	Amela Summers	SUPA101	Super Soft - Product Sample	0.3	0	Unknown
+392	2012-05-17 00:00:00.000	PURA250	165	Direct	Central America and the Caribbean	23653	Kaye Rocha	PURA250	Pure Soft Detergent - 250ml	2.3	4.5	Panama
+393	2012-04-11 00:00:00.000	PURA100	128	Direct	Unknown	23654	Brian Clarke	PURA100	Pure Soft Detergent - 100ml	1.5	3	Unknown
+394	2012-05-23 00:00:00.000	PURA200	146	Online	Unknown	23655	Dawn Carey	PURA200	Pure Soft Detergent - 200ml	2	3.99	Unknown
+395	2012-05-18 00:00:00.000	SUPA105	206	Online	Europe	23656	Audrey Chase	SUPA105	Super Soft Bulk - 2 Litres	8	14.5	Switzerland
+396	2012-04-02 00:00:00.000	PURA250	196	Retail	Europe	23657	Aimee James	PURA250	Pure Soft Detergent - 250ml	2.3	4.5	Bosnia and Herzegovina
+397	2012-05-15 00:00:00.000	SUPA102	88	Online	Central America and the Caribbean	23658	Raymond Noel	SUPA102	Super Soft - 250ml	2.5	4.5	Belize
+398	2012-04-06 00:00:00.000	PURA500	209	Online	Unknown	23659	Judah Erickson	PURA500	Pure Soft Detergent - 500ml	3.5	6.5	Unknown
+399	2012-05-08 00:00:00.000	PURA500	189	Retail	Unknown	23660	Quemby Romero	PURA500	Pure Soft Detergent - 500ml	3.5	6.5	Unknown
+400	2012-03-24 00:00:00.000	PURA100	77	Online	Sub-Saharan Africa	23661	Shaine Lambert	PURA100	Pure Soft Detergent - 100ml	1.5	3	Rwanda
+401	2012-01-24 00:00:00.000	SUPA104	163	Online	Sub-Saharan Africa	23662	Deirdre Ford	SUPA104	Super Soft - 1 Litre	5	9.99	Benin
+402	2012-03-18 00:00:00.000	PURA100	99	Retail	Unknown	23663	Maris Shepherd	PURA100	Pure Soft Detergent - 100ml	1.5	3	Unknown
+403	2012-01-17 00:00:00.000	SUPA101	180	Retail	Australia and Oceania	23664	Sybil Barker	SUPA101	Super Soft - Product Sample	0.3	0	Samoa 
+404	2012-03-08 00:00:00.000	SUPA101	106	Online	Central America and the Caribbean	23665	Breanna Sweeney	SUPA101	Super Soft - Product Sample	0.3	0	Panama
+405	2012-02-25 00:00:00.000	SUPA105	165	Online	Asia	23666	Blair Horne	SUPA105	Super Soft Bulk - 2 Litres	8	14.5	Maldives
+406	2012-03-23 00:00:00.000	PURA100	12	Retail	Europe	23667	Evelyn Cherry	PURA100	Pure Soft Detergent - 100ml	1.5	3	Norway
+407	2012-01-03 00:00:00.000	PURA200	37	Retail	Unknown	23668	Jermaine Mcneil	PURA200	Pure Soft Detergent - 200ml	2	3.99	Unknown
+408	2012-03-26 00:00:00.000	PURA200	28	Online	North America	23669	Melissa Roberts	PURA200	Pure Soft Detergent - 200ml	2	3.99	Greenland
+409	2012-02-19 00:00:00.000	PURA500	18	Online	Sub-Saharan Africa	23670	Davis Kennedy	PURA500	Pure Soft Detergent - 500ml	3.5	6.5	Rwanda
+410	2012-03-18 00:00:00.000	SUPA104	99	Retail	Unknown	23671	Hadassah Hodge	SUPA104	Super Soft - 1 Litre	5	9.99	Unknown
+411	2012-01-10 00:00:00.000	SUPA102	132	Online	Australia and Oceania	23672	Callie Cervantes	SUPA102	Super Soft - 250ml	2.5	4.5	Vanuatu
+412	2012-02-08 00:00:00.000	PURA100	95	Retail	Unknown	23673	Ifeoma Crane	PURA100	Pure Soft Detergent - 100ml	1.5	3	Unknown
+413	2012-03-06 00:00:00.000	SUPA102	120	Online	Sub-Saharan Africa	23674	Dara Burch	SUPA102	Super Soft - 250ml	2.5	4.5	Namibia
+414	2012-02-20 00:00:00.000	SUPA105	36	Online	Sub-Saharan Africa	23675	Brielle Mcdaniel	SUPA105	Super Soft Bulk - 2 Litres	8	14.5	Sao Tome and Principe
+415	2012-01-18 00:00:00.000	PURA200	86	Retail	Unknown	23676	Ralph Carroll	PURA200	Pure Soft Detergent - 200ml	2	3.99	Unknown
+416	2012-01-08 00:00:00.000	PURA250	149	Retail	Sub-Saharan Africa	23677	Destiny Fisher	PURA250	Pure Soft Detergent - 250ml	2.3	4.5	Zambia
+417	2012-01-14 00:00:00.000	PURA250	7	Online	Sub-Saharan Africa	23678	Georgia Good	PURA250	Pure Soft Detergent - 250ml	2.3	4.5	Swaziland
+420	2012-02-17 00:00:00.000	SUPA101	24	Online	Australia and Oceania	23681	Bruno Durham	SUPA101	Super Soft - Product Sample	0.3	0	Fiji
+421	2012-01-16 00:00:00.000	PURA100	200	Retail	Unknown	23682	Yuri Rice	PURA100	Pure Soft Detergent - 100ml	1.5	3	Unknown
+422	2012-01-11 00:00:00.000	PURA250	160	Online	Sub-Saharan Africa	23683	Harding Blackwell	PURA250	Pure Soft Detergent - 250ml	2.3	4.5	Comoros
+423	2012-03-29 00:00:00.000	PURA500	103	Retail	Unknown	23684	Kieran Charles	PURA500	Pure Soft Detergent - 500ml	3.5	6.5	Unknown
+424	2012-01-31 00:00:00.000	SUPA101	61	Retail	Sub-Saharan Africa	23685	Jennifer Harrington	SUPA101	Super Soft - Product Sample	0.3	0	Mauritania
+426	2012-01-27 00:00:00.000	SUPA103	197	Retail	Unknown	23687	Leroy Valdez	SUPA103	Super Soft - 500ml	3.5	6.99	Unknown
+428	2012-02-20 00:00:00.000	SUPA102	181	Online	Middle East and North Africa	23689	Phillip Schneider	SUPA102	Super Soft - 250ml	2.5	4.5	Oman
+429	2012-01-26 00:00:00.000	SUPA105	91	Retail	Asia	23690	Rooney Wolfe	SUPA105	Super Soft Bulk - 2 Litres	8	14.5	Singapore
+431	2012-01-19 00:00:00.000	PURA100	207	Retail	Europe	23692	Yuri Huber	PURA100	Pure Soft Detergent - 100ml	1.5	3	Cyprus
+432	2012-01-15 00:00:00.000	PURA100	132	Retail	Central America and the Caribbean	23693	Yvonne Shepard	PURA100	Pure Soft Detergent - 100ml	1.5	3	Trinidad and Tobago
+433	2012-02-13 00:00:00.000	SUPA102	25	Online	Middle East and North Africa	23694	Sybill Rivers	SUPA102	Super Soft - 250ml	2.5	4.5	Bahrain
+434	2012-01-24 00:00:00.000	PURA100	152	Online	Asia	23695	Acton Ratliff	PURA100	Pure Soft Detergent - 100ml	1.5	3	Uzbekistan
+436	2012-01-19 00:00:00.000	PURA250	84	Retail	Australia and Oceania	23697	Joelle Kidd	PURA250	Pure Soft Detergent - 250ml	2.3	4.5	New Zealand
+437	2012-02-25 00:00:00.000	SUPA105	86	Retail	Middle East and North Africa	23698	Uta Rodgers	SUPA105	Super Soft Bulk - 2 Litres	8	14.5	Egypt
+438	2012-01-11 00:00:00.000	SUPA102	183	Online	Central America and the Caribbean	23699	Graham Paul	SUPA102	Super Soft - 250ml	2.5	4.5	Trinidad and Tobago
+440	2012-02-15 00:00:00.000	PURA200	165	Online	Unknown	23701	Pamela Paul	PURA200	Pure Soft Detergent - 200ml	2	3.99	Unknown
+441	2012-02-06 00:00:00.000	PURA200	27	Online	Unknown	23702	Yvonne Mcguire	PURA200	Pure Soft Detergent - 200ml	2	3.99	Unknown
+443	2012-03-22 00:00:00.000	SUPA101	22	Online	Sub-Saharan Africa	23704	Shelly Johnston	SUPA101	Super Soft - Product Sample	0.3	0	Mauritius 
+444	2012-02-12 00:00:00.000	PURA250	155	Retail	Unknown	23705	Jameson Sawyer	PURA250	Pure Soft Detergent - 250ml	2.3	4.5	Unknown
+446	2012-01-14 00:00:00.000	SUPA102	202	Direct	Central America and the Caribbean	23707	Georgia Ford	SUPA102	Super Soft - 250ml	2.5	4.5	Saint Lucia
+447	2012-02-08 00:00:00.000	SUPA102	126	Online	Middle East and North Africa	23708	Kevin Dejesus	SUPA102	Super Soft - 250ml	2.5	4.5	Algeria
+448	2012-03-06 00:00:00.000	SUPA105	164	Online	Unknown	23709	Ina Chang	SUPA105	Super Soft Bulk - 2 Litres	8	14.5	Unknown
+449	2012-02-28 00:00:00.000	PURA250	9	Online	Europe	23710	Alexa Byrd	PURA250	Pure Soft Detergent - 250ml	2.3	4.5	Albania
+450	2012-01-13 00:00:00.000	SUPA101	42	Online	Sub-Saharan Africa	23711	Vance Middleton	SUPA101	Super Soft - Product Sample	0.3	0	Comoros
+453	2012-02-25 00:00:00.000	SUPA104	184	Online	Unknown	23714	Shea Valenzuela	SUPA104	Super Soft - 1 Litre	5	9.99	Unknown
+454	2012-03-05 00:00:00.000	SUPA102	119	Retail	Sub-Saharan Africa	23715	Ignacia Cantu	SUPA102	Super Soft - 250ml	2.5	4.5	Zimbabwe
+455	2012-02-20 00:00:00.000	SUPA102	49	Online	Middle East and North Africa	23716	Xanthus Holden	SUPA102	Super Soft - 250ml	2.5	4.5	Kuwait
+456	2012-01-29 00:00:00.000	SUPA104	93	Retail	Sub-Saharan Africa	23717	Hayden Fulton	SUPA104	Super Soft - 1 Litre	5	9.99	Guinea-Bissau
+457	2012-01-21 00:00:00.000	SUPA102	187	Direct	Unknown	23718	Shana Rich	SUPA102	Super Soft - 250ml	2.5	4.5	Unknown
+458	2012-03-17 00:00:00.000	SUPA105	183	Direct	Unknown	23719	Hall Callahan	SUPA105	Super Soft Bulk - 2 Litres	8	14.5	Unknown
+459	2012-03-21 00:00:00.000	PURA100	58	Retail	Unknown	23720	Akeem Madden	PURA100	Pure Soft Detergent - 100ml	1.5	3	Unknown
+460	2012-02-21 00:00:00.000	PURA250	194	Online	Europe	23721	Montana Vincent	PURA250	Pure Soft Detergent - 250ml	2.3	4.5	Iceland
+463	2012-02-25 00:00:00.000	PURA500	33	Retail	Sub-Saharan Africa	23724	Stella Strickland	PURA500	Pure Soft Detergent - 500ml	3.5	6.5	Swaziland
+464	2012-02-08 00:00:00.000	PURA250	36	Retail	Unknown	23725	Callie Stanley	PURA250	Pure Soft Detergent - 250ml	2.3	4.5	Unknown
+465	2012-02-23 00:00:00.000	PURA250	141	Online	Unknown	23726	Amity Hudson	PURA250	Pure Soft Detergent - 250ml	2.3	4.5	Unknown
+466	2012-03-18 00:00:00.000	PURA100	111	Online	Asia	23727	McKenzie Kirkland	PURA100	Pure Soft Detergent - 100ml	1.5	3	Malaysia
+467	2012-02-26 00:00:00.000	PURA100	171	Online	Unknown	23728	Sheila Atkinson	PURA100	Pure Soft Detergent - 100ml	1.5	3	Unknown
+468	2012-02-02 00:00:00.000	SUPA105	16	Online	Unknown	23729	Beatrice Malone	SUPA105	Super Soft Bulk - 2 Litres	8	14.5	Unknown
+469	2012-01-22 00:00:00.000	PURA200	144	Retail	Sub-Saharan Africa	23730	Savannah Meyer	PURA200	Pure Soft Detergent - 200ml	2	3.99	Benin
+470	2012-01-08 00:00:00.000	PURA100	104	Online	Europe	23731	Aurelia Jennings	PURA100	Pure Soft Detergent - 100ml	1.5	3	Denmark
+471	2012-02-22 00:00:00.000	PURA200	196	Online	Europe	23732	Kyra Osborn	PURA200	Pure Soft Detergent - 200ml	2	3.99	Bosnia and Herzegovina
+474	2012-02-24 00:00:00.000	PURA500	66	Online	Unknown	23735	Gemma Bradford	PURA500	Pure Soft Detergent - 500ml	3.5	6.5	Unknown
+477	2012-02-03 00:00:00.000	SUPA105	89	Retail	Middle East and North Africa	23738	Burke Frank	SUPA105	Super Soft Bulk - 2 Litres	8	14.5	Morocco
+478	2012-03-23 00:00:00.000	SUPA103	150	Retail	Sub-Saharan Africa	23739	Portia Stewart	SUPA103	Super Soft - 500ml	3.5	6.99	Mauritania
+480	2012-02-07 00:00:00.000	PURA100	178	Retail	Europe	23741	Erich Brewer	PURA100	Pure Soft Detergent - 100ml	1.5	3	Czech Republic
+481	2012-01-30 00:00:00.000	SUPA104	193	Retail	Europe	23742	Britanney Knapp	SUPA104	Super Soft - 1 Litre	5	9.99	United Kingdom
+482	2012-03-07 00:00:00.000	SUPA103	174	Online	Europe	23743	August Chaney	SUPA103	Super Soft - 500ml	3.5	6.99	Albania
+485	2012-02-10 00:00:00.000	PURA200	10	Retail	Sub-Saharan Africa	23746	Dakota Conner	PURA200	Pure Soft Detergent - 200ml	2	3.99	Mauritius 
+487	2012-02-10 00:00:00.000	SUPA103	23	Online	Unknown	23748	Jaime Reilly	SUPA103	Super Soft - 500ml	3.5	6.99	Unknown
+488	2012-03-26 00:00:00.000	PURA250	139	Direct	Australia and Oceania	23749	Britanni Brown	PURA250	Pure Soft Detergent - 250ml	2.3	4.5	New Zealand
+489	2012-02-12 00:00:00.000	SUPA103	75	Retail	Asia	23750	Lucy Dawson	SUPA103	Super Soft - 500ml	3.5	6.99	Indonesia
+490	2012-02-22 00:00:00.000	SUPA102	166	Retail	Australia and Oceania	23751	Hamilton Willis	SUPA102	Super Soft - 250ml	2.5	4.5	Kiribati
+491	2012-01-08 00:00:00.000	PURA100	115	Online	Europe	23752	Celeste Church	PURA100	Pure Soft Detergent - 100ml	1.5	3	Albania
+493	2012-03-23 00:00:00.000	PURA250	66	Online	Sub-Saharan Africa	23754	Hermione Rogers	PURA250	Pure Soft Detergent - 250ml	2.3	4.5	Burundi
+495	2012-01-05 00:00:00.000	SUPA105	92	Online	Central America and the Caribbean	23756	Kaseem Adkins	SUPA105	Super Soft Bulk - 2 Litres	8	14.5	Belize
+496	2012-02-17 00:00:00.000	PURA100	185	Online	Unknown	23757	Minerva Reynolds	PURA100	Pure Soft Detergent - 100ml	1.5	3	Unknown
+498	2012-01-20 00:00:00.000	PURA250	82	Direct	Middle East and North Africa	23759	Raya Guthrie	PURA250	Pure Soft Detergent - 250ml	2.3	4.5	Qatar
+499	2012-03-15 00:00:00.000	SUPA101	69	Online	Asia	23760	Idola Underwood	SUPA101	Super Soft - Product Sample	0.3	0	Sri Lanka
+500	2012-02-18 00:00:00.000	PURA250	198	Online	Unknown	23761	Velma Sanford	PURA250	Pure Soft Detergent - 250ml	2.3	4.5	Unknown
+501	2012-02-26 00:00:00.000	SUPA103	105	Online	Unknown	23762	Hayes Carter	SUPA103	Super Soft - 500ml	3.5	6.99	Unknown
+504	2012-03-17 00:00:00.000	PURA100	29	Online	Asia	23765	Lunea Fuentes	PURA100	Pure Soft Detergent - 100ml	1.5	3	Kazakhstan
+505	2012-02-27 00:00:00.000	SUPA101	75	Online	Sub-Saharan Africa	23766	Lani Fox	SUPA101	Super Soft - Product Sample	0.3	0	Benin
+506	2012-02-01 00:00:00.000	PURA250	83	Retail	Middle East and North Africa	23767	Daryl Riddle	PURA250	Pure Soft Detergent - 250ml	2.3	4.5	Pakistan
+507	2012-01-05 00:00:00.000	SUPA102	168	Retail	Unknown	23768	Hadassah Christian	SUPA102	Super Soft - 250ml	2.5	4.5	Unknown
+508	2012-03-10 00:00:00.000	PURA500	153	Retail	Sub-Saharan Africa	23769	Cathleen Espinoza	PURA500	Pure Soft Detergent - 500ml	3.5	6.5	Mauritania
+509	2012-02-03 00:00:00.000	PURA500	109	Online	Unknown	23770	Paloma Vega	PURA500	Pure Soft Detergent - 500ml	3.5	6.5	Unknown
+510	2012-02-29 00:00:00.000	SUPA102	57	Online	Sub-Saharan Africa	23771	Melinda Klein	SUPA102	Super Soft - 250ml	2.5	4.5	Senegal
+513	2012-03-07 00:00:00.000	PURA100	170	Online	Central America and the Caribbean	23774	Bert Grant	PURA100	Pure Soft Detergent - 100ml	1.5	3	Panama
+514	2012-01-05 00:00:00.000	SUPA103	91	Online	Sub-Saharan Africa	23775	Guinevere Rosales	SUPA103	Super Soft - 500ml	3.5	6.99	Uganda
+518	2012-03-07 00:00:00.000	SUPA103	124	Direct	Unknown	23779	Rafael Fletcher	SUPA103	Super Soft - 500ml	3.5	6.99	Unknown
+520	2012-03-06 00:00:00.000	PURA500	198	Online	Asia	23781	Buffy Heath	PURA500	Pure Soft Detergent - 500ml	3.5	6.5	Kyrgyzstan
+522	2012-01-08 00:00:00.000	PURA100	127	Retail	Unknown	23783	Alice Lara	PURA100	Pure Soft Detergent - 100ml	1.5	3	Unknown
+523	2012-02-26 00:00:00.000	PURA500	86	Online	Central America and the Caribbean	23784	Pascale Sanchez	PURA500	Pure Soft Detergent - 500ml	3.5	6.5	Saint Lucia
+524	2012-02-01 00:00:00.000	PURA100	109	Online	Sub-Saharan Africa	23785	Emma Waller	PURA100	Pure Soft Detergent - 100ml	1.5	3	Uganda
+525	2012-01-08 00:00:00.000	PURA500	194	Online	Europe	23786	Yen Graves	PURA500	Pure Soft Detergent - 500ml	3.5	6.5	Georgia
+526	2012-02-16 00:00:00.000	PURA500	29	Online	Sub-Saharan Africa	23787	Selma Coffey	PURA500	Pure Soft Detergent - 500ml	3.5	6.5	Swaziland
+528	2012-01-28 00:00:00.000	SUPA101	47	Online	Unknown	23789	Gray Moss	SUPA101	Super Soft - Product Sample	0.3	0	Unknown
+529	2012-02-05 00:00:00.000	SUPA104	114	Online	Central America and the Caribbean	23790	Sylvia Fry	SUPA104	Super Soft - 1 Litre	5	9.99	Jamaica
+530	2012-02-05 00:00:00.000	SUPA103	33	Retail	Unknown	23791	Aileen Hunter	SUPA103	Super Soft - 500ml	3.5	6.99	Unknown
+531	2012-02-03 00:00:00.000	PURA500	31	Online	Unknown	23792	Vincent Bauer	PURA500	Pure Soft Detergent - 500ml	3.5	6.5	Unknown
+534	2012-02-02 00:00:00.000	PURA200	115	Online	Europe	23795	Ori Sparks	PURA200	Pure Soft Detergent - 200ml	2	3.99	Belgium
+536	2012-03-21 00:00:00.000	PURA500	126	Online	Sub-Saharan Africa	23797	Lael Serrano	PURA500	Pure Soft Detergent - 500ml	3.5	6.5	Cape Verde
+537	2012-02-28 00:00:00.000	SUPA105	177	Retail	Middle East and North Africa	23798	Blythe Simpson	SUPA105	Super Soft Bulk - 2 Litres	8	14.5	Jordan
+538	2012-02-28 00:00:00.000	SUPA103	64	Online	Middle East and North Africa	23799	Yuli Jacobson	SUPA103	Super Soft - 500ml	3.5	6.99	Oman
+539	2012-01-29 00:00:00.000	SUPA101	44	Retail	Sub-Saharan Africa	23800	Peter Goodwin	SUPA101	Super Soft - Product Sample	0.3	0	Burundi
+540	2012-02-12 00:00:00.000	SUPA104	194	Retail	Middle East and North Africa	23801	Deirdre Mccullough	SUPA104	Super Soft - 1 Litre	5	9.99	Pakistan
+541	2012-02-09 00:00:00.000	SUPA103	49	Retail	Sub-Saharan Africa	23802	Bruce French	SUPA103	Super Soft - 500ml	3.5	6.99	Eritrea
+542	2012-01-19 00:00:00.000	SUPA105	209	Retail	Middle East and North Africa	23803	Mara Garcia	SUPA105	Super Soft Bulk - 2 Litres	8	14.5	Somalia
+544	2012-01-18 00:00:00.000	SUPA101	130	Retail	Sub-Saharan Africa	23805	Callum Contreras	SUPA101	Super Soft - Product Sample	0.3	0	South Africa
+546	2012-03-16 00:00:00.000	SUPA105	160	Retail	Middle East and North Africa	23807	Oliver Bullock	SUPA105	Super Soft Bulk - 2 Litres	8	14.5	Iraq
+547	2012-01-14 00:00:00.000	SUPA105	179	Retail	Europe	23808	Nita Andrews	SUPA105	Super Soft Bulk - 2 Litres	8	14.5	United Kingdom
+548	2012-01-24 00:00:00.000	SUPA103	180	Retail	Asia	23809	Lucius Barton	SUPA103	Super Soft - 500ml	3.5	6.99	Uzbekistan
+549	2012-03-27 00:00:00.000	SUPA105	171	Online	Unknown	23810	Josephine Oliver	SUPA105	Super Soft Bulk - 2 Litres	8	14.5	Unknown
+551	2012-02-26 00:00:00.000	SUPA103	189	Online	Asia	23812	Elvis Watkins	SUPA103	Super Soft - 500ml	3.5	6.99	China
+552	2012-01-25 00:00:00.000	PURA100	161	Direct	Unknown	23813	Vielka Leon	PURA100	Pure Soft Detergent - 100ml	1.5	3	Unknown
+553	2012-03-16 00:00:00.000	SUPA105	150	Retail	Unknown	23814	Teagan Baird	SUPA105	Super Soft Bulk - 2 Litres	8	14.5	Unknown
+554	2012-02-06 00:00:00.000	SUPA103	85	Online	Europe	23815	Rashad Clay	SUPA103	Super Soft - 500ml	3.5	6.99	Denmark
+555	2012-03-23 00:00:00.000	SUPA104	85	Retail	Europe	23816	Wanda Guy	SUPA104	Super Soft - 1 Litre	5	9.99	Ireland
+556	2012-02-28 00:00:00.000	SUPA102	58	Retail	Europe	23817	Michael Guthrie	SUPA102	Super Soft - 250ml	2.5	4.5	Moldova 
+557	2012-01-12 00:00:00.000	PURA100	93	Direct	Sub-Saharan Africa	23818	Brennan Mcclain	PURA100	Pure Soft Detergent - 100ml	1.5	3	Nigeria
+559	2012-03-29 00:00:00.000	PURA250	194	Online	Unknown	23820	Nicholas Singleton	PURA250	Pure Soft Detergent - 250ml	2.3	4.5	Unknown
+560	2012-01-12 00:00:00.000	SUPA103	40	Retail	Central America and the Caribbean	23821	Thaddeus Vinson	SUPA103	Super Soft - 500ml	3.5	6.99	El Salvador
+561	2012-02-11 00:00:00.000	PURA100	193	Online	Central America and the Caribbean	23822	Demetrius Watson	PURA100	Pure Soft Detergent - 100ml	1.5	3	Antigua and Barbuda 
+564	2012-01-08 00:00:00.000	PURA500	182	Online	Unknown	23825	Reece Hodge	PURA500	Pure Soft Detergent - 500ml	3.5	6.5	Unknown
+565	2012-03-04 00:00:00.000	PURA250	199	Retail	Europe	23826	Laith Charles	PURA250	Pure Soft Detergent - 250ml	2.3	4.5	Germany
+566	2012-01-13 00:00:00.000	SUPA104	83	Online	Central America and the Caribbean	23827	Camden Rosa	SUPA104	Super Soft - 1 Litre	5	9.99	Guatemala
+567	2012-03-25 00:00:00.000	SUPA101	115	Online	Unknown	23828	Marah Ashley	SUPA101	Super Soft - Product Sample	0.3	0	Unknown
+569	2012-01-21 00:00:00.000	SUPA101	37	Retail	Middle East and North Africa	23830	Haley Collins	SUPA101	Super Soft - Product Sample	0.3	0	Oman
+571	2012-01-02 00:00:00.000	PURA250	49	Retail	Sub-Saharan Africa	23832	Nita Monroe	PURA250	Pure Soft Detergent - 250ml	2.3	4.5	Swaziland
+572	2012-03-19 00:00:00.000	SUPA103	74	Direct	Middle East and North Africa	23833	Hilary Schultz	SUPA103	Super Soft - 500ml	3.5	6.99	Qatar
+573	2012-02-24 00:00:00.000	SUPA102	23	Retail	Unknown	23834	Hope Mcbride	SUPA102	Super Soft - 250ml	2.5	4.5	Unknown
+574	2012-03-21 00:00:00.000	SUPA101	116	Online	Europe	23835	Quinlan Jensen	SUPA101	Super Soft - Product Sample	0.3	0	Ukraine
+575	2012-03-25 00:00:00.000	SUPA105	190	Direct	Unknown	23836	Hamish Crawford	SUPA105	Super Soft Bulk - 2 Litres	8	14.5	Unknown
+576	2012-02-19 00:00:00.000	SUPA103	151	Retail	Sub-Saharan Africa	23837	Lamar Rodriquez	SUPA103	Super Soft - 500ml	3.5	6.99	Guinea-Bissau
+577	2012-03-17 00:00:00.000	SUPA102	133	Retail	Australia and Oceania	23838	Karina Riddle	SUPA102	Super Soft - 250ml	2.5	4.5	Tuvalu
+578	2012-01-23 00:00:00.000	SUPA101	182	Online	Asia	23839	Hedwig Harvey	SUPA101	Super Soft - Product Sample	0.3	0	Indonesia
+579	2012-02-01 00:00:00.000	SUPA103	203	Online	Unknown	23840	Noelle Buckley	SUPA103	Super Soft - 500ml	3.5	6.99	Unknown
+580	2012-01-01 00:00:00.000	PURA200	170	Retail	Central America and the Caribbean	23841	Harriet Banks	PURA200	Pure Soft Detergent - 200ml	2	3.99	Grenada
+582	2012-01-07 00:00:00.000	SUPA103	211	Online	Europe	23843	Burke Rojas	SUPA103	Super Soft - 500ml	3.5	6.99	Ukraine
+584	2012-01-06 00:00:00.000	SUPA102	142	Retail	Unknown	23845	Cameron Schmidt	SUPA102	Super Soft - 250ml	2.5	4.5	Unknown
+585	2012-03-08 00:00:00.000	PURA100	19	Online	Australia and Oceania	23846	Indira Collier	PURA100	Pure Soft Detergent - 100ml	1.5	3	Fiji
+587	2012-01-27 00:00:00.000	SUPA104	62	Retail	Unknown	23848	Harlan Baxter	SUPA104	Super Soft - 1 Litre	5	9.99	Unknown
+590	2012-02-17 00:00:00.000	PURA250	171	Direct	Unknown	23851	Eve Bentley	PURA250	Pure Soft Detergent - 250ml	2.3	4.5	Unknown
+593	2012-01-27 00:00:00.000	PURA100	189	Retail	Unknown	23854	Hector Mcfadden	PURA100	Pure Soft Detergent - 100ml	1.5	3	Unknown
+594	2012-01-18 00:00:00.000	PURA100	145	Retail	Unknown	23855	Madaline Briggs	PURA100	Pure Soft Detergent - 100ml	1.5	3	Unknown
+595	2012-01-16 00:00:00.000	SUPA104	92	Online	Europe	23856	Vivian Garrett	SUPA104	Super Soft - 1 Litre	5	9.99	Estonia
+596	2012-01-01 00:00:00.000	PURA100	45	Online	Asia	23857	Shelby Hendrix	PURA100	Pure Soft Detergent - 100ml	1.5	3	Maldives
+598	2012-02-06 00:00:00.000	PURA500	185	Online	Sub-Saharan Africa	23859	Kelly Andrews	PURA500	Pure Soft Detergent - 500ml	3.5	6.5	Seychelles 
+599	2012-02-01 00:00:00.000	SUPA102	161	Online	Sub-Saharan Africa	23860	Palmer Craft	SUPA102	Super Soft - 250ml	2.5	4.5	Liberia
+601	2011-11-14 00:00:00.000	SUPA104	25	Online	Australia and Oceania	23862	Chastity Reynolds	SUPA104	Super Soft - 1 Litre	5	9.99	Nauru
+602	2011-12-18 00:00:00.000	PURA100	184	Retail	Asia	23863	Sara Parrish	PURA100	Pure Soft Detergent - 100ml	1.5	3	Mongolia
+605	2011-10-02 00:00:00.000	PURA200	69	Online	Sub-Saharan Africa	23866	Tatyana Ingram	PURA200	Pure Soft Detergent - 200ml	2	3.99	Gabon
+606	2011-11-06 00:00:00.000	SUPA102	132	Retail	Unknown	23867	Elaine Le	SUPA102	Super Soft - 250ml	2.5	4.5	Unknown
+607	2011-09-07 00:00:00.000	SUPA102	141	Online	Europe	23868	Azalia Riddle	SUPA102	Super Soft - 250ml	2.5	4.5	Belgium
+609	2011-12-19 00:00:00.000	PURA200	210	Online	Unknown	23870	Forrest Hayes	PURA200	Pure Soft Detergent - 200ml	2	3.99	Unknown
+610	2011-09-30 00:00:00.000	PURA250	152	Direct	Australia and Oceania	23871	Maggie Howard	PURA250	Pure Soft Detergent - 250ml	2.3	4.5	New Zealand
+611	2011-09-07 00:00:00.000	SUPA105	67	Online	Sub-Saharan Africa	23872	Colin Vazquez	SUPA105	Super Soft Bulk - 2 Litres	8	14.5	Botswana
+612	2011-12-27 00:00:00.000	PURA200	41	Online	Australia and Oceania	23873	Leroy Russo	PURA200	Pure Soft Detergent - 200ml	2	3.99	Samoa 
+613	2011-11-10 00:00:00.000	SUPA101	61	Online	Europe	23874	Marvin Oneil	SUPA101	Super Soft - Product Sample	0.3	0	Bosnia and Herzegovina
+614	2011-09-19 00:00:00.000	PURA100	92	Online	Central America and the Caribbean	23875	Leah Kline	PURA100	Pure Soft Detergent - 100ml	1.5	3	Belize
+615	2011-10-25 00:00:00.000	SUPA102	119	Direct	Unknown	23876	Mechelle Gutierrez	SUPA102	Super Soft - 250ml	2.5	4.5	Unknown
+618	2011-09-10 00:00:00.000	PURA100	9	Online	Europe	23879	Savannah Everett	PURA100	Pure Soft Detergent - 100ml	1.5	3	Czech Republic
+619	2011-09-05 00:00:00.000	SUPA102	96	Retail	Middle East and North Africa	23880	Burke Vinson	SUPA102	Super Soft - 250ml	2.5	4.5	Lebanon
+620	2011-12-10 00:00:00.000	PURA200	104	Retail	Unknown	23881	Fitzgerald Fleming	PURA200	Pure Soft Detergent - 200ml	2	3.99	Unknown
+621	2011-09-23 00:00:00.000	SUPA101	180	Online	Middle East and North Africa	23882	Drake Gibson	SUPA101	Super Soft - Product Sample	0.3	0	Iraq
+622	2011-10-11 00:00:00.000	SUPA102	7	Online	Sub-Saharan Africa	23883	Odysseus Vaughn	SUPA102	Super Soft - 250ml	2.5	4.5	Burkina Faso
+623	2011-11-30 00:00:00.000	SUPA103	109	Online	Sub-Saharan Africa	23884	Arden Atkinson	SUPA103	Super Soft - 500ml	3.5	6.99	Guinea
+624	2011-09-27 00:00:00.000	SUPA101	146	Online	Europe	23885	Leigh Schultz	SUPA101	Super Soft - Product Sample	0.3	0	Italy
+625	2011-10-18 00:00:00.000	SUPA103	141	Direct	Europe	23886	Brielle Roberson	SUPA103	Super Soft - 500ml	3.5	6.99	Poland
+626	2011-11-20 00:00:00.000	PURA200	201	Retail	Middle East and North Africa	23887	Adam Blackburn	PURA200	Pure Soft Detergent - 200ml	2	3.99	Lebanon
+627	2011-10-03 00:00:00.000	SUPA105	132	Online	Middle East and North Africa	23888	Hop Gomez	SUPA105	Super Soft Bulk - 2 Litres	8	14.5	Qatar
+628	2011-12-20 00:00:00.000	SUPA103	148	Retail	Unknown	23889	Laith Conley	SUPA103	Super Soft - 500ml	3.5	6.99	Unknown
+629	2011-10-16 00:00:00.000	PURA500	184	Retail	Europe	23890	Astra Terry	PURA500	Pure Soft Detergent - 500ml	3.5	6.5	Armenia
+630	2011-11-27 00:00:00.000	PURA500	197	Retail	Middle East and North Africa	23891	Tucker Hudson	PURA500	Pure Soft Detergent - 500ml	3.5	6.5	Azerbaijan
+632	2011-09-16 00:00:00.000	SUPA105	46	Direct	Sub-Saharan Africa	23893	Barclay Guerrero	SUPA105	Super Soft Bulk - 2 Litres	8	14.5	Sierra Leone
+633	2011-12-01 00:00:00.000	SUPA101	104	Retail	Sub-Saharan Africa	23894	Talon Boyer	SUPA101	Super Soft - Product Sample	0.3	0	Niger
+634	2011-11-11 00:00:00.000	PURA100	197	Online	Europe	23895	Rudyard Chan	PURA100	Pure Soft Detergent - 100ml	1.5	3	Sweden
+635	2011-09-11 00:00:00.000	SUPA102	3	Retail	Europe	23896	Lyle Lawson	SUPA102	Super Soft - 250ml	2.5	4.5	Andorra
+637	2011-11-10 00:00:00.000	SUPA103	127	Online	Middle East and North Africa	23898	Karina Contreras	SUPA103	Super Soft - 500ml	3.5	6.99	Kuwait
+638	2011-12-22 00:00:00.000	SUPA101	178	Direct	Europe	23899	Garrett Burnett	SUPA101	Super Soft - Product Sample	0.3	0	Poland
+639	2011-12-18 00:00:00.000	PURA200	54	Retail	Unknown	23900	Tana Velasquez	PURA200	Pure Soft Detergent - 200ml	2	3.99	Unknown
+640	2011-09-27 00:00:00.000	PURA100	169	Online	Unknown	23901	Jasper Shannon	PURA100	Pure Soft Detergent - 100ml	1.5	3	Unknown
+642	2011-09-20 00:00:00.000	SUPA102	2	Retail	Europe	23903	Dillon Carlson	SUPA102	Super Soft - 250ml	2.5	4.5	Italy
+643	2011-11-19 00:00:00.000	PURA250	149	Retail	Australia and Oceania	23904	Dean Galloway	PURA250	Pure Soft Detergent - 250ml	2.3	4.5	Solomon Islands
+644	2011-12-06 00:00:00.000	PURA500	56	Retail	Unknown	23905	Rogan Best	PURA500	Pure Soft Detergent - 500ml	3.5	6.5	Unknown
+646	2011-12-03 00:00:00.000	SUPA101	162	Online	Asia	23907	Zelda Dickson	SUPA101	Super Soft - Product Sample	0.3	0	Singapore
+648	2011-10-28 00:00:00.000	SUPA103	66	Online	Middle East and North Africa	23909	Cassady Scott	SUPA103	Super Soft - 500ml	3.5	6.99	Qatar
+649	2011-10-21 00:00:00.000	SUPA105	82	Online	Asia	23910	Zena Miranda	SUPA105	Super Soft Bulk - 2 Litres	8	14.5	Kyrgyzstan
+650	2011-10-30 00:00:00.000	PURA100	180	Online	Central America and the Caribbean	23911	Sandra Rios	PURA100	Pure Soft Detergent - 100ml	1.5	3	Costa Rica
+651	2011-12-05 00:00:00.000	SUPA104	39	Online	Middle East and North Africa	23912	Chaney Myers	SUPA104	Super Soft - 1 Litre	5	9.99	Kuwait
+652	2011-10-26 00:00:00.000	SUPA102	6	Online	Unknown	23913	Eve Gill	SUPA102	Super Soft - 250ml	2.5	4.5	Unknown
+654	2011-11-03 00:00:00.000	SUPA101	134	Retail	Asia	23915	Janna Sears	SUPA101	Super Soft - Product Sample	0.3	0	Uzbekistan
+656	2011-10-25 00:00:00.000	SUPA105	106	Online	Europe	23917	Shellie Dean	SUPA105	Super Soft Bulk - 2 Litres	8	14.5	Spain
+657	2011-09-04 00:00:00.000	PURA200	204	Direct	Asia	23918	Ian Mcdaniel	PURA200	Pure Soft Detergent - 200ml	2	3.99	Kazakhstan
+658	2011-09-08 00:00:00.000	PURA100	120	Retail	Unknown	23919	Desiree Booth	PURA100	Pure Soft Detergent - 100ml	1.5	3	Unknown
+659	2011-12-05 00:00:00.000	PURA500	196	Online	Asia	23920	Erica Vargas	PURA500	Pure Soft Detergent - 500ml	3.5	6.5	Cambodia
+661	2011-12-01 00:00:00.000	SUPA103	159	Online	Asia	23922	Brynn Avila	SUPA103	Super Soft - 500ml	3.5	6.99	Myanmar
+664	2011-12-24 00:00:00.000	SUPA101	118	Online	Australia and Oceania	23925	Deanna Kelley	SUPA101	Super Soft - Product Sample	0.3	0	Nauru
+665	2011-12-27 00:00:00.000	SUPA105	152	Online	Sub-Saharan Africa	23926	Fletcher Savage	SUPA105	Super Soft Bulk - 2 Litres	8	14.5	Swaziland
+667	2011-12-29 00:00:00.000	SUPA103	74	Retail	Asia	23928	Maisie Witt	SUPA103	Super Soft - 500ml	3.5	6.99	Malaysia
+668	2011-10-05 00:00:00.000	SUPA104	47	Retail	Unknown	23929	Illana Mccall	SUPA104	Super Soft - 1 Litre	5	9.99	Unknown
+669	2011-10-30 00:00:00.000	PURA200	189	Retail	Sub-Saharan Africa	23930	Katelyn Finley	PURA200	Pure Soft Detergent - 200ml	2	3.99	Comoros
+670	2011-09-14 00:00:00.000	PURA200	138	Online	Middle East and North Africa	23931	Merritt Sosa	PURA200	Pure Soft Detergent - 200ml	2	3.99	Kuwait
+672	2011-12-25 00:00:00.000	SUPA104	208	Online	Europe	23933	Kenneth Bolton	SUPA104	Super Soft - 1 Litre	5	9.99	Hungary
+673	2011-11-02 00:00:00.000	PURA100	166	Online	Australia and Oceania	23934	Knox Fox	PURA100	Pure Soft Detergent - 100ml	1.5	3	Solomon Islands
+674	2011-10-19 00:00:00.000	SUPA103	17	Retail	Unknown	23935	Colton Briggs	SUPA103	Super Soft - 500ml	3.5	6.99	Unknown
+675	2011-10-29 00:00:00.000	SUPA102	195	Online	Central America and the Caribbean	23936	Felicia Alvarez	SUPA102	Super Soft - 250ml	2.5	4.5	Haiti
+677	2011-10-31 00:00:00.000	SUPA105	45	Retail	Middle East and North Africa	23938	Jennifer Montgomery	SUPA105	Super Soft Bulk - 2 Litres	8	14.5	Saudi Arabia
+679	2011-11-11 00:00:00.000	PURA100	131	Direct	Europe	23940	Lara Rogers	PURA100	Pure Soft Detergent - 100ml	1.5	3	Hungary
+680	2011-09-13 00:00:00.000	SUPA102	54	Online	Australia and Oceania	23941	Autumn Brock	SUPA102	Super Soft - 250ml	2.5	4.5	Australia
+681	2011-12-03 00:00:00.000	SUPA105	117	Online	Unknown	23942	Fitzgerald Gray	SUPA105	Super Soft Bulk - 2 Litres	8	14.5	Unknown
+684	2011-11-11 00:00:00.000	PURA500	183	Direct	Europe	23945	Audrey Wiggins	PURA500	Pure Soft Detergent - 500ml	3.5	6.5	Poland
+686	2011-12-26 00:00:00.000	SUPA102	113	Direct	Europe	23947	Rebekah Farley	SUPA102	Super Soft - 250ml	2.5	4.5	Netherlands
+687	2011-11-14 00:00:00.000	PURA100	170	Online	Asia	23948	Olympia Contreras	PURA100	Pure Soft Detergent - 100ml	1.5	3	Sri Lanka
+689	2011-12-02 00:00:00.000	PURA200	93	Online	Unknown	23950	Wendy Norris	PURA200	Pure Soft Detergent - 200ml	2	3.99	Unknown
+690	2011-12-29 00:00:00.000	PURA500	10	Online	Australia and Oceania	23951	Sasha Morton	PURA500	Pure Soft Detergent - 500ml	3.5	6.5	Samoa 
+691	2011-11-27 00:00:00.000	PURA500	81	Retail	Unknown	23952	Kevin Schwartz	PURA500	Pure Soft Detergent - 500ml	3.5	6.5	Unknown
+692	2011-09-06 00:00:00.000	PURA100	164	Retail	Unknown	23953	Ferdinand Holder	PURA100	Pure Soft Detergent - 100ml	1.5	3	Unknown
+693	2011-10-25 00:00:00.000	PURA100	106	Retail	Middle East and North Africa	23954	Sarah Leblanc	PURA100	Pure Soft Detergent - 100ml	1.5	3	Morocco
+694	2011-10-26 00:00:00.000	PURA200	26	Retail	Europe	23955	Ethan Colon	PURA200	Pure Soft Detergent - 200ml	2	3.99	Ukraine
+696	2011-10-26 00:00:00.000	SUPA101	81	Online	Australia and Oceania	23957	Lana Hunter	SUPA101	Super Soft - Product Sample	0.3	0	Australia
+698	2011-12-04 00:00:00.000	SUPA101	148	Online	Middle East and North Africa	23959	Buffy Powers	SUPA101	Super Soft - Product Sample	0.3	0	Oman
+699	2011-09-24 00:00:00.000	SUPA104	78	Retail	Unknown	23960	Brennan Lee	SUPA104	Super Soft - 1 Litre	5	9.99	Unknown
+701	2011-09-28 00:00:00.000	PURA500	17	Retail	Sub-Saharan Africa	23962	Mollie Chaney	PURA500	Pure Soft Detergent - 500ml	3.5	6.5	Cameroon
+702	2011-12-29 00:00:00.000	PURA500	145	Online	Unknown	23963	Mikayla Randall	PURA500	Pure Soft Detergent - 500ml	3.5	6.5	Unknown
+703	2011-10-23 00:00:00.000	PURA100	141	Retail	Unknown	23964	Ruth Mathews	PURA100	Pure Soft Detergent - 100ml	1.5	3	Unknown
+705	2011-11-08 00:00:00.000	SUPA103	167	Online	Sub-Saharan Africa	23966	Sonya Shaw	SUPA103	Super Soft - 500ml	3.5	6.99	Sao Tome and Principe
+706	2011-09-17 00:00:00.000	SUPA104	143	Retail	Central America and the Caribbean	23967	Hedy Murray	SUPA104	Super Soft - 1 Litre	5	9.99	Dominican Republic
+708	2011-12-05 00:00:00.000	PURA100	124	Retail	Central America and the Caribbean	23969	Buffy Moore	PURA100	Pure Soft Detergent - 100ml	1.5	3	Nicaragua
+709	2011-11-26 00:00:00.000	PURA100	148	Online	Unknown	23970	Alma Higgins	PURA100	Pure Soft Detergent - 100ml	1.5	3	Unknown
+710	2011-11-22 00:00:00.000	PURA250	114	Retail	Unknown	23971	Paki Richmond	PURA250	Pure Soft Detergent - 250ml	2.3	4.5	Unknown
+711	2011-09-02 00:00:00.000	SUPA102	192	Online	Australia and Oceania	23972	Brent Cabrera	SUPA102	Super Soft - 250ml	2.5	4.5	Vanuatu
+712	2011-12-02 00:00:00.000	PURA100	142	Online	Middle East and North Africa	23973	Kennan Winters	PURA100	Pure Soft Detergent - 100ml	1.5	3	Pakistan
+713	2011-12-18 00:00:00.000	SUPA102	156	Online	Sub-Saharan Africa	23974	Ila Webb	SUPA102	Super Soft - 250ml	2.5	4.5	Sierra Leone
+715	2011-12-29 00:00:00.000	SUPA101	70	Retail	Asia	23976	Christine Hale	SUPA101	Super Soft - Product Sample	0.3	0	Malaysia
+716	2011-11-09 00:00:00.000	PURA100	161	Retail	Sub-Saharan Africa	23977	Nichole Weiss	PURA100	Pure Soft Detergent - 100ml	1.5	3	Zimbabwe
+718	2011-11-16 00:00:00.000	PURA200	163	Online	Unknown	23979	Cruz Morris	PURA200	Pure Soft Detergent - 200ml	2	3.99	Unknown
+719	2011-11-08 00:00:00.000	SUPA101	52	Online	Europe	23980	Armando Huber	SUPA101	Super Soft - Product Sample	0.3	0	Slovakia
+720	2011-12-09 00:00:00.000	SUPA104	39	Retail	Unknown	23981	Yvonne Stanley	SUPA104	Super Soft - 1 Litre	5	9.99	Unknown
+721	2011-10-01 00:00:00.000	SUPA105	67	Direct	Australia and Oceania	23982	Lillian Pitts	SUPA105	Super Soft Bulk - 2 Litres	8	14.5	New Zealand
+723	2011-12-24 00:00:00.000	SUPA103	32	Online	Unknown	23984	Macey Prince	SUPA103	Super Soft - 500ml	3.5	6.99	Unknown
+724	2011-11-03 00:00:00.000	SUPA105	48	Online	Unknown	23985	Amity Ware	SUPA105	Super Soft Bulk - 2 Litres	8	14.5	Unknown
+725	2011-11-24 00:00:00.000	PURA100	61	Online	Unknown	23986	Darrel Harrell	PURA100	Pure Soft Detergent - 100ml	1.5	3	Unknown
+726	2011-10-05 00:00:00.000	SUPA101	35	Online	Europe	23987	Thaddeus Mercado	SUPA101	Super Soft - Product Sample	0.3	0	Czech Republic
+727	2011-09-04 00:00:00.000	SUPA104	81	Retail	Unknown	23988	Logan Gates	SUPA104	Super Soft - 1 Litre	5	9.99	Unknown
+730	2011-09-20 00:00:00.000	SUPA101	55	Retail	Central America and the Caribbean	23991	Scarlett Padilla	SUPA101	Super Soft - Product Sample	0.3	0	Barbados
+732	2011-09-18 00:00:00.000	PURA100	161	Online	Europe	23993	Cooper Guy	PURA100	Pure Soft Detergent - 100ml	1.5	3	Sweden
+735	2011-12-05 00:00:00.000	PURA100	58	Retail	Middle East and North Africa	23996	Patricia Stanley	PURA100	Pure Soft Detergent - 100ml	1.5	3	Bahrain
+736	2011-09-11 00:00:00.000	PURA200	161	Retail	Middle East and North Africa	23997	Regan Whitehead	PURA200	Pure Soft Detergent - 200ml	2	3.99	Turkey
+737	2011-09-24 00:00:00.000	PURA250	127	Online	Unknown	23998	Knox Tillman	PURA250	Pure Soft Detergent - 250ml	2.3	4.5	Unknown
+738	2011-09-18 00:00:00.000	SUPA103	94	Retail	Sub-Saharan Africa	23999	Eden Padilla	SUPA103	Super Soft - 500ml	3.5	6.99	Mauritius 
+739	2011-12-11 00:00:00.000	PURA500	4	Online	Europe	24000	Sopoline Stout	PURA500	Pure Soft Detergent - 500ml	3.5	6.5	Greece
+740	2011-12-11 00:00:00.000	PURA200	83	Direct	Unknown	24001	Emerald Rojas	PURA200	Pure Soft Detergent - 200ml	2	3.99	Unknown
+741	2011-09-14 00:00:00.000	PURA200	22	Online	Sub-Saharan Africa	24002	Ciara Burks	PURA200	Pure Soft Detergent - 200ml	2	3.99	Equatorial Guinea
+742	2011-09-23 00:00:00.000	SUPA104	62	Retail	Sub-Saharan Africa	24003	Sybill Mendoza	SUPA104	Super Soft - 1 Litre	5	9.99	Togo
+747	2011-09-15 00:00:00.000	PURA250	139	Online	Europe	24008	Devin Shepard	PURA250	Pure Soft Detergent - 250ml	2.3	4.5	Iceland
+748	2011-11-10 00:00:00.000	SUPA102	92	Retail	Unknown	24009	Riley Sellers	SUPA102	Super Soft - 250ml	2.5	4.5	Unknown
+749	2011-10-13 00:00:00.000	SUPA102	23	Online	Sub-Saharan Africa	24010	Cruz Ray	SUPA102	Super Soft - 250ml	2.5	4.5	Eritrea
+750	2011-10-12 00:00:00.000	PURA100	60	Retail	Europe	24011	Merritt Romero	PURA100	Pure Soft Detergent - 100ml	1.5	3	United Kingdom
+751	2011-10-21 00:00:00.000	SUPA101	133	Retail	Central America and the Caribbean	24012	Yvette Sosa	SUPA101	Super Soft - Product Sample	0.3	0	Antigua and Barbuda 
+752	2011-12-01 00:00:00.000	SUPA104	68	Online	Unknown	24013	Sylvester Lopez	SUPA104	Super Soft - 1 Litre	5	9.99	Unknown
+753	2011-09-13 00:00:00.000	SUPA102	38	Retail	Sub-Saharan Africa	24014	Gregory Sykes	SUPA102	Super Soft - 250ml	2.5	4.5	Chad
+755	2011-12-16 00:00:00.000	SUPA101	63	Online	Europe	24016	Megan Clemons	SUPA101	Super Soft - Product Sample	0.3	0	Croatia
+756	2011-11-13 00:00:00.000	PURA250	208	Online	Europe	24017	Ignatius Contreras	PURA250	Pure Soft Detergent - 250ml	2.3	4.5	Denmark
+757	2011-10-15 00:00:00.000	SUPA103	37	Retail	North America	24018	Willa Strong	SUPA103	Super Soft - 500ml	3.5	6.99	Canada
+758	2011-09-29 00:00:00.000	SUPA105	52	Retail	Sub-Saharan Africa	24019	Alfonso Shepherd	SUPA105	Super Soft Bulk - 2 Litres	8	14.5	Guinea
+759	2011-12-30 00:00:00.000	PURA500	138	Retail	Unknown	24020	Sean Townsend	PURA500	Pure Soft Detergent - 500ml	3.5	6.5	Unknown
+760	2011-09-29 00:00:00.000	SUPA105	182	Online	Sub-Saharan Africa	24021	Ronan Stark	SUPA105	Super Soft Bulk - 2 Litres	8	14.5	Lesotho
+761	2011-09-25 00:00:00.000	PURA100	84	Online	Unknown	24022	Kalia Roberson	PURA100	Pure Soft Detergent - 100ml	1.5	3	Unknown
+763	2011-09-04 00:00:00.000	PURA200	208	Online	Asia	24024	Olga Young	PURA200	Pure Soft Detergent - 200ml	2	3.99	Mongolia
+765	2011-09-22 00:00:00.000	PURA100	210	Online	Unknown	24026	Sandra Odonnell	PURA100	Pure Soft Detergent - 100ml	1.5	3	Unknown
+766	2011-10-28 00:00:00.000	SUPA103	156	Direct	Unknown	24027	Paloma Duran	SUPA103	Super Soft - 500ml	3.5	6.99	Unknown
+767	2011-11-03 00:00:00.000	SUPA102	181	Retail	Unknown	24028	Gisela Mckee	SUPA102	Super Soft - 250ml	2.5	4.5	Unknown
+768	2011-11-07 00:00:00.000	PURA100	98	Retail	Europe	24029	Theodore Wells	PURA100	Pure Soft Detergent - 100ml	1.5	3	Bosnia and Herzegovina
+772	2011-12-23 00:00:00.000	SUPA103	35	Retail	Sub-Saharan Africa	24033	Byron Briggs	SUPA103	Super Soft - 500ml	3.5	6.99	Eritrea
+774	2011-12-26 00:00:00.000	SUPA104	91	Retail	Unknown	24035	Jamalia Sims	SUPA104	Super Soft - 1 Litre	5	9.99	Unknown
+775	2011-11-17 00:00:00.000	PURA250	173	Online	Europe	24036	Zephania Mills	PURA250	Pure Soft Detergent - 250ml	2.3	4.5	Netherlands
+777	2011-11-22 00:00:00.000	PURA100	115	Online	Asia	24038	Bertha Juarez	PURA100	Pure Soft Detergent - 100ml	1.5	3	Sri Lanka
+779	2011-11-11 00:00:00.000	SUPA103	155	Retail	Unknown	24040	Sonya Leon	SUPA103	Super Soft - 500ml	3.5	6.99	Unknown
+780	2011-12-28 00:00:00.000	PURA500	35	Online	Central America and the Caribbean	24041	Patience Mcclain	PURA500	Pure Soft Detergent - 500ml	3.5	6.5	Saint Kitts and Nevis 
+781	2011-11-11 00:00:00.000	PURA250	170	Online	Unknown	24042	Macey Shaw	PURA250	Pure Soft Detergent - 250ml	2.3	4.5	Unknown
+782	2011-12-09 00:00:00.000	SUPA101	42	Retail	Central America and the Caribbean	24043	Amethyst Dotson	SUPA101	Super Soft - Product Sample	0.3	0	Haiti
+783	2011-10-02 00:00:00.000	PURA200	82	Retail	Unknown	24044	Beatrice Golden	PURA200	Pure Soft Detergent - 200ml	2	3.99	Unknown
+785	2011-11-08 00:00:00.000	PURA500	68	Retail	Unknown	24046	Lois Mcdowell	PURA500	Pure Soft Detergent - 500ml	3.5	6.5	Unknown
+786	2011-10-23 00:00:00.000	SUPA104	58	Online	Unknown	24047	Allen Caldwell	SUPA104	Super Soft - 1 Litre	5	9.99	Unknown
+789	2011-12-18 00:00:00.000	SUPA102	147	Online	Unknown	24050	Melyssa Sawyer	SUPA102	Super Soft - 250ml	2.5	4.5	Unknown
+790	2011-11-08 00:00:00.000	SUPA101	74	Retail	Europe	24051	Charissa Olsen	SUPA101	Super Soft - Product Sample	0.3	0	Luxembourg
+791	2011-11-11 00:00:00.000	SUPA101	189	Retail	Sub-Saharan Africa	24052	Althea Good	SUPA101	Super Soft - Product Sample	0.3	0	Central African Republic
+792	2011-12-03 00:00:00.000	PURA250	104	Online	Unknown	24053	Anthony Foster	PURA250	Pure Soft Detergent - 250ml	2.3	4.5	Unknown
+793	2011-12-07 00:00:00.000	SUPA104	56	Retail	Unknown	24054	Quentin Houston	SUPA104	Super Soft - 1 Litre	5	9.99	Unknown
+795	2011-10-31 00:00:00.000	SUPA103	204	Online	Asia	24056	Erasmus Morrison	SUPA103	Super Soft - 500ml	3.5	6.99	Myanmar
+796	2011-12-22 00:00:00.000	SUPA101	5	Online	Europe	24057	Maris Cantrell	SUPA101	Super Soft - Product Sample	0.3	0	Finland
+797	2011-12-12 00:00:00.000	PURA200	199	Online	Middle East and North Africa	24058	Quentin Hill	PURA200	Pure Soft Detergent - 200ml	2	3.99	Oman
+798	2011-12-09 00:00:00.000	SUPA101	129	Direct	Central America and the Caribbean	24059	Cade Pace	SUPA101	Super Soft - Product Sample	0.3	0	Barbados
+799	2011-08-24 00:00:00.000	PURA100	14	Retail	Sub-Saharan Africa	24060	Kibo Gibbs	PURA100	Pure Soft Detergent - 100ml	1.5	3	Burundi
+801	2011-02-20 00:00:00.000	SUPA105	43	Direct	Australia and Oceania	24062	Chloe Black	SUPA105	Super Soft Bulk - 2 Litres	8	14.5	Samoa 
+803	2011-04-09 00:00:00.000	SUPA101	38	Retail	Europe	24064	Bruce Summers	SUPA101	Super Soft - Product Sample	0.3	0	Romania
+804	2011-02-11 00:00:00.000	PURA200	57	Direct	Europe	24065	Yeo Welch	PURA200	Pure Soft Detergent - 200ml	2	3.99	Norway
+805	2011-06-01 00:00:00.000	SUPA103	34	Retail	Asia	24066	Simon Keith	SUPA103	Super Soft - 500ml	3.5	6.99	Cambodia
+806	2011-01-12 00:00:00.000	PURA200	4	Online	Sub-Saharan Africa	24067	Quamar Albert	PURA200	Pure Soft Detergent - 200ml	2	3.99	Botswana
+808	2011-05-29 00:00:00.000	PURA100	132	Retail	Middle East and North Africa	24069	Daphne Graves	PURA100	Pure Soft Detergent - 100ml	1.5	3	Yemen
+810	2011-03-25 00:00:00.000	SUPA105	38	Direct	Asia	24071	Aimee Sparks	SUPA105	Super Soft Bulk - 2 Litres	8	14.5	Singapore
+811	2011-03-27 00:00:00.000	SUPA104	159	Online	Asia	24072	Adara Shields	SUPA104	Super Soft - 1 Litre	5	9.99	Bhutan
+812	2011-01-06 00:00:00.000	SUPA101	15	Retail	Australia and Oceania	24073	Brock Sullivan	SUPA101	Super Soft - Product Sample	0.3	0	Nauru
+813	2011-07-27 00:00:00.000	SUPA103	147	Retail	Middle East and North Africa	24074	Alma Riley	SUPA103	Super Soft - 500ml	3.5	6.99	Turkey
+814	2011-01-14 00:00:00.000	PURA250	4	Direct	Unknown	24075	Angelica Bridges	PURA250	Pure Soft Detergent - 250ml	2.3	4.5	Unknown
+816	2011-07-23 00:00:00.000	SUPA104	61	Retail	Europe	24077	Samson Bishop	SUPA104	Super Soft - 1 Litre	5	9.99	Armenia
+818	2011-05-10 00:00:00.000	PURA500	129	Retail	Sub-Saharan Africa	24079	Maxwell Workman	PURA500	Pure Soft Detergent - 500ml	3.5	6.5	Guinea
+819	2011-08-11 00:00:00.000	PURA200	48	Online	Europe	24080	Clare Barnes	PURA200	Pure Soft Detergent - 200ml	2	3.99	United Kingdom
+820	2011-01-06 00:00:00.000	PURA100	192	Online	Central America and the Caribbean	24081	Jameson Anderson	PURA100	Pure Soft Detergent - 100ml	1.5	3	Costa Rica
+821	2011-01-02 00:00:00.000	PURA100	150	Retail	Unknown	24082	Evan York	PURA100	Pure Soft Detergent - 100ml	1.5	3	Unknown
+822	2011-08-30 00:00:00.000	SUPA103	125	Retail	Middle East and North Africa	24083	Tatyana Burns	SUPA103	Super Soft - 500ml	3.5	6.99	Qatar
+823	2011-08-22 00:00:00.000	SUPA103	135	Retail	Asia	24084	Hayley Chaney	SUPA103	Super Soft - 500ml	3.5	6.99	Mongolia
+824	2011-05-22 00:00:00.000	PURA200	128	Online	Unknown	24085	Sybill Christensen	PURA200	Pure Soft Detergent - 200ml	2	3.99	Unknown
+826	2011-05-25 00:00:00.000	PURA200	43	Retail	Unknown	24087	Tana Sharpe	PURA200	Pure Soft Detergent - 200ml	2	3.99	Unknown
+828	2011-01-29 00:00:00.000	PURA250	124	Retail	Unknown	24089	Calista Osborn	PURA250	Pure Soft Detergent - 250ml	2.3	4.5	Unknown
+829	2011-02-01 00:00:00.000	PURA250	42	Retail	Sub-Saharan Africa	24090	Macaulay Meadows	PURA250	Pure Soft Detergent - 250ml	2.3	4.5	Botswana
+830	2011-06-24 00:00:00.000	PURA500	187	Retail	Sub-Saharan Africa	24091	Perry Livingston	PURA500	Pure Soft Detergent - 500ml	3.5	6.5	Togo
+831	2011-06-19 00:00:00.000	SUPA104	147	Retail	Sub-Saharan Africa	24092	Clare Barry	SUPA104	Super Soft - 1 Litre	5	9.99	Lesotho
+832	2011-04-04 00:00:00.000	SUPA102	53	Online	Europe	24093	Gage Rivera	SUPA102	Super Soft - 250ml	2.5	4.5	Czech Republic
+833	2011-04-14 00:00:00.000	SUPA101	71	Retail	Australia and Oceania	24094	Rhea Stokes	SUPA101	Super Soft - Product Sample	0.3	0	Fiji
+835	2011-04-15 00:00:00.000	SUPA103	54	Retail	Europe	24096	Mira Bolton	SUPA103	Super Soft - 500ml	3.5	6.99	Bosnia and Herzegovina
+837	2011-03-23 00:00:00.000	SUPA104	77	Retail	Sub-Saharan Africa	24098	Cally Pratt	SUPA104	Super Soft - 1 Litre	5	9.99	Swaziland
+839	2011-06-14 00:00:00.000	SUPA102	177	Online	Sub-Saharan Africa	24100	Lareina Barton	SUPA102	Super Soft - 250ml	2.5	4.5	Mauritius 
+840	2011-02-18 00:00:00.000	SUPA104	143	Retail	Asia	24101	Fleur Mcdaniel	SUPA104	Super Soft - 1 Litre	5	9.99	Indonesia
+841	2011-02-20 00:00:00.000	SUPA102	183	Online	Unknown	24102	Adrienne Mack	SUPA102	Super Soft - 250ml	2.5	4.5	Unknown
+842	2011-07-11 00:00:00.000	PURA500	25	Direct	Asia	24103	Leigh Matthews	PURA500	Pure Soft Detergent - 500ml	3.5	6.5	Kazakhstan
+843	2011-06-13 00:00:00.000	SUPA103	169	Online	Middle East and North Africa	24104	Ignatius Petty	SUPA103	Super Soft - 500ml	3.5	6.99	Pakistan
+846	2011-08-28 00:00:00.000	SUPA101	29	Online	Sub-Saharan Africa	24107	Herman Bryan	SUPA101	Super Soft - Product Sample	0.3	0	Guinea
+847	2011-05-30 00:00:00.000	SUPA103	42	Online	Unknown	24108	Gisela Lloyd	SUPA103	Super Soft - 500ml	3.5	6.99	Unknown
+848	2011-03-18 00:00:00.000	PURA250	182	Retail	Unknown	24109	Elliott Lawrence	PURA250	Pure Soft Detergent - 250ml	2.3	4.5	Unknown
+849	2011-08-29 00:00:00.000	SUPA102	39	Online	Central America and the Caribbean	24110	Nicole Mcgowan	SUPA102	Super Soft - 250ml	2.5	4.5	Honduras
+851	2011-07-14 00:00:00.000	SUPA103	20	Retail	Unknown	24112	Jermaine Wilson	SUPA103	Super Soft - 500ml	3.5	6.99	Unknown
+852	2011-06-11 00:00:00.000	SUPA103	5	Online	Middle East and North Africa	24113	Octavia Flowers	SUPA103	Super Soft - 500ml	3.5	6.99	Afghanistan
+853	2011-01-03 00:00:00.000	SUPA105	179	Retail	Middle East and North Africa	24114	Vernon Daniels	SUPA105	Super Soft Bulk - 2 Litres	8	14.5	Afghanistan
+854	2011-02-08 00:00:00.000	SUPA104	169	Online	Europe	24115	Anne Rivers	SUPA104	Super Soft - 1 Litre	5	9.99	Bulgaria
+855	2011-06-16 00:00:00.000	PURA100	153	Online	Europe	24116	Jackson Gallegos	PURA100	Pure Soft Detergent - 100ml	1.5	3	Andorra
+856	2011-05-28 00:00:00.000	SUPA105	199	Retail	Sub-Saharan Africa	24117	Kirestin Whitehead	SUPA105	Super Soft Bulk - 2 Litres	8	14.5	Liberia
+857	2011-02-19 00:00:00.000	PURA500	41	Retail	Central America and the Caribbean	24118	Brendan Cruz	PURA500	Pure Soft Detergent - 500ml	3.5	6.5	El Salvador
+859	2011-03-28 00:00:00.000	PURA250	99	Online	Sub-Saharan Africa	24120	Quinlan Hebert	PURA250	Pure Soft Detergent - 250ml	2.3	4.5	Burkina Faso
+861	2011-02-14 00:00:00.000	PURA250	125	Direct	Asia	24122	Zenia Carr	PURA250	Pure Soft Detergent - 250ml	2.3	4.5	Sri Lanka
+862	2011-08-14 00:00:00.000	PURA100	18	Online	Asia	24123	Odette Mills	PURA100	Pure Soft Detergent - 100ml	1.5	3	Myanmar
+863	2011-03-23 00:00:00.000	PURA100	159	Online	Europe	24124	August Levy	PURA100	Pure Soft Detergent - 100ml	1.5	3	Czech Republic
+865	2011-04-07 00:00:00.000	PURA200	125	Retail	Europe	24126	Samuel Tyler	PURA200	Pure Soft Detergent - 200ml	2	3.99	Andorra
+866	2011-06-26 00:00:00.000	SUPA102	25	Retail	Central America and the Caribbean	24127	Kyra Pollard	SUPA102	Super Soft - 250ml	2.5	4.5	Barbados
+867	2011-01-29 00:00:00.000	PURA100	183	Online	Unknown	24128	Ori Cummings	PURA100	Pure Soft Detergent - 100ml	1.5	3	Unknown
+868	2011-04-29 00:00:00.000	PURA200	197	Retail	Unknown	24129	Cairo Boyer	PURA200	Pure Soft Detergent - 200ml	2	3.99	Unknown
+869	2011-02-20 00:00:00.000	SUPA104	84	Online	Sub-Saharan Africa	24130	Caldwell Caldwell	SUPA104	Super Soft - 1 Litre	5	9.99	Burkina Faso
+872	2011-08-03 00:00:00.000	SUPA105	42	Online	Sub-Saharan Africa	24133	Leila Mason	SUPA105	Super Soft Bulk - 2 Litres	8	14.5	Rwanda
+873	2011-02-17 00:00:00.000	SUPA103	47	Online	Unknown	24134	Howard Colon	SUPA103	Super Soft - 500ml	3.5	6.99	Unknown
+874	2011-04-08 00:00:00.000	SUPA103	108	Online	Unknown	24135	Abigail Cunningham	SUPA103	Super Soft - 500ml	3.5	6.99	Unknown
+875	2011-01-07 00:00:00.000	SUPA103	174	Online	Unknown	24136	Sandra Perry	SUPA103	Super Soft - 500ml	3.5	6.99	Unknown
+876	2011-07-30 00:00:00.000	SUPA102	68	Direct	Central America and the Caribbean	24137	Lana Good	SUPA102	Super Soft - 250ml	2.5	4.5	Antigua and Barbuda 
+877	2011-04-28 00:00:00.000	SUPA105	108	Retail	Central America and the Caribbean	24138	Brian Trevino	SUPA105	Super Soft Bulk - 2 Litres	8	14.5	Antigua and Barbuda 
+878	2011-08-25 00:00:00.000	PURA200	10	Retail	Europe	24139	Connor Soto	PURA200	Pure Soft Detergent - 200ml	2	3.99	Switzerland
+879	2011-04-14 00:00:00.000	PURA250	58	Online	Unknown	24140	Basil Foley	PURA250	Pure Soft Detergent - 250ml	2.3	4.5	Unknown
+880	2011-02-16 00:00:00.000	PURA250	203	Direct	Unknown	24141	Stephen Herring	PURA250	Pure Soft Detergent - 250ml	2.3	4.5	Unknown
+881	2011-05-24 00:00:00.000	PURA100	201	Retail	Middle East and North Africa	24142	Dacey Stark	PURA100	Pure Soft Detergent - 100ml	1.5	3	Egypt
+882	2011-05-18 00:00:00.000	SUPA103	13	Online	Central America and the Caribbean	24143	Ursula Salinas	SUPA103	Super Soft - 500ml	3.5	6.99	Guatemala
+883	2011-05-24 00:00:00.000	SUPA102	168	Online	Sub-Saharan Africa	24144	Hakeem Singleton	SUPA102	Super Soft - 250ml	2.5	4.5	Uganda
+886	2011-07-24 00:00:00.000	SUPA101	12	Retail	Europe	24147	Jackson Rivas	SUPA101	Super Soft - Product Sample	0.3	0	Croatia
+887	2011-03-16 00:00:00.000	PURA250	58	Retail	Unknown	24148	Rae Hurst	PURA250	Pure Soft Detergent - 250ml	2.3	4.5	Unknown
+888	2011-03-18 00:00:00.000	PURA100	142	Retail	Europe	24149	Tucker Klein	PURA100	Pure Soft Detergent - 100ml	1.5	3	Armenia
+889	2011-04-08 00:00:00.000	SUPA101	46	Retail	Unknown	24150	Laura Holloway	SUPA101	Super Soft - Product Sample	0.3	0	Unknown
+891	2011-01-02 00:00:00.000	SUPA101	130	Online	Middle East and North Africa	24152	Amela Carpenter	SUPA101	Super Soft - Product Sample	0.3	0	Iraq
+893	2011-08-18 00:00:00.000	SUPA102	54	Online	Australia and Oceania	24154	Sara Chaney	SUPA102	Super Soft - 250ml	2.5	4.5	Vanuatu
+894	2011-01-17 00:00:00.000	SUPA102	44	Direct	Unknown	24155	George Mcpherson	SUPA102	Super Soft - 250ml	2.5	4.5	Unknown
+896	2011-05-11 00:00:00.000	PURA250	132	Direct	Unknown	24157	Gloria Talley	PURA250	Pure Soft Detergent - 250ml	2.3	4.5	Unknown
+897	2011-07-27 00:00:00.000	PURA500	38	Online	Unknown	24158	Risa Decker	PURA500	Pure Soft Detergent - 500ml	3.5	6.5	Unknown
+898	2011-03-06 00:00:00.000	SUPA102	40	Retail	Unknown	24159	Sebastian Huber	SUPA102	Super Soft - 250ml	2.5	4.5	Unknown
+900	2011-05-29 00:00:00.000	SUPA103	185	Online	Unknown	24161	Susan Fisher	SUPA103	Super Soft - 500ml	3.5	6.99	Unknown
+901	2011-06-22 00:00:00.000	PURA200	61	Online	Unknown	24162	Irene Beach	PURA200	Pure Soft Detergent - 200ml	2	3.99	Unknown
+902	2011-06-28 00:00:00.000	SUPA101	84	Online	Europe	24163	Athena Faulkner	SUPA101	Super Soft - Product Sample	0.3	0	Moldova 
+903	2011-01-25 00:00:00.000	PURA200	119	Direct	Middle East and North Africa	24164	Tamekah Roach	PURA200	Pure Soft Detergent - 200ml	2	3.99	Jordan
+904	2011-03-17 00:00:00.000	SUPA105	54	Online	Unknown	24165	Luke Malone	SUPA105	Super Soft Bulk - 2 Litres	8	14.5	Unknown
+905	2011-01-17 00:00:00.000	PURA100	191	Online	Unknown	24166	Amery David	PURA100	Pure Soft Detergent - 100ml	1.5	3	Unknown
+907	2011-05-19 00:00:00.000	PURA250	99	Retail	Asia	24168	Howard Hinton	PURA250	Pure Soft Detergent - 250ml	2.3	4.5	Bangladesh
+910	2011-08-07 00:00:00.000	SUPA104	2	Retail	Australia and Oceania	24171	Jessica Skinner	SUPA104	Super Soft - 1 Litre	5	9.99	Palau
+911	2011-07-19 00:00:00.000	PURA100	99	Retail	Unknown	24172	Lester Luna	PURA100	Pure Soft Detergent - 100ml	1.5	3	Unknown
+912	2011-01-06 00:00:00.000	SUPA104	136	Retail	Sub-Saharan Africa	24173	Adena Gates	SUPA104	Super Soft - 1 Litre	5	9.99	Gabon
+913	2011-07-10 00:00:00.000	PURA200	163	Direct	Unknown	24174	Garrison Peters	PURA200	Pure Soft Detergent - 200ml	2	3.99	Unknown
+914	2011-03-01 00:00:00.000	PURA250	97	Retail	Unknown	24175	Lani Ferrell	PURA250	Pure Soft Detergent - 250ml	2.3	4.5	Unknown
+917	2011-06-05 00:00:00.000	PURA100	80	Online	Unknown	24178	Regan Kirk	PURA100	Pure Soft Detergent - 100ml	1.5	3	Unknown
+918	2011-08-24 00:00:00.000	PURA500	190	Online	Middle East and North Africa	24179	Hyatt Durham	PURA500	Pure Soft Detergent - 500ml	3.5	6.5	Somalia
+919	2011-01-22 00:00:00.000	SUPA101	168	Direct	Unknown	24180	Bree Acevedo	SUPA101	Super Soft - Product Sample	0.3	0	Unknown
+920	2011-03-08 00:00:00.000	SUPA102	12	Retail	Australia and Oceania	24181	Brenda Wolfe	SUPA102	Super Soft - 250ml	2.5	4.5	Australia
+921	2011-04-14 00:00:00.000	SUPA103	31	Online	Europe	24182	Isabella Avery	SUPA103	Super Soft - 500ml	3.5	6.99	Austria
+922	2011-04-17 00:00:00.000	PURA100	51	Retail	Unknown	24183	Kitra Reilly	PURA100	Pure Soft Detergent - 100ml	1.5	3	Unknown
+923	2011-02-19 00:00:00.000	SUPA105	135	Online	Sub-Saharan Africa	24184	Lucius Wilkins	SUPA105	Super Soft Bulk - 2 Litres	8	14.5	Equatorial Guinea
+926	2011-05-13 00:00:00.000	PURA250	81	Online	Australia and Oceania	24187	Cara Salazar	PURA250	Pure Soft Detergent - 250ml	2.3	4.5	Nauru
+927	2011-03-01 00:00:00.000	PURA200	185	Retail	Unknown	24188	Oliver Wolf	PURA200	Pure Soft Detergent - 200ml	2	3.99	Unknown
+928	2011-08-27 00:00:00.000	SUPA101	3	Retail	Australia and Oceania	24189	David Moses	SUPA101	Super Soft - Product Sample	0.3	0	Palau
+929	2011-02-22 00:00:00.000	PURA500	185	Online	Sub-Saharan Africa	24190	Stacy Hickman	PURA500	Pure Soft Detergent - 500ml	3.5	6.5	Zambia
+930	2011-01-03 00:00:00.000	SUPA103	127	Online	Europe	24191	Addison Doyle	SUPA103	Super Soft - 500ml	3.5	6.99	Macedonia
+932	2011-01-19 00:00:00.000	SUPA103	133	Direct	Unknown	24193	Lucius Figueroa	SUPA103	Super Soft - 500ml	3.5	6.99	Unknown
+933	2011-02-12 00:00:00.000	SUPA102	138	Online	Unknown	24194	Thomas Douglas	SUPA102	Super Soft - 250ml	2.5	4.5	Unknown
+934	2011-01-17 00:00:00.000	SUPA101	132	Direct	Europe	24195	Robin Stuart	SUPA101	Super Soft - Product Sample	0.3	0	Ukraine
+935	2011-07-18 00:00:00.000	SUPA104	13	Online	Asia	24196	Joelle Johns	SUPA104	Super Soft - 1 Litre	5	9.99	Tajikistan
+936	2011-07-27 00:00:00.000	PURA200	136	Retail	Europe	24197	Alma Benson	PURA200	Pure Soft Detergent - 200ml	2	3.99	United Kingdom
+937	2011-04-29 00:00:00.000	PURA200	25	Online	Sub-Saharan Africa	24198	Stacy Schwartz	PURA200	Pure Soft Detergent - 200ml	2	3.99	Botswana
+939	2011-07-11 00:00:00.000	PURA250	148	Direct	Australia and Oceania	24200	Frances Hammond	PURA250	Pure Soft Detergent - 250ml	2.3	4.5	Samoa 
+940	2011-04-22 00:00:00.000	SUPA102	175	Retail	Unknown	24201	Elizabeth Schwartz	SUPA102	Super Soft - 250ml	2.5	4.5	Unknown
+942	2011-07-02 00:00:00.000	SUPA104	39	Direct	Unknown	24203	Gisela Gay	SUPA104	Super Soft - 1 Litre	5	9.99	Unknown
+943	2011-06-13 00:00:00.000	SUPA105	80	Online	Europe	24204	Jacob Oconnor	SUPA105	Super Soft Bulk - 2 Litres	8	14.5	Germany
+944	2011-05-27 00:00:00.000	PURA250	198	Direct	Europe	24205	Priscilla Quinn	PURA250	Pure Soft Detergent - 250ml	2.3	4.5	Poland
+945	2011-05-26 00:00:00.000	PURA500	203	Retail	Sub-Saharan Africa	24206	Emerson Wilcox	PURA500	Pure Soft Detergent - 500ml	3.5	6.5	Namibia
+946	2011-01-04 00:00:00.000	SUPA101	210	Online	Asia	24207	Oliver Cherry	SUPA101	Super Soft - Product Sample	0.3	0	Philippines
+947	2011-01-21 00:00:00.000	PURA250	94	Retail	Australia and Oceania	24208	Ramona Munoz	PURA250	Pure Soft Detergent - 250ml	2.3	4.5	Vanuatu
+948	2011-07-01 00:00:00.000	SUPA103	142	Direct	Australia and Oceania	24209	Felicia Turner	SUPA103	Super Soft - 500ml	3.5	6.99	Nauru
+949	2011-06-12 00:00:00.000	SUPA102	94	Retail	Europe	24210	Autumn Anthony	SUPA102	Super Soft - 250ml	2.5	4.5	Georgia
+950	2011-07-05 00:00:00.000	PURA100	129	Direct	Unknown	24211	Eaton Shaffer	PURA100	Pure Soft Detergent - 100ml	1.5	3	Unknown
+951	2011-03-22 00:00:00.000	SUPA102	15	Retail	Unknown	24212	Karyn Nolan	SUPA102	Super Soft - 250ml	2.5	4.5	Unknown
+952	2011-05-14 00:00:00.000	SUPA104	155	Online	Central America and the Caribbean	24213	Lance Durham	SUPA104	Super Soft - 1 Litre	5	9.99	Trinidad and Tobago
+953	2011-02-21 00:00:00.000	SUPA104	120	Online	Europe	24214	Leigh Little	SUPA104	Super Soft - 1 Litre	5	9.99	Iceland
+954	2011-05-14 00:00:00.000	PURA100	171	Direct	Unknown	24215	Denise Harrington	PURA100	Pure Soft Detergent - 100ml	1.5	3	Unknown
+955	2011-03-22 00:00:00.000	PURA200	11	Retail	Europe	24216	Hollee Briggs	PURA200	Pure Soft Detergent - 200ml	2	3.99	Greece
+956	2011-07-02 00:00:00.000	SUPA104	159	Online	Asia	24217	Keegan Moses	SUPA104	Super Soft - 1 Litre	5	9.99	Japan
+960	2011-05-03 00:00:00.000	SUPA103	190	Online	Middle East and North Africa	24221	Daphne Curry	SUPA103	Super Soft - 500ml	3.5	6.99	Azerbaijan
+961	2011-01-30 00:00:00.000	SUPA103	3	Online	Sub-Saharan Africa	24222	Slade Russo	SUPA103	Super Soft - 500ml	3.5	6.99	Rwanda
+962	2011-01-15 00:00:00.000	PURA200	106	Retail	Europe	24223	Brenda Hays	PURA200	Pure Soft Detergent - 200ml	2	3.99	Cyprus
+964	2011-01-10 00:00:00.000	PURA100	141	Online	Middle East and North Africa	24225	Clementine Hewitt	PURA100	Pure Soft Detergent - 100ml	1.5	3	Egypt
+965	2011-03-20 00:00:00.000	PURA100	64	Retail	Sub-Saharan Africa	24226	Cherokee Shaffer	PURA100	Pure Soft Detergent - 100ml	1.5	3	Rwanda
+967	2011-05-23 00:00:00.000	PURA250	1	Direct	Sub-Saharan Africa	24228	Hayley Williamson	PURA250	Pure Soft Detergent - 250ml	2.3	4.5	Sierra Leone
+969	2011-07-31 00:00:00.000	SUPA101	84	Online	Asia	24230	Iliana Dawson	SUPA101	Super Soft - Product Sample	0.3	0	Bangladesh
+970	2011-08-28 00:00:00.000	PURA250	33	Retail	Central America and the Caribbean	24231	Rose Baker	PURA250	Pure Soft Detergent - 250ml	2.3	4.5	Honduras
+972	2011-03-12 00:00:00.000	SUPA102	162	Online	Unknown	24233	Haviva Stevenson	SUPA102	Super Soft - 250ml	2.5	4.5	Unknown
+973	2011-08-20 00:00:00.000	SUPA103	204	Online	Central America and the Caribbean	24234	Selma Roach	SUPA103	Super Soft - 500ml	3.5	6.99	Haiti
+974	2011-07-12 00:00:00.000	SUPA103	138	Retail	Sub-Saharan Africa	24235	Florence Pennington	SUPA103	Super Soft - 500ml	3.5	6.99	Sudan
+976	2011-07-27 00:00:00.000	PURA100	110	Direct	Australia and Oceania	24237	Tamara Hodges	PURA100	Pure Soft Detergent - 100ml	1.5	3	New Zealand
+978	2011-06-04 00:00:00.000	PURA200	201	Retail	Unknown	24239	Victor Suarez	PURA200	Pure Soft Detergent - 200ml	2	3.99	Unknown
+979	2011-05-05 00:00:00.000	PURA250	44	Retail	Asia	24240	Roary Gray	PURA250	Pure Soft Detergent - 250ml	2.3	4.5	Japan
+980	2011-08-06 00:00:00.000	PURA250	36	Retail	Europe	24241	Otto Golden	PURA250	Pure Soft Detergent - 250ml	2.3	4.5	Belgium
+982	2011-02-05 00:00:00.000	PURA200	88	Online	Europe	24243	Lester Emerson	PURA200	Pure Soft Detergent - 200ml	2	3.99	Hungary
+983	2011-08-30 00:00:00.000	PURA200	16	Direct	Australia and Oceania	24244	Bell Shaffer	PURA200	Pure Soft Detergent - 200ml	2	3.99	Nauru
+984	2011-07-08 00:00:00.000	SUPA102	138	Retail	Europe	24245	Shoshana Wilkinson	SUPA102	Super Soft - 250ml	2.5	4.5	Greece
+985	2011-06-12 00:00:00.000	SUPA104	92	Online	Europe	24246	Vivian Colon	SUPA104	Super Soft - 1 Litre	5	9.99	Latvia
+986	2011-07-30 00:00:00.000	PURA250	74	Retail	Europe	24247	Forrest Maddox	PURA250	Pure Soft Detergent - 250ml	2.3	4.5	Iceland
+987	2011-05-30 00:00:00.000	SUPA101	144	Direct	Sub-Saharan Africa	24248	Clayton Gomez	SUPA101	Super Soft - Product Sample	0.3	0	Mali
+988	2011-03-09 00:00:00.000	SUPA101	151	Retail	Europe	24249	Jerome Hoffman	SUPA101	Super Soft - Product Sample	0.3	0	Czech Republic
+989	2011-03-09 00:00:00.000	SUPA102	11	Direct	Middle East and North Africa	24250	Maia Schmidt	SUPA102	Super Soft - 250ml	2.5	4.5	Azerbaijan
+990	2011-04-28 00:00:00.000	PURA500	15	Retail	Europe	24251	Deacon Williamson	PURA500	Pure Soft Detergent - 500ml	3.5	6.5	Latvia
+991	2011-06-05 00:00:00.000	PURA250	170	Retail	Unknown	24252	Wynne Poole	PURA250	Pure Soft Detergent - 250ml	2.3	4.5	Unknown
+995	2011-05-08 00:00:00.000	PURA500	43	Retail	Australia and Oceania	24256	Quail Knox	PURA500	Pure Soft Detergent - 500ml	3.5	6.5	Tonga
+997	2011-01-13 00:00:00.000	SUPA103	80	Retail	Unknown	24258	Kuame Wallace	SUPA103	Super Soft - 500ml	3.5	6.99	Unknown
+998	2011-08-10 00:00:00.000	PURA500	138	Online	Unknown	24259	Lester Fisher	PURA500	Pure Soft Detergent - 500ml	3.5	6.5	Unknown
