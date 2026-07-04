@@ -1,0 +1,73 @@
+table Date
+	lineageTag: f6edb025-3349-40a7-90b1-67236be5cd93
+
+	column 'Date Key'
+		dataType: int64
+		isHidden
+		lineageTag: de28ef94-86d8-41d0-af89-462909b9bef5
+		summarizeBy: none
+		sourceColumn: date_sk
+
+	column Date
+		dataType: dateTime
+		formatString: Long Date
+		lineageTag: 4627720f-8c6f-4361-a687-d7366222efa0
+		summarizeBy: none
+		sourceColumn: date_value
+
+		variation Variation
+			isDefault
+			relationship: ff39da6f-db33-406e-9222-6b199f63233b
+			defaultHierarchy: LocalDateTable_2db43de1-0c81-4fe1-9a96-098cbc0af815.'Date Hierarchy'
+
+		annotation UnderlyingDateTimeDataType = Date
+
+	column Day
+		dataType: int64
+		lineageTag: 416fcb92-a70a-42dc-829c-d532864c4c74
+		summarizeBy: sum
+		sourceColumn: day
+
+		annotation SummarizationSetBy = Automatic
+
+	column Week
+		dataType: int64
+		lineageTag: 5d1e96aa-66df-4411-a057-62f79a2bafdc
+		summarizeBy: sum
+		sourceColumn: week
+
+		annotation SummarizationSetBy = Automatic
+
+	column Month
+		dataType: int64
+		lineageTag: c13baba1-9428-4849-a140-00fc2e100ffc
+		summarizeBy: sum
+		sourceColumn: month
+
+		annotation SummarizationSetBy = Automatic
+
+	column Quarter
+		dataType: int64
+		lineageTag: e98ed741-f9ba-419d-8860-36ee28dc3891
+		summarizeBy: sum
+		sourceColumn: quarter
+
+		annotation SummarizationSetBy = Automatic
+
+	column Year
+		dataType: int64
+		lineageTag: 1a739a93-8b7a-4cd9-a563-1df1df780933
+		summarizeBy: sum
+		sourceColumn: year
+
+		annotation SummarizationSetBy = Automatic
+
+	partition Date = m
+		mode: import
+		source =
+				let
+				    Source = DbSource,
+				    data = Source{[Schema="dw",Item="dim_date"]}[Data]
+				in
+				    data
+

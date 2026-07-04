@@ -1,0 +1,150 @@
+table Sales
+	lineageTag: 821ad8e7-f0aa-4a10-bc96-be6b8cce3db5
+
+	/// Total sales amount (additive).
+	measure 'Total Sales' = SUM(Sales[Sales Amount])
+		formatString: $#,##0
+		lineageTag: eda02266-413d-4022-a2b0-9930f9c12038
+
+	/// Total units sold (additive).
+	measure 'Total Quantity' = SUM(Sales[Quantity])
+		formatString: #,##0
+		lineageTag: 759ebf32-b56a-4319-9f5f-350bce21c80c
+
+	/// Total profit (additive; can be negative).
+	measure 'Total Profit' = SUM(Sales[Profit])
+		formatString: $#,##0
+		lineageTag: 3b669b0a-9c56-4c7b-a7a9-19f15cb92f94
+
+	/// Profit as a percentage of sales.
+	measure 'Profit Margin %' = DIVIDE([Total Profit], [Total Sales])
+		formatString: 0.0%
+		lineageTag: 21858977-b2bc-4864-8a70-f6d5d2c30f21
+
+	/// Average discount rate (non-additive measure).
+	measure 'Avg Discount' = AVERAGE(Sales[Discount])
+		formatString: 0.0%
+		lineageTag: 488937a1-22a1-4b6f-8d26-2409c1b059bb
+
+	/// Number of order lines (fact rows).
+	measure 'Order Lines' = COUNTROWS(Sales)
+		formatString: #,##0
+		lineageTag: cd772f73-c8d2-4651-a4fb-16e08b4d8228
+
+	/// Distinct order count (uses the degenerate Order ID).
+	measure 'Distinct Orders' = DISTINCTCOUNT(Sales[Order ID])
+		formatString: #,##0
+		lineageTag: 47f10a16-ff86-4a0e-8084-6c1fc83e83f2
+
+	column 'Fact Key'
+		dataType: int64
+		isHidden
+		lineageTag: c4f3b0f3-b354-4c45-829f-89fcfcdda6e7
+		summarizeBy: count
+		sourceColumn: fact_sk
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Row ID'
+		dataType: int64
+		isHidden
+		lineageTag: 928f783f-b5ad-4ece-bbcf-de95435522da
+		summarizeBy: count
+		sourceColumn: row_id
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Order ID'
+		dataType: string
+		lineageTag: 7f868148-f492-4610-b00a-3e1c5c0b6c83
+		summarizeBy: none
+		sourceColumn: order_id
+
+	column 'Customer Key'
+		dataType: int64
+		isHidden
+		lineageTag: 6565eecb-ec94-4679-9453-d94d91d55b31
+		summarizeBy: none
+		sourceColumn: customer_sk
+
+	column 'Product Key'
+		dataType: int64
+		isHidden
+		lineageTag: 9bba14ed-432a-42fc-97d3-1c0d604c84b9
+		summarizeBy: none
+		sourceColumn: product_sk
+
+	column 'Ship Mode Key'
+		dataType: int64
+		isHidden
+		lineageTag: 1fedc18b-5135-475c-86a1-64d5039967ef
+		summarizeBy: none
+		sourceColumn: ship_mode_sk
+
+	column 'Geography Key'
+		dataType: int64
+		isHidden
+		lineageTag: dc4d607d-d669-4e93-9af2-f19dbec2c526
+		summarizeBy: none
+		sourceColumn: geog_sk
+
+	column 'Order Date Key'
+		dataType: int64
+		isHidden
+		lineageTag: 596e44e4-b664-4797-97a7-a8e160dbdcec
+		summarizeBy: none
+		sourceColumn: order_date_sk
+
+	column 'Ship Date'
+		dataType: dateTime
+		formatString: Long Date
+		lineageTag: c13c171d-c848-49fc-8109-3b4f422e6f83
+		summarizeBy: none
+		sourceColumn: ship_date
+
+		variation Variation
+			isDefault
+			relationship: d2717172-6915-4d10-98d3-e91ffc16d25d
+			defaultHierarchy: LocalDateTable_9c6a6634-e75b-4ee7-958c-1c1e0665254e.'Date Hierarchy'
+
+		annotation UnderlyingDateTimeDataType = Date
+
+	column 'Sales Amount'
+		dataType: double
+		isHidden
+		lineageTag: 517e3a4a-e3bc-49b0-abb0-af02b065c0a8
+		summarizeBy: sum
+		sourceColumn: sales
+
+	column Quantity
+		dataType: int64
+		isHidden
+		lineageTag: 349d925d-1ff7-4a51-b89e-547465d5c91c
+		summarizeBy: sum
+		sourceColumn: qty
+
+	column Discount
+		dataType: double
+		isHidden
+		lineageTag: 2a0b0d23-e335-4013-8995-d6f1ce56a212
+		summarizeBy: sum
+		sourceColumn: discount
+
+		annotation SummarizationSetBy = Automatic
+
+	column Profit
+		dataType: double
+		isHidden
+		lineageTag: 8acba451-40b3-4301-95bb-5d8d19194d4d
+		summarizeBy: sum
+		sourceColumn: profit
+
+	partition Sales = m
+		mode: import
+		source =
+				let
+				    Source = DbSource,
+				    data = Source{[Schema="dw",Item="fact_order_item"]}[Data]
+				in
+				    data
+

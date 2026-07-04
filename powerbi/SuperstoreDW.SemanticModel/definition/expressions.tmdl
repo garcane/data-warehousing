@@ -1,0 +1,10 @@
+/// Connection to the Superstore warehouse (PostgreSQL / Import). Edit host/database to repoint; see powerbi/README.md to switch to SQL Server.
+expression DbSource =
+		let
+		    Source = PostgreSQL.Database("localhost", "dw_superstore")
+		in
+		    Source
+	lineageTag: 421a2c4f-f43e-4083-9575-154ed9a1a8f6
+
+	annotation PBI_ResultType = Table
+

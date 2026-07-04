@@ -1,0 +1,43 @@
+table Product
+	lineageTag: 95a5b23b-b3ed-4ec9-adb5-9fa32fcd6639
+
+	column 'Product Key'
+		dataType: int64
+		isHidden
+		lineageTag: 11a28ecc-192a-4a7e-8f26-953de064916d
+		summarizeBy: none
+		sourceColumn: product_sk
+
+	column 'Product ID'
+		dataType: string
+		lineageTag: 42fbbfd0-be00-42fe-a19f-afd230799d9e
+		summarizeBy: none
+		sourceColumn: product_id
+
+	column 'Product Name'
+		dataType: string
+		lineageTag: 690dc203-60ae-4dbf-9c20-f6c8816d91f3
+		summarizeBy: none
+		sourceColumn: product_name
+
+	column Category
+		dataType: string
+		lineageTag: ac17adae-70d3-472f-84aa-f27ada8368d5
+		summarizeBy: none
+		sourceColumn: product_category
+
+	column Sub-Category
+		dataType: string
+		lineageTag: 534f55e2-d767-45ef-8e57-76f621f6666f
+		summarizeBy: none
+		sourceColumn: product_sub_category
+
+	partition Product = m
+		mode: import
+		source =
+				let
+				    Source = DbSource,
+				    data = Source{[Schema="dw",Item="dim_product"]}[Data]
+				in
+				    data
+

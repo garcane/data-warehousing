@@ -1,0 +1,52 @@
+table Geography
+	lineageTag: cf7f3a81-7697-4587-b7cb-c0a2c86490cb
+
+	column 'Geography Key'
+		dataType: int64
+		isHidden
+		lineageTag: 2de42a9b-a279-484a-9e63-df8ea8aeb8b0
+		summarizeBy: none
+		sourceColumn: geog_sk
+
+	column Country
+		dataType: string
+		lineageTag: 894ea1ca-5592-4f9a-8c2b-d9c55ebc5467
+		summarizeBy: none
+		sourceColumn: country
+
+	column Region
+		dataType: string
+		lineageTag: 329151e0-78f1-453e-8842-f5d1788079b0
+		summarizeBy: none
+		sourceColumn: region
+
+	column State
+		dataType: string
+		lineageTag: 95b7300e-4ed0-4143-a21a-4b106dae7b2c
+		dataCategory: StateOrProvince
+		summarizeBy: none
+		sourceColumn: state
+
+	column City
+		dataType: string
+		lineageTag: c6a40abe-6a3d-4114-9ff0-beffd2115a95
+		dataCategory: City
+		summarizeBy: none
+		sourceColumn: city
+
+	column 'Postal Code'
+		dataType: string
+		lineageTag: 5a731afe-51a4-421b-bc9d-cf0debd305cc
+		dataCategory: PostalCode
+		summarizeBy: none
+		sourceColumn: postal_code
+
+	partition Geography = m
+		mode: import
+		source =
+				let
+				    Source = DbSource,
+				    data = Source{[Schema="dw",Item="dim_geog"]}[Data]
+				in
+				    data
+

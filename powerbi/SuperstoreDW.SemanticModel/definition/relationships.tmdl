@@ -1,0 +1,30 @@
+relationship rel_Sales_Customer
+	fromColumn: Sales.'Customer Key'
+	toColumn: Customer.'Customer Key'
+
+relationship rel_Sales_Product
+	fromColumn: Sales.'Product Key'
+	toColumn: Product.'Product Key'
+
+relationship rel_Sales_Geography
+	fromColumn: Sales.'Geography Key'
+	toColumn: Geography.'Geography Key'
+
+relationship rel_Sales_ShipMode
+	fromColumn: Sales.'Ship Mode Key'
+	toColumn: 'Ship Mode'.'Ship Mode Key'
+
+relationship rel_Sales_Date
+	fromColumn: Sales.'Order Date Key'
+	toColumn: Date.'Date Key'
+
+relationship ff39da6f-db33-406e-9222-6b199f63233b
+	joinOnDateBehavior: datePartOnly
+	fromColumn: Date.Date
+	toColumn: LocalDateTable_2db43de1-0c81-4fe1-9a96-098cbc0af815.Date
+
+relationship d2717172-6915-4d10-98d3-e91ffc16d25d
+	joinOnDateBehavior: datePartOnly
+	fromColumn: Sales.'Ship Date'
+	toColumn: LocalDateTable_9c6a6634-e75b-4ee7-958c-1c1e0665254e.Date
+

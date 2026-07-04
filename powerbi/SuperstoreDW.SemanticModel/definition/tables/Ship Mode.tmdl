@@ -1,0 +1,25 @@
+table 'Ship Mode'
+	lineageTag: 7888d2b7-b6c4-4da9-ab25-2ce4bd14429b
+
+	column 'Ship Mode Key'
+		dataType: int64
+		isHidden
+		lineageTag: fedcbc66-18f6-4cc8-b2c7-4661123d38c9
+		summarizeBy: none
+		sourceColumn: ship_mode_sk
+
+	column 'Ship Mode'
+		dataType: string
+		lineageTag: bc4a08fc-a6c2-4d5f-9450-a20b5109dac1
+		summarizeBy: none
+		sourceColumn: ship_mode
+
+	partition 'Ship Mode' = m
+		mode: import
+		source =
+				let
+				    Source = DbSource,
+				    data = Source{[Schema="dw",Item="dim_ship_mode"]}[Data]
+				in
+				    data
+

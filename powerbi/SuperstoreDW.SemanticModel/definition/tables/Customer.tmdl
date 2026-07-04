@@ -1,0 +1,37 @@
+table Customer
+	lineageTag: c7b74732-b1ee-48ef-b35c-8caff05f49fa
+
+	column 'Customer Key'
+		dataType: int64
+		isHidden
+		lineageTag: 9ae7dd5f-737b-4de7-9e5b-156e49f5b90d
+		summarizeBy: none
+		sourceColumn: customer_sk
+
+	column 'Customer ID'
+		dataType: string
+		lineageTag: 032907e5-5c98-4393-b604-d45a9f6ff385
+		summarizeBy: none
+		sourceColumn: customer_id
+
+	column 'Customer Name'
+		dataType: string
+		lineageTag: 476ddd41-659a-4ea5-85f6-b95fede7b45b
+		summarizeBy: none
+		sourceColumn: customer_name
+
+	column Segment
+		dataType: string
+		lineageTag: deb53f8c-1e4e-421e-9b99-6653dbeb6b17
+		summarizeBy: none
+		sourceColumn: customer_segment
+
+	partition Customer = m
+		mode: import
+		source =
+				let
+				    Source = DbSource,
+				    data = Source{[Schema="dw",Item="dim_customer"]}[Data]
+				in
+				    data
+
