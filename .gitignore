@@ -1,0 +1,33 @@
+# ---- OS / editor ----
+Thumbs.db
+Desktop.ini
+.DS_Store
+*.swp
+.vscode/
+.idea/
+
+# ---- SQL Server / SSMS / SSDT ----
+*.bak
+*.mdf
+*.ldf
+*.ndf
+bin/
+obj/
+*.user
+*.suo
+*.ispac
+
+# ---- PostgreSQL ----
+*.dump
+
+# ---- Local secrets / connection config (never commit) ----
+.env
+*.local.sql
+connection*.json
+secrets*
+
+# ---- Large local data (keep the curated sample-data/Superstore.csv tracked) ----
+*.tmp
+
+# Local build copy of the sample data (source of truth is sample-data/)
+postgres/Superstore.csv

@@ -1,0 +1,52 @@
+<mxfile host="app.diagrams.net" type="device">
+  <diagram id="star" name="Star Schema">
+    <mxGraphModel dx="900" dy="600" grid="1" gridSize="10" guides="1" tooltips="1" connect="1"
+                  arrows="1" fold="1" page="1" pageScale="1" pageWidth="1100" pageHeight="750" math="0" shadow="0">
+      <root>
+        <mxCell id="0"/>
+        <mxCell id="1" parent="0"/>
+
+        <!-- FACT -->
+        <mxCell id="fact" value="FACTOrderItem&#10;&#10;PK Fact_SK&#10;Row_Id, Order_Id (DD)&#10;FK Customer_SK, Product_SK&#10;FK ShipMode_SK, Geog_SK&#10;FK OrderDate_SK&#10;ShipDate&#10;Sales, Qty, Discount, Profit&#10;(grain: one order line item)"
+                style="rounded=1;whiteSpace=wrap;html=1;align=left;verticalAlign=top;spacingLeft=8;spacingTop=6;fillColor=#fdecea;strokeColor=#c0392b;fontSize=11;"
+                vertex="1" parent="1">
+          <mxGeometry x="440" y="300" width="230" height="160" as="geometry"/>
+        </mxCell>
+
+        <!-- DIMENSIONS -->
+        <mxCell id="date" value="dimDate&#10;&#10;PK Date_SK&#10;DateValue&#10;Day, Week, Month&#10;Quarter, Year"
+                style="rounded=1;whiteSpace=wrap;html=1;align=left;verticalAlign=top;spacingLeft=8;spacingTop=6;fillColor=#eaf2fb;strokeColor=#2f6fb0;fontSize=11;"
+                vertex="1" parent="1">
+          <mxGeometry x="80" y="80" width="200" height="110" as="geometry"/>
+        </mxCell>
+        <mxCell id="cust" value="dimCustomer&#10;&#10;PK Customer_SK&#10;CustomerId (NK)&#10;CustomerName&#10;CustomerSegment"
+                style="rounded=1;whiteSpace=wrap;html=1;align=left;verticalAlign=top;spacingLeft=8;spacingTop=6;fillColor=#eaf2fb;strokeColor=#2f6fb0;fontSize=11;"
+                vertex="1" parent="1">
+          <mxGeometry x="820" y="80" width="200" height="110" as="geometry"/>
+        </mxCell>
+        <mxCell id="prod" value="dimProduct&#10;&#10;PK Product_SK&#10;ProductId+Name (NK)&#10;ProductCategory&#10;ProductSubCategory"
+                style="rounded=1;whiteSpace=wrap;html=1;align=left;verticalAlign=top;spacingLeft=8;spacingTop=6;fillColor=#eaf2fb;strokeColor=#2f6fb0;fontSize=11;"
+                vertex="1" parent="1">
+          <mxGeometry x="820" y="330" width="200" height="110" as="geometry"/>
+        </mxCell>
+        <mxCell id="geog" value="dimGeog&#10;&#10;PK Geog_SK&#10;Country, Region, State&#10;City + PostalCode (NK)"
+                style="rounded=1;whiteSpace=wrap;html=1;align=left;verticalAlign=top;spacingLeft=8;spacingTop=6;fillColor=#eaf2fb;strokeColor=#2f6fb0;fontSize=11;"
+                vertex="1" parent="1">
+          <mxGeometry x="80" y="560" width="200" height="100" as="geometry"/>
+        </mxCell>
+        <mxCell id="ship" value="dimShipMode&#10;&#10;PK ShipMode_SK&#10;ShipMode (NK)"
+                style="rounded=1;whiteSpace=wrap;html=1;align=left;verticalAlign=top;spacingLeft=8;spacingTop=6;fillColor=#eaf2fb;strokeColor=#2f6fb0;fontSize=11;"
+                vertex="1" parent="1">
+          <mxGeometry x="820" y="570" width="200" height="80" as="geometry"/>
+        </mxCell>
+
+        <!-- EDGES -->
+        <mxCell id="e1" style="endArrow=none;html=1;strokeColor=#888;" edge="1" parent="1" source="date" target="fact"><mxGeometry relative="1" as="geometry"/></mxCell>
+        <mxCell id="e2" style="endArrow=none;html=1;strokeColor=#888;" edge="1" parent="1" source="cust" target="fact"><mxGeometry relative="1" as="geometry"/></mxCell>
+        <mxCell id="e3" style="endArrow=none;html=1;strokeColor=#888;" edge="1" parent="1" source="prod" target="fact"><mxGeometry relative="1" as="geometry"/></mxCell>
+        <mxCell id="e4" style="endArrow=none;html=1;strokeColor=#888;" edge="1" parent="1" source="geog" target="fact"><mxGeometry relative="1" as="geometry"/></mxCell>
+        <mxCell id="e5" style="endArrow=none;html=1;strokeColor=#888;" edge="1" parent="1" source="ship" target="fact"><mxGeometry relative="1" as="geometry"/></mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>

@@ -1,0 +1,61 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 300" font-family="Segoe UI, Arial, sans-serif">
+  <style>
+    .box  { rx:8; stroke-width:1.5; }
+    .lbl  { font-size:13px; font-weight:700; text-anchor:middle; }
+    .sub  { font-size:10.5px; text-anchor:middle; fill:#444; }
+    .cap  { font-size:16px; font-weight:700; fill:#555; text-anchor:middle; }
+    .arrow{ stroke:#666; stroke-width:2; marker-end:url(#ah); }
+  </style>
+  <defs>
+    <marker id="ah" markerWidth="9" markerHeight="9" refX="7" refY="4" orient="auto">
+      <path d="M0,0 L8,4 L0,8 z" fill="#666"/>
+    </marker>
+  </defs>
+
+  <text x="480" y="30" class="cap">ETL / ELT Pipeline</text>
+
+  <!-- Source -->
+  <rect x="20"  y="90" width="150" height="90" class="box" fill="#f4f6f7" stroke="#7f8c8d"/>
+  <text x="95"  y="120" class="lbl">Source</text>
+  <text x="95"  y="142" class="sub">Superstore.csv</text>
+  <text x="95"  y="158" class="sub">9,994 rows</text>
+
+  <!-- Staging -->
+  <rect x="215" y="90" width="150" height="90" class="box" fill="#fef9e7" stroke="#b7950b"/>
+  <text x="290" y="120" class="lbl">Staging</text>
+  <text x="290" y="142" class="sub">SuperstoreStaging</text>
+  <text x="290" y="158" class="sub">raw, 1:1 load</text>
+
+  <!-- Warehouse -->
+  <rect x="410" y="90" width="150" height="90" class="box" fill="#eafaf1" stroke="#1e8449"/>
+  <text x="485" y="118" class="lbl">Warehouse</text>
+  <text x="485" y="140" class="sub">5 dims + 1 fact</text>
+  <text x="485" y="156" class="sub">surrogate keys</text>
+
+  <!-- Presentation -->
+  <rect x="605" y="90" width="150" height="90" class="box" fill="#eaf2fb" stroke="#2f6fb0"/>
+  <text x="680" y="118" class="lbl">Presentation</text>
+  <text x="680" y="140" class="sub">Cube0-3, MegaCube</text>
+  <text x="680" y="156" class="sub">views</text>
+
+  <!-- Reporting -->
+  <rect x="800" y="90" width="150" height="90" class="box" fill="#f5eef8" stroke="#7d3c98"/>
+  <text x="875" y="120" class="lbl">Reporting</text>
+  <text x="875" y="142" class="sub">Power BI</text>
+  <text x="875" y="158" class="sub">SQL clients</text>
+
+  <!-- arrows -->
+  <line x1="170" y1="135" x2="212" y2="135" class="arrow"/>
+  <line x1="365" y1="135" x2="407" y2="135" class="arrow"/>
+  <line x1="560" y1="135" x2="602" y2="135" class="arrow"/>
+  <line x1="755" y1="135" x2="797" y2="135" class="arrow"/>
+
+  <!-- step captions -->
+  <text x="191" y="205" class="sub">BULK INSERT / \copy</text>
+  <text x="386" y="205" class="sub">INSERT..SELECT DISTINCT</text>
+  <text x="386" y="220" class="sub">+ surrogate-key pipeline</text>
+  <text x="581" y="205" class="sub">star joins + GROUP BY</text>
+  <text x="776" y="205" class="sub">slice &amp; dice</text>
+
+  <text x="480" y="270" class="sub">Idempotent, transactional reload: EXEC usp_Load_SuperstoreDW  /  CALL dw.load_superstore_dw()</text>
+</svg>
