@@ -1,0 +1,348 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>SuperstoreDW — Sales Dashboard Specification v2.0</title>
+<style>
+:root{--navy:#12294a;--navy2:#1d3f6e;--ink:#1c2733;--paper:#ffffff;--wash:#f4f7fb;
+--line:#d7e0ea;--accent:#2e6da4;--amber-bg:#fdf3e0;--amber-bd:#e0a83c;--note-bg:#eef4fa;
+--note-bd:#9dbfe0;--mono:'Consolas','Courier New',monospace;}
+*{box-sizing:border-box;margin:0;padding:0;}
+body{font-family:Georgia,'Times New Roman',serif;color:var(--ink);background:var(--wash);line-height:1.55;}
+.page{max-width:960px;margin:0 auto;background:var(--paper);box-shadow:0 0 12px rgba(18,41,74,.12);}
+header.cover{background:var(--navy);color:#fff;padding:56px 64px 44px;}
+header.cover h1{font-size:2.1em;font-weight:normal;letter-spacing:.5px;margin-bottom:.25em;}
+header.cover .subtitle{font-size:1.15em;color:#c9d7e8;margin-bottom:1.6em;}
+.covermeta{display:flex;gap:2.5em;flex-wrap:wrap;border-top:1px solid #3a5a85;padding-top:1.1em;font-size:.92em;}
+.covermeta div span{display:block;color:#9fb4cf;font-size:.82em;text-transform:uppercase;letter-spacing:1px;}
+main{padding:40px 64px 64px;}
+section{margin-bottom:2.8em;}
+h2{color:var(--navy);font-size:1.45em;border-bottom:2px solid var(--navy);padding-bottom:.25em;margin:1.6em 0 .8em;font-weight:normal;}
+.secnum{display:inline-block;min-width:1.6em;color:var(--accent);font-weight:bold;margin-right:.35em;}
+h3{color:var(--navy2);font-size:1.12em;margin:1.4em 0 .5em;}
+h4{color:var(--navy2);font-size:1em;margin:1.1em 0 .4em;}
+p{margin:.55em 0;}
+ul,ol{margin:.55em 0 .55em 1.6em;}
+li{margin:.25em 0;}
+a{color:var(--accent);}
+table.datatable{border-collapse:collapse;width:100%;margin:.8em 0;font-size:.9em;font-family:'Segoe UI',Arial,sans-serif;}
+table.datatable th{background:var(--navy);color:#fff;text-align:left;padding:.45em .6em;font-weight:600;}
+table.datatable td{border:1px solid var(--line);padding:.4em .6em;vertical-align:top;}
+table.datatable tr:nth-child(even) td{background:var(--wash);}
+code{font-family:var(--mono);font-size:.88em;background:var(--wash);border:1px solid var(--line);border-radius:3px;padding:0 .25em;}
+.codeblock{margin:.9em 0;border:1px solid var(--line);border-radius:4px;overflow:hidden;}
+.codelabel{background:var(--navy);color:#fff;font-family:'Segoe UI',Arial,sans-serif;font-size:.8em;padding:.35em .8em;display:flex;justify-content:space-between;}
+.codelang{color:#9fb4cf;text-transform:uppercase;letter-spacing:1px;}
+.codeblock pre{background:#0e1f38;color:#e8eef6;padding:.9em 1em;overflow-x:auto;font-size:.85em;line-height:1.5;}
+.codeblock pre code{background:none;border:none;padding:0;color:inherit;font-size:1em;}
+.callout{border-left:4px solid;border-radius:0 4px 4px 0;padding:.7em .9em;margin:.9em 0;font-size:.93em;font-family:'Segoe UI',Arial,sans-serif;}
+.callout-title{font-weight:700;margin-bottom:.25em;}
+.callout.note,.callout.standing,.callout.tip{background:var(--note-bg);border-color:var(--note-bd);}
+.callout.amber{background:var(--amber-bg);border-color:var(--amber-bd);}
+nav.toc{background:var(--wash);border:1px solid var(--line);border-radius:4px;padding:1em 1.4em;font-family:'Segoe UI',Arial,sans-serif;font-size:.93em;}
+nav.toc ol{margin-left:1.2em;}
+.visualcard{border:1px solid var(--line);border-radius:4px;margin:1em 0;overflow:hidden;}
+.visualcard .vc-head{background:var(--navy2);color:#fff;padding:.45em .8em;font-family:'Segoe UI',Arial,sans-serif;font-size:.92em;display:flex;justify-content:space-between;flex-wrap:wrap;gap:.5em;}
+.visualcard .vc-body{padding:.6em .9em;}
+.kbd{font-family:var(--mono);font-size:.85em;}
+footer{background:var(--navy);color:#c9d7e8;padding:1.2em 64px;font-size:.85em;font-family:'Segoe UI',Arial,sans-serif;}
+.checklist li{margin:.4em 0;}
+.badge{display:inline-block;font-family:'Segoe UI',Arial,sans-serif;font-size:.7em;font-weight:700;
+letter-spacing:1px;text-transform:uppercase;border-radius:3px;padding:.15em .6em;vertical-align:middle;margin-left:.6em;}
+.badge.built{background:#e3efe3;color:#25562a;border:1px solid #8fbb93;}
+.badge.tobuild{background:var(--amber-bg);color:#7a5210;border:1px solid var(--amber-bd);}
+.pagemeta{background:var(--wash);border:1px solid var(--line);border-radius:4px;padding:.6em .9em;
+margin:.7em 0;font-size:.93em;font-family:'Segoe UI',Arial,sans-serif;}
+.pagemeta strong{color:var(--navy2);}
+@media print{.page{box-shadow:none;}body{background:#fff;}}
+</style>
+</head>
+<body>
+<div class="page">
+<header class="cover">
+<h1>SuperstoreDW &mdash; Sales Dashboard Specification</h1>
+<div class="subtitle">Power BI build documentation for the Superstore data warehouse reporting layer
+(semantic model &amp; seven-page business dashboard)</div>
+<div class="covermeta">
+<div><span>Version</span>2.0</div>
+<div><span>Date</span>5 July 2026</div>
+<div><span>Status</span>Final &mdash; as-built (pages 1&ndash;2) + build specification (pages 3&ndash;7)</div>
+<div><span>Source project</span>SuperstoreDW.pbip (TMDL / PBIR v4) + Dashboard Guide</div>
+</div>
+</header>
+<main>
+<section id="purpose"><h2><span class="secnum">2</span>Purpose &amp; Approach</h2>
+<p>This document is the complete build specification for the <strong>SuperstoreDW</strong> Power BI
+report — the reporting layer that sits on top of the Superstore data warehouse. It documents the
+semantic model (tables, relationships, Power Query, DAX measures) and the report pages exactly as
+they are defined in the Power BI Project (<code>SuperstoreDW.pbip</code>, TMDL/PBIR format), so that the
+report can be rebuilt, maintained, or reviewed without opening the project itself.</p>
+<p>The report answers the core commercial questions of the Superstore business — how much are we
+selling, where, to whom, at what margin, and how is that changing over time — for anyone maintaining
+or extending the warehouse and its reporting layer.</p>
+<p><strong>Scope of this version.</strong> Version 2.0 extends the as-built documentation of v1.0
+with the seven-page target design set out in the supplied <em>Dashboard Guide</em>
+(<code>DASHBOARD_GUIDE.md</code>, 5 July 2026). Pages 1&ndash;2 exist in the project and are documented
+<span class="badge built">as built</span>; pages 3&ndash;7 are specified in full for construction <span class="badge tobuild">to be built</span>. Where the guide and the
+project files differ on page&nbsp;3, the guide takes precedence (per the sponsor's instruction): the
+two existing trend charts are absorbed into the new pages&nbsp;3 and&nbsp;7 as noted in §9.3 and
+§9.7. Every planned visual binds only to columns and measures that already exist in the model — the
+seven-page build requires <strong>no new tables, columns, relationships or DAX measures</strong>.</p>
+<p><strong>Build philosophy.</strong> Every table, column, relationship, measure and visual in this
+specification traces directly to one of four verified sources: the TMDL semantic model definition,
+the PBIR report definition (<code>report.json</code>), programmatic inspection of the underlying data, or
+the sponsor-supplied Dashboard Guide. Nothing is assumed or invented. Where the project leaves
+something unfinished, this is flagged honestly as an open item rather than papered over.</p>
+<h3>2.1 Audiences and commercial use</h3><table class="datatable"><thead><tr><th>Audience</th><th>Primary pages</th><th>Decisions supported</th></tr></thead><tbody><tr><td>Sales leaders</td><td>3 &middot; 5 &middot; 6</td><td>Revenue targets, regional team comparison, fulfilment optimisation</td></tr><tr><td>Finance</td><td>7 &middot; 5 &middot; 4</td><td>Margin trends, high-margin regions, portfolio profitability</td></tr><tr><td>Operations</td><td>6 &middot; 7 &middot; 3</td><td>Logistics efficiency, discount impact, volume forecasting</td></tr><tr><td>Product managers</td><td>4 &middot; 7 &middot; 2</td><td>Category performance, margin by product, segment preferences</td></tr><tr><td>Executives / board</td><td>1</td><td>At-a-glance health check and geographic performance</td></tr></tbody></table>
+<div class="callout standing"><div class="callout-title">&#128220; Standing notice — Import model ships without cached data</div><div>The semantic model uses <strong>Import</strong> mode against the PostgreSQL warehouse. The PBIP is
+distributed without cached data, so on first open every visual reports that it cannot display until a
+refresh is run against a built and loaded <code>dw_superstore</code> database (see §4.1). All data
+observations in this document were made against the warehouse's seed dataset,
+<code>postgres/Superstore.csv</code> (9,994 rows), which is the sole feed of the warehouse.</div></div></section>
+<section id="contents"><h2><span class="secnum">3</span>Contents</h2><nav class="toc"><ol><li><a href="#purpose">Purpose &amp; Approach</a></li><li><a href="#datamodel">Data Model &amp; Sources</a></li><li><a href="#dictionary">Data Dictionary</a></li><li><a href="#powerquery">Power Query (M) Transformations</a></li><li><a href="#calccols">Calculated Columns</a></li><li><a href="#measures">Global DAX Measures</a></li><li><a href="#pages">Per-Page Specifications</a></li><li><a href="#crosspage">Cross-Page Requirements</a></li><li><a href="#validation">Validation Benchmarks</a></li><li><a href="#checklist">Implementation Checklist</a></li></ol></nav></section>
+<section id="datamodel"><h2><span class="secnum">4</span>Data Model &amp; Sources</h2>
+<h3>4.1 Source system and connection</h3>
+<p>The model imports from a <strong>PostgreSQL</strong> warehouse:</p>
+<table class="datatable"><thead><tr><th>Property</th><th>Value</th></tr></thead><tbody><tr><td>Connector</td><td><code>PostgreSQL.Database</code></td></tr><tr><td>Server</td><td><code>localhost</code></td></tr><tr><td>Database</td><td><code>dw_superstore</code></td></tr><tr><td>Schema</td><td><code>dw</code></td></tr><tr><td>Storage mode</td><td>Import (all tables)</td></tr><tr><td>Connection expression</td><td><code>DbSource</code> (shared M expression, §6.1)</td></tr></tbody></table>
+<p>Upstream of the warehouse, the single data feed is <code>postgres/Superstore.csv</code> (Windows-1252
+encoded, 9,994 data rows, 21 columns), loaded through a staging schema and set-based SQL
+(<code>postgres/run_all.sql</code>). The Power BI model reads only the finished <code>dw</code> star schema and
+performs no reshaping of its own.</p>
+<p>The prerequisite Npgsql provider and the option to repoint the connection (including a documented
+SQL Server variant) are covered in <code>powerbi/README.md</code>; where that README and the project files
+disagree, this specification follows the project files.</p>
+<h3>4.2 Table inventory</h3>
+<table class="datatable"><thead><tr><th>Model table</th><th>Role</th><th>Warehouse source</th><th>Rows (observed)</th><th>Grain / note</th></tr></thead><tbody><tr><td><code>Sales</code></td><td>Fact</td><td><code>dw.fact_order_item</code></td><td>9,994</td><td>One row per order line item</td></tr><tr><td><code>Customer</code></td><td>Dimension</td><td><code>dw.dim_customer</code></td><td>794</td><td>One row per (customer id, name, segment)</td></tr><tr><td><code>Product</code></td><td>Dimension</td><td><code>dw.dim_product</code></td><td>1,894</td><td>Natural key is (product id, product name)</td></tr><tr><td><code>Geography</code></td><td>Dimension</td><td><code>dw.dim_geog</code></td><td>632</td><td>One row per (country, region, state, city, postal code)</td></tr><tr><td><code>Ship Mode</code></td><td>Dimension</td><td><code>dw.dim_ship_mode</code></td><td>4</td><td>Junk/mini dimension</td></tr><tr><td><code>Date</code></td><td>Dimension</td><td><code>dw.dim_date</code></td><td>1,458</td><td>One row per calendar day, 3 January 2014 &ndash; 30 December 2017</td></tr></tbody></table>
+<p>Three further hidden system tables exist solely to power Power BI's automatic time intelligence:
+<code>DateTableTemplate_4857234a-…</code> and two <code>LocalDateTable_…</code> tables attached to
+<code>Date[Date]</code> and <code>Sales[Ship Date]</code>. They are auto-generated (the model has
+<code>__PBI_TimeIntelligenceEnabled = 1</code>), require no build action, and are excluded from the data
+dictionary.</p>
+<h3>4.3 Relationship register</h3>
+<p>Five relationships form a clean star: every dimension joins the fact many-to-one, single
+direction, on a hidden integer surrogate key. Cardinality is not asserted from habit — it is
+verifiable from the supplied warehouse DDL, where every dimension key is a
+<code>GENERATED ALWAYS AS IDENTITY PRIMARY KEY</code> (guaranteed unique on the one side) and every fact
+key column carries a <code>FOREIGN KEY REFERENCES</code> constraint to it.</p>
+<table class="datatable"><thead><tr><th>Relationship</th><th>From (many side)</th><th>To (one side)</th><th>Cardinality</th><th>Direction</th><th>Verified by</th></tr></thead><tbody><tr><td><code>rel_Sales_Customer</code></td><td><code>Sales[Customer Key]</code></td><td><code>Customer[Customer Key]</code></td><td>Many-to-one</td><td>Single (dimension &rarr; fact)</td><td>FK in DDL; PK on dimension key</td></tr><tr><td><code>rel_Sales_Product</code></td><td><code>Sales[Product Key]</code></td><td><code>Product[Product Key]</code></td><td>Many-to-one</td><td>Single</td><td>FK in DDL; PK on dimension key</td></tr><tr><td><code>rel_Sales_Geography</code></td><td><code>Sales[Geography Key]</code></td><td><code>Geography[Geography Key]</code></td><td>Many-to-one</td><td>Single</td><td>FK in DDL; PK on dimension key</td></tr><tr><td><code>rel_Sales_ShipMode</code></td><td><code>Sales[Ship Mode Key]</code></td><td><code>'Ship Mode'[Ship Mode Key]</code></td><td>Many-to-one</td><td>Single</td><td>FK in DDL; PK on dimension key</td></tr><tr><td><code>rel_Sales_Date</code></td><td><code>Sales[Order Date Key]</code></td><td><code>Date[Date Key]</code></td><td>Many-to-one</td><td>Single</td><td>FK in DDL; PK on dimension key</td></tr></tbody></table>
+<p>Two additional auto-generated relationships (<code>joinOnDateBehavior: datePartOnly</code>) bind
+<code>Date[Date]</code> and <code>Sales[Ship Date]</code> to their hidden local date tables; these exist only
+to serve the built-in date hierarchies used on the trend visuals (§9.3, §9.7).</p>
+</section>
+<section id="dictionary"><h2><span class="secnum">5</span>Data Dictionary</h2>
+<p>Every supplied file was inspected programmatically (pandas against the seed CSV; DDL and load
+scripts for warehouse types). Across all 9,994 rows and 21 source columns there are
+<strong>zero nulls</strong>. Column names below are verbatim from the TMDL and DDL — never
+normalised.</p>
+<div class="callout note"><div class="callout-title">&#128278; Encoding and names</div><div>The seed CSV is <strong>Windows-1252</strong> encoded and contains non-ASCII customer names (e.g. <code>Roy Französisch</code>, <code>Resi Pölking</code>). Any re-load of the warehouse must preserve that encoding or names will corrupt.</div></div>
+<h3>5.1 Sales (fact — dw.fact_order_item, 9,994 rows)</h3><table class="datatable"><thead><tr><th>Model column</th><th>Source column</th><th>Observed type</th><th>Nulls</th><th>Notes</th></tr></thead><tbody><tr><td><code>Fact Key</code></td><td><code>fact_sk</code></td><td>int64 (identity)</td><td>0</td><td>Hidden surrogate key</td></tr><tr><td><code>Row ID</code></td><td><code>row_id</code></td><td>int64</td><td>0</td><td>Hidden degenerate dimension; unique per row (no duplicates observed)</td></tr><tr><td><code>Order ID</code></td><td><code>order_id</code></td><td>string (CHAR(14))</td><td>0</td><td>Degenerate dimension; 5,010 distinct orders; format e.g. <code>CA-2016-152156</code></td></tr><tr><td><code>Customer Key</code></td><td><code>customer_sk</code></td><td>int64</td><td>0</td><td>Hidden FK &rarr; Customer</td></tr><tr><td><code>Product Key</code></td><td><code>product_sk</code></td><td>int64</td><td>0</td><td>Hidden FK &rarr; Product</td></tr><tr><td><code>Ship Mode Key</code></td><td><code>ship_mode_sk</code></td><td>int64</td><td>0</td><td>Hidden FK &rarr; Ship Mode</td></tr><tr><td><code>Geography Key</code></td><td><code>geog_sk</code></td><td>int64</td><td>0</td><td>Hidden FK &rarr; Geography</td></tr><tr><td><code>Order Date Key</code></td><td><code>order_date_sk</code></td><td>int64</td><td>0</td><td>Hidden FK &rarr; Date</td></tr><tr><td><code>Ship Date</code></td><td><code>ship_date</code></td><td>dateTime (DATE)</td><td>0</td><td>Visible role-playing date; drives its own auto date hierarchy</td></tr><tr><td><code>Sales Amount</code></td><td><code>sales</code></td><td>double</td><td>0</td><td>Hidden base column; observed range 0.444 &ndash; 22,638.48</td></tr><tr><td><code>Quantity</code></td><td><code>qty</code></td><td>int64</td><td>0</td><td>Hidden; observed values 1&ndash;14</td></tr><tr><td><code>Discount</code></td><td><code>discount</code></td><td>double (NUMERIC(3,2))</td><td>0</td><td>Hidden; 12 distinct rates, 0.00&ndash;0.80</td></tr><tr><td><code>Profit</code></td><td><code>profit</code></td><td>double</td><td>0</td><td>Hidden; observed range &minus;6,599.978 &ndash; 8,399.976 (negatives are legitimate)</td></tr></tbody></table>
+<h3>5.2 Customer (dw.dim_customer, 794 rows)</h3><table class="datatable"><thead><tr><th>Model column</th><th>Source column</th><th>Observed type</th><th>Nulls</th><th>Notes</th></tr></thead><tbody><tr><td><code>Customer Key</code></td><td><code>customer_sk</code></td><td>int64 (identity)</td><td>0</td><td>Hidden surrogate key</td></tr><tr><td><code>Customer ID</code></td><td><code>customer_id</code></td><td>string (CHAR(8))</td><td>0</td><td>794 distinct, e.g. <code>CG-12520</code></td></tr><tr><td><code>Customer Name</code></td><td><code>customer_name</code></td><td>string</td><td>0</td><td>793 distinct — one name is shared by two customer IDs; treat <code>Customer ID</code> as the identifier</td></tr><tr><td><code>Segment</code></td><td><code>customer_segment</code></td><td>string</td><td>0</td><td>3 values: Consumer, Corporate, Home Office</td></tr></tbody></table>
+<h3>5.3 Product (dw.dim_product, 1,894 rows)</h3><table class="datatable"><thead><tr><th>Model column</th><th>Source column</th><th>Observed type</th><th>Nulls</th><th>Notes</th></tr></thead><tbody><tr><td><code>Product Key</code></td><td><code>product_sk</code></td><td>int64 (identity)</td><td>0</td><td>Hidden surrogate key</td></tr><tr><td><code>Product ID</code></td><td><code>product_id</code></td><td>string (CHAR(15))</td><td>0</td><td>1,862 distinct IDs across 1,894 rows — some IDs carry more than one product name; the dimension's natural key is (ID, name)</td></tr><tr><td><code>Product Name</code></td><td><code>product_name</code></td><td>string</td><td>0</td><td>1,850 distinct</td></tr><tr><td><code>Category</code></td><td><code>product_category</code></td><td>string</td><td>0</td><td>3 values: Furniture, Office Supplies, Technology</td></tr><tr><td><code>Sub-Category</code></td><td><code>product_sub_category</code></td><td>string</td><td>0</td><td>17 values: Accessories, Appliances, Art, Binders, Bookcases, Chairs, Copiers, Envelopes, Fasteners, Furnishings, Labels, Machines, Paper, Phones, Storage, Supplies, Tables</td></tr></tbody></table>
+<h3>5.4 Geography (dw.dim_geog, 632 rows)</h3><table class="datatable"><thead><tr><th>Model column</th><th>Source column</th><th>Observed type</th><th>Nulls</th><th>Notes</th></tr></thead><tbody><tr><td><code>Geography Key</code></td><td><code>geog_sk</code></td><td>int64 (identity)</td><td>0</td><td>Hidden surrogate key</td></tr><tr><td><code>Country</code></td><td><code>country</code></td><td>string (CHAR(13))</td><td>0</td><td>1 value: United States</td></tr><tr><td><code>Region</code></td><td><code>region</code></td><td>string</td><td>0</td><td>4 values: Central, East, South, West</td></tr><tr><td><code>State</code></td><td><code>state</code></td><td>string</td><td>0</td><td>49 distinct; data category StateOrProvince</td></tr><tr><td><code>City</code></td><td><code>city</code></td><td>string</td><td>0</td><td>531 distinct; data category City</td></tr><tr><td><code>Postal Code</code></td><td><code>postal_code</code></td><td>string (CHAR(5))</td><td>0</td><td>631 distinct; data category PostalCode. Stored as text in the warehouse — correct, as it preserves leading zeros the CSV's integer typing would lose</td></tr></tbody></table>
+<h3>5.5 Ship Mode (dw.dim_ship_mode, 4 rows)</h3><table class="datatable"><thead><tr><th>Model column</th><th>Source column</th><th>Observed type</th><th>Nulls</th><th>Notes</th></tr></thead><tbody><tr><td><code>Ship Mode Key</code></td><td><code>ship_mode_sk</code></td><td>int64 (identity)</td><td>0</td><td>Hidden surrogate key</td></tr><tr><td><code>Ship Mode</code></td><td><code>ship_mode</code></td><td>string (VARCHAR(14))</td><td>0</td><td>4 values: First Class, Same Day, Second Class, Standard Class</td></tr></tbody></table>
+<h3>5.6 Date (dw.dim_date, 1,458 rows)</h3><table class="datatable"><thead><tr><th>Model column</th><th>Source column</th><th>Observed type</th><th>Nulls</th><th>Notes</th></tr></thead><tbody><tr><td><code>Date Key</code></td><td><code>date_sk</code></td><td>int64 (identity)</td><td>0</td><td>Hidden surrogate key</td></tr><tr><td><code>Date</code></td><td><code>date_value</code></td><td>dateTime (DATE)</td><td>0</td><td>Continuous calendar, 3 January 2014 &ndash; 30 December 2017 (min/max order date)</td></tr><tr><td><code>Day</code></td><td><code>day</code></td><td>int64</td><td>0</td><td>Day of month 1&ndash;31</td></tr><tr><td><code>Week</code></td><td><code>week</code></td><td>int64</td><td>0</td><td>ISO-8601 week number (differs from SQL Server's US-style DATEPART(WEEK))</td></tr><tr><td><code>Month</code></td><td><code>month</code></td><td>int64</td><td>0</td><td>1&ndash;12</td></tr><tr><td><code>Quarter</code></td><td><code>quarter</code></td><td>int64</td><td>0</td><td>1&ndash;4</td></tr><tr><td><code>Year</code></td><td><code>year</code></td><td>int64</td><td>0</td><td>2014&ndash;2017</td></tr></tbody></table>
+<div class="callout note"><div class="callout-title">&#128278; Calendar span</div><div>The load script's header comment says the calendar is expected to run 1 January 2014 – 31 December 2017, but <code>generate_series</code> actually spans min to max <em>order date</em>, i.e. 3 January 2014 – 30 December 2017 — which is exactly 1,458 rows, matching the script's own row-count validation. The comment's date range is the only thing that is slightly off; the build is correct.</div></div>
+</section>
+<section id="powerquery"><h2><span class="secnum">6</span>Power Query (M) Transformations</h2>
+<p>All queries follow one deliberate pattern: a single shared connection expression
+(<code>DbSource</code>) plus one minimal navigation step per table. There are <strong>no
+transformations</strong> in M — all shaping is done upstream in the warehouse SQL, which keeps the
+model layer thin and the connection repointable by editing one line.</p>
+<h3>6.1 Shared expression — DbSource</h3><div class="codeblock"><div class="codelabel">Shared expression: DbSource<span class="codelang">M</span></div><pre><code>let
+    Source = PostgreSQL.Database("localhost", "dw_superstore")
+in
+    Source</code></pre></div>
+<h3>6.2 Table partitions (Import mode)</h3><div class="codeblock"><div class="codelabel">Partition: Sales<span class="codelang">M</span></div><pre><code>let
+    Source = DbSource,
+    data = Source{[Schema="dw",Item="fact_order_item"]}[Data]
+in
+    data</code></pre></div><div class="codeblock"><div class="codelabel">Partition: Customer<span class="codelang">M</span></div><pre><code>let
+    Source = DbSource,
+    data = Source{[Schema="dw",Item="dim_customer"]}[Data]
+in
+    data</code></pre></div><div class="codeblock"><div class="codelabel">Partition: Product<span class="codelang">M</span></div><pre><code>let
+    Source = DbSource,
+    data = Source{[Schema="dw",Item="dim_product"]}[Data]
+in
+    data</code></pre></div><div class="codeblock"><div class="codelabel">Partition: Geography<span class="codelang">M</span></div><pre><code>let
+    Source = DbSource,
+    data = Source{[Schema="dw",Item="dim_geog"]}[Data]
+in
+    data</code></pre></div><div class="codeblock"><div class="codelabel">Partition: Ship Mode<span class="codelang">M</span></div><pre><code>let
+    Source = DbSource,
+    data = Source{[Schema="dw",Item="dim_ship_mode"]}[Data]
+in
+    data</code></pre></div><div class="codeblock"><div class="codelabel">Partition: Date<span class="codelang">M</span></div><pre><code>let
+    Source = DbSource,
+    data = Source{[Schema="dw",Item="dim_date"]}[Data]
+in
+    data</code></pre></div>
+</section>
+<section id="calccols"><h2><span class="secnum">7</span>Calculated Columns</h2>
+<p><strong>The model defines no calculated columns, and the seven-page build requires none.</strong>
+This is a positive design fact, not an omission: every attribute a visual needs already exists as a
+physical warehouse column, so nothing is computed in DAX at row level. The date hierarchies used on
+the trend visuals are Power BI's automatic time-intelligence variations on <code>Date[Date]</code> and
+<code>Sales[Ship Date]</code>, not calculated columns, and require no build action.</p>
+</section>
+<section id="measures"><h2><span class="secnum">8</span>Global DAX Measures</h2>
+<p>Seven measures are defined, all homed on the <code>Sales</code> fact table, each with a description and
+format string in the TMDL. All seven are global — no page-specific measures exist, and the full
+seven-page build of §9 requires no additional measures. Their commercial reading (per the Dashboard
+Guide):</p>
+<table class="datatable"><thead><tr><th>Measure</th><th>Business value</th></tr></thead><tbody><tr><td><code>Total Sales</code></td><td>Revenue health</td></tr><tr><td><code>Total Profit</code></td><td>Bottom-line performance</td></tr><tr><td><code>Profit Margin %</code></td><td>Efficiency indicator — defined as DIVIDE([Total Profit], [Total Sales]) with a percentage format string (the guide's &ldquo;&times;&nbsp;100&rdquo; is achieved by the format, not the formula)</td></tr><tr><td><code>Total Quantity</code></td><td>Volume performance</td></tr><tr><td><code>Order Lines</code></td><td>Operational load</td></tr><tr><td><code>Distinct Orders</code></td><td>Customer transaction volume</td></tr><tr><td><code>Avg Discount</code></td><td>Pricing strategy impact</td></tr></tbody></table>
+<h4>Total Sales</h4><p>Total sales amount (additive). Format string: <code>$#,##0</code>. Home table: <code>Sales</code>.</p><div class="codeblock"><div class="codelabel">Measure: Total Sales<span class="codelang">DAX</span></div><pre><code>Total Sales = SUM(Sales[Sales Amount])</code></pre></div><h4>Total Quantity</h4><p>Total units sold (additive). Format string: <code>#,##0</code>. Home table: <code>Sales</code>.</p><div class="codeblock"><div class="codelabel">Measure: Total Quantity<span class="codelang">DAX</span></div><pre><code>Total Quantity = SUM(Sales[Quantity])</code></pre></div><h4>Total Profit</h4><p>Total profit (additive; can be negative). Format string: <code>$#,##0</code>. Home table: <code>Sales</code>.</p><div class="codeblock"><div class="codelabel">Measure: Total Profit<span class="codelang">DAX</span></div><pre><code>Total Profit = SUM(Sales[Profit])</code></pre></div><h4>Profit Margin %</h4><p>Profit as a percentage of sales. Format string: <code>0.0%</code>. Home table: <code>Sales</code>.</p><div class="codeblock"><div class="codelabel">Measure: Profit Margin %<span class="codelang">DAX</span></div><pre><code>Profit Margin % = DIVIDE([Total Profit], [Total Sales])</code></pre></div><h4>Avg Discount</h4><p>Average discount rate (non-additive measure). Format string: <code>0.0%</code>. Home table: <code>Sales</code>.</p><div class="codeblock"><div class="codelabel">Measure: Avg Discount<span class="codelang">DAX</span></div><pre><code>Avg Discount = AVERAGE(Sales[Discount])</code></pre></div><h4>Order Lines</h4><p>Number of order lines (fact rows). Format string: <code>#,##0</code>. Home table: <code>Sales</code>.</p><div class="codeblock"><div class="codelabel">Measure: Order Lines<span class="codelang">DAX</span></div><pre><code>Order Lines = COUNTROWS(Sales)</code></pre></div><h4>Distinct Orders</h4><p>Distinct order count (uses the degenerate Order ID). Format string: <code>#,##0</code>. Home table: <code>Sales</code>.</p><div class="codeblock"><div class="codelabel">Measure: Distinct Orders<span class="codelang">DAX</span></div><pre><code>Distinct Orders = DISTINCTCOUNT(Sales[Order ID])</code></pre></div>
+<div class="callout tip"><div class="callout-title">&#128161; Recommendation — dedicated measures table</div><div>House convention prefers a dedicated <code>_Measures</code> table so that a re-import of the fact table can never orphan the measures. The current model homes them on <code>Sales</code>, which works but is more fragile. This is a labelled recommendation only — the specification documents the model as built.</div></div>
+</section>
+<section id="pages"><h2><span class="secnum">9</span>Per-Page Specifications</h2>
+<p>The target report contains <strong>seven pages</strong>, per the Dashboard Guide. Pages 1&ndash;2
+exist in <code>SuperstoreDW.Report/report.json</code> (PBIR v4) and are documented as observed
+<span class="badge built">as built</span>, with positions as canvas coordinates (px). Pages 3&ndash;7 are complete build
+specifications <span class="badge tobuild">to be built</span>; their layouts are recommendations and every field mapping references
+existing model columns and the global measures of §8 by exact name. No page requires page-specific
+calculated columns or measures.</p>
+<div class="callout amber"><div class="callout-title">&#9888;&#65039; Open item — page names and visual titles</div><div>The two built pages after the Executive Summary are still named <code>Page 1</code> and <code>Page 2</code> in the definition, and no built visual has a title set. The guide now supplies the intended names, used below; renaming the built pages and titling all visuals is on the build checklist (§12).</div></div>
+<h3>9.1 Page 1 — Executive Summary</h3><span class="badge built">as built</span>
+<div class="pagemeta"><strong>Key questions:</strong> <em>What are our overall business metrics at a glance?</em> <em>How are we performing geographically?</em><br><strong>Business use:</strong> Executive briefings, board presentations, quick health check</div>
+<p>Canvas 1280 &times; 720 px. The landing page: headline KPIs, geographic spread, and the two page
+slicers. No page-level or visual-level filters are defined.</p>
+<div class="visualcard"><div class="vc-head"><span><strong>KPI strip</strong> — Card (cardVisual)</span><span class="kbd">x 544, y 0, 720 × 160</span></div><div class="vc-body"><table class="datatable"><thead><tr><th>Field well</th><th>Field (exact name)</th></tr></thead><tbody><tr><td>Data</td><td><code>Sales[Total Profit]</code>, <code>Sales[Profit Margin %]</code>, <code>Sales[Total Sales]</code>, <code>Sales[Total Quantity]</code></td></tr></tbody></table><p>Four headline figures in one multi-card. All four are the global measures of §8 — no implicit aggregation.</p></div></div>
+<div class="visualcard"><div class="vc-head"><span><strong>Region slicer</strong> — Slicer (Basic list)</span><span class="kbd">x 16, y 0, 288 × 160</span></div><div class="vc-body"><table class="datatable"><thead><tr><th>Field well</th><th>Field (exact name)</th></tr></thead><tbody><tr><td>Values</td><td><code>Geography[Region]</code></td></tr></tbody></table><p>Basic list mode (<code>mode: 'Basic'</code>). Domain observed: Central, East, South, West.</p></div></div>
+<div class="visualcard"><div class="vc-head"><span><strong>Date slicer</strong> — Slicer (Between)</span><span class="kbd">x 320, y 0, 208 × 160</span></div><div class="vc-body"><table class="datatable"><thead><tr><th>Field well</th><th>Field (exact name)</th></tr></thead><tbody><tr><td>Values</td><td><code>Date[Date]</code></td></tr></tbody></table><p>Range slicer (<code>mode: 'Between'</code>) over the conformed calendar; effective span 3 January 2014 – 30 December 2017.</p></div></div>
+<div class="visualcard"><div class="vc-head"><span><strong>Quantity by Ship Mode</strong> — Clustered column chart</span><span class="kbd">x 16, y 192, 464 × 304</span></div><div class="vc-body"><table class="datatable"><thead><tr><th>Field well</th><th>Field (exact name)</th></tr></thead><tbody><tr><td>Category (axis)</td><td><code>'Ship Mode'[Ship Mode]</code></td></tr><tr><td>Y</td><td><code>Sales[Total Quantity]</code></td></tr></tbody></table></div></div>
+<div class="visualcard"><div class="vc-head"><span><strong>Sales map</strong> — Map</span><span class="kbd">x 512, y 208, 752 × 496</span></div><div class="vc-body"><table class="datatable"><thead><tr><th>Field well</th><th>Field (exact name)</th></tr></thead><tbody><tr><td>Category (location)</td><td><code>Geography[Country]</code> &rarr; <code>Geography[State]</code> &rarr; <code>Geography[City]</code> (drill path)</td></tr><tr><td>Series (legend)</td><td><code>Geography[Region]</code></td></tr></tbody></table><p>Location fields carry the data categories set in the model (StateOrProvince, City) for correct geocoding. Bubble size is not bound to a measure in the definition — see the open item in §10.</p></div></div>
+<div class="visualcard"><div class="vc-head"><span><strong>Sales by Category</strong> — Donut chart</span><span class="kbd">x 16, y 512, 464 × 192</span></div><div class="vc-body"><table class="datatable"><thead><tr><th>Field well</th><th>Field (exact name)</th></tr></thead><tbody><tr><td>Category (legend)</td><td><code>Product[Category]</code></td></tr><tr><td>Y (values)</td><td><code>Sales[Total Sales]</code></td></tr></tbody></table></div></div>
+
+<h3>9.2 Page 2 — Customer Segmentation &amp; Volume</h3><span class="badge built">as built</span>
+<div class="pagemeta"><strong>Key questions:</strong> <em>How many distinct orders and line items are we processing?</em> <em>How are customers distributed across segments?</em> <em>Which product categories move the most volume?</em><br><strong>Business use:</strong> Customer analysis, volume forecasting, segment strategy</div>
+<p>Canvas 1280 &times; 720 px. Order- and product-mix analysis. No page-level or visual-level filters,
+and no slicers on this page.</p>
+<div class="visualcard"><div class="vc-head"><span><strong>Order KPI strip</strong> — Card (cardVisual)</span><span class="kbd">x 16, y 0, 672 × 176</span></div><div class="vc-body"><table class="datatable"><thead><tr><th>Field well</th><th>Field (exact name)</th></tr></thead><tbody><tr><td>Data</td><td><code>Sales[Distinct Orders]</code>, <code>Sales[Order Lines]</code>, <code>Sales[Total Quantity]</code></td></tr></tbody></table></div></div>
+<div class="visualcard"><div class="vc-head"><span><strong>Product count by Category and Sub-Category</strong> — Clustered column chart</span><span class="kbd">x 16, y 224, 816 × 304</span></div><div class="vc-body"><table class="datatable"><thead><tr><th>Field well</th><th>Field (exact name)</th></tr></thead><tbody><tr><td>Category (axis)</td><td><code>Product[Category]</code></td></tr><tr><td>Series (legend)</td><td><code>Product[Sub-Category]</code></td></tr><tr><td>Y</td><td>Count (non-blank) of <code>Product[Product ID]</code> — <em>implicit</em> aggregation <code>CountNonNull(Product.Product ID)</code></td></tr></tbody></table><p>Counts dimension rows per category/sub-category, not sales activity. Note §5.3: 1,862 distinct IDs sit in 1,894 rows, so this count is of ID instances (rows), not unique IDs.</p></div></div>
+<div class="visualcard"><div class="vc-head"><span><strong>Customers by Segment</strong> — Donut chart</span><span class="kbd">x 880, y 96, 400 × 272</span></div><div class="vc-body"><table class="datatable"><thead><tr><th>Field well</th><th>Field (exact name)</th></tr></thead><tbody><tr><td>Category (legend)</td><td><code>Customer[Segment]</code></td></tr><tr><td>Y (values)</td><td>Count (non-blank) of <code>Customer[Customer ID]</code> — <em>implicit</em> aggregation <code>CountNonNull(Customer.Customer ID)</code></td></tr></tbody></table><p>Counts customers on the dimension (794 total), unaffected by sales volume.</p></div></div>
+<div class="visualcard"><div class="vc-head"><span><strong>Orders by Category and Ship Mode</strong> — Column chart</span><span class="kbd">x 848, y 400, 400 × 272</span></div><div class="vc-body"><table class="datatable"><thead><tr><th>Field well</th><th>Field (exact name)</th></tr></thead><tbody><tr><td>Category (axis)</td><td><code>Product[Category]</code></td></tr><tr><td>Series (legend)</td><td><code>'Ship Mode'[Ship Mode]</code></td></tr><tr><td>Y</td><td><code>Sales[Distinct Orders]</code></td></tr></tbody></table><p>An order containing several categories or ship modes is counted once per group it appears in, so column totals can exceed the page-level 5,010 distinct orders — expected DISTINCTCOUNT behaviour.</p></div></div>
+<div class="callout amber"><div class="callout-title">&#9888;&#65039; Open item — implicit measures on this page</div><div>Two visuals aggregate bare columns (<code>CountNonNull</code>) instead of referencing explicit DAX measures. This works, but implicit measures cannot be reused, formatted centrally, or protected from model changes. If the page is kept, consider adding explicit measures (e.g. a customer count and a product row count) — a labelled recommendation, not part of the current build.</div></div>
+
+<h3>9.3 Page 3 — Sales Performance &amp; Trends</h3><span class="badge tobuild">to be built</span>
+<div class="pagemeta"><strong>Key questions:</strong> <em>What is our revenue trajectory over time?</em> <em>Which regions generate the most sales?</em> <em>How does sales volume vary by geography?</em><br><strong>Business use:</strong> Revenue tracking, regional performance analysis, trend identification</div>
+<p>Per the Dashboard Guide, this page replaces the project's current two-chart trends page
+(named <code>Page 2</code> in the definition). Of the two existing line charts, <em>Sales over time</em>
+is retained below as the Monthly Sales Trend; the <em>Profit margin over time</em> chart moves to
+page&nbsp;7 as the profit trend (§9.7). Recommended canvas 1280 &times; 720 px, consistent with the
+built pages; positions below are recommended layouts, not observed ones.</p>
+<div class="visualcard"><div class="vc-head"><span><strong>KPI strip</strong> — Card (cardVisual)</span><span class="kbd">recommended: x 16, y 0, 720 × 160</span></div><div class="vc-body"><table class="datatable"><thead><tr><th>Field well</th><th>Field (exact name)</th></tr></thead><tbody><tr><td>Data</td><td><code>Sales[Total Sales]</code>, <code>Sales[Total Profit]</code>, <code>Sales[Total Quantity]</code></td></tr></tbody></table></div></div>
+<div class="visualcard"><div class="vc-head"><span><strong>Sales by Region</strong> — Clustered column chart</span><span class="kbd">recommended: x 16, y 192, 608 × 240</span></div><div class="vc-body"><table class="datatable"><thead><tr><th>Field well</th><th>Field (exact name)</th></tr></thead><tbody><tr><td>Category (axis)</td><td><code>Geography[Region]</code></td></tr><tr><td>Y</td><td><code>Sales[Total Sales]</code></td></tr></tbody></table></div></div>
+<div class="visualcard"><div class="vc-head"><span><strong>Quantity by Region</strong> — Clustered column chart</span><span class="kbd">recommended: x 656, y 192, 608 × 240</span></div><div class="vc-body"><table class="datatable"><thead><tr><th>Field well</th><th>Field (exact name)</th></tr></thead><tbody><tr><td>Category (axis)</td><td><code>Geography[Region]</code></td></tr><tr><td>Y</td><td><code>Sales[Total Quantity]</code></td></tr></tbody></table></div></div>
+<div class="visualcard"><div class="vc-head"><span><strong>Monthly Sales Trend</strong> — Line chart</span><span class="kbd">retained; recommended: x 16, y 464, 1248 × 240</span></div><div class="vc-body"><table class="datatable"><thead><tr><th>Field well</th><th>Field (exact name)</th></tr></thead><tbody><tr><td>Category (axis)</td><td><code>Date[Date]</code> &mdash; built-in Date Hierarchy: Year, Quarter, Month, Day</td></tr><tr><td>Y</td><td><code>Sales[Total Sales]</code></td></tr><tr><td>Tooltips</td><td><code>Sales[Profit Margin %]</code></td></tr></tbody></table><p>Carried over from the as-built trends chart (originally x 624, y 16, 624 × 256). Expand the axis to Month level by default to show the monthly growth pattern the guide asks for.</p></div></div>
+
+<h3>9.4 Page 4 — Product Profitability Analysis</h3><span class="badge tobuild">to be built</span>
+<div class="pagemeta"><strong>Key questions:</strong> <em>Which product categories are most profitable?</em> <em>What is our product mix in terms of profitability?</em> <em>Which sub-categories underperform?</em><br><strong>Business use:</strong> Product strategy, portfolio optimisation, pricing decisions</div>
+<p>Recommended canvas 1280 &times; 720 px.</p>
+<div class="visualcard"><div class="vc-head"><span><strong>KPI strip</strong> — Card (cardVisual)</span><span class="kbd">recommended: x 16, y 0, 720 × 160</span></div><div class="vc-body"><table class="datatable"><thead><tr><th>Field well</th><th>Field (exact name)</th></tr></thead><tbody><tr><td>Data</td><td><code>Sales[Total Sales]</code>, <code>Sales[Total Profit]</code>, <code>Sales[Profit Margin %]</code></td></tr></tbody></table></div></div>
+<div class="visualcard"><div class="vc-head"><span><strong>Sales by Category</strong> — Clustered bar chart</span><span class="kbd">recommended: x 16, y 192, 608 × 240</span></div><div class="vc-body"><table class="datatable"><thead><tr><th>Field well</th><th>Field (exact name)</th></tr></thead><tbody><tr><td>Category (axis)</td><td><code>Product[Category]</code></td></tr><tr><td>Y</td><td><code>Sales[Total Sales]</code></td></tr></tbody></table></div></div>
+<div class="visualcard"><div class="vc-head"><span><strong>Profit by Category</strong> — Clustered bar chart</span><span class="kbd">recommended: x 656, y 192, 608 × 240</span></div><div class="vc-body"><table class="datatable"><thead><tr><th>Field well</th><th>Field (exact name)</th></tr></thead><tbody><tr><td>Category (axis)</td><td><code>Product[Category]</code></td></tr><tr><td>Y</td><td><code>Sales[Total Profit]</code></td></tr></tbody></table><p>Expect a stark contrast with the sales chart: Furniture sells $742.0k but returns only $18.5k profit (2.5% margin) — see the benchmarks in §11.2.</p></div></div>
+<div class="visualcard"><div class="vc-head"><span><strong>Top 5 Sub-Categories by Profit</strong> — Clustered bar chart</span><span class="kbd">recommended: x 16, y 464, 608 × 240</span></div><div class="vc-body"><table class="datatable"><thead><tr><th>Field well</th><th>Field (exact name)</th></tr></thead><tbody><tr><td>Category (axis)</td><td><code>Product[Sub-Category]</code></td></tr><tr><td>Y</td><td><code>Sales[Total Profit]</code></td></tr><tr><td>Visual-level filter</td><td>Top N filter: Top 5 of <code>Product[Sub-Category]</code> by <code>Sales[Total Profit]</code></td></tr></tbody></table><p>Sort descending by <code>Sales[Total Profit]</code>.</p></div></div>
+<div class="visualcard"><div class="vc-head"><span><strong>Bottom 5 Sub-Categories by Profit</strong> — Clustered bar chart</span><span class="kbd">recommended: x 656, y 464, 608 × 240</span></div><div class="vc-body"><table class="datatable"><thead><tr><th>Field well</th><th>Field (exact name)</th></tr></thead><tbody><tr><td>Category (axis)</td><td><code>Product[Sub-Category]</code></td></tr><tr><td>Y</td><td><code>Sales[Total Profit]</code></td></tr><tr><td>Visual-level filter</td><td>Top N filter: Bottom 5 of <code>Product[Sub-Category]</code> by <code>Sales[Total Profit]</code></td></tr></tbody></table><p>Sort ascending. Three sub-categories are loss-making in the unfiltered data (Tables &minus;$17.7k, Bookcases &minus;$3.5k, Supplies &minus;$1.2k) — apply conditional formatting (red for negative values) so losses read instantly.</p></div></div>
+
+<h3>9.5 Page 5 — Regional Performance &amp; Margins</h3><span class="badge tobuild">to be built</span>
+<div class="pagemeta"><strong>Key questions:</strong> <em>How do profit margins vary by region?</em> <em>Which regions have the highest discount rates?</em> <em>Where are we most profitable?</em><br><strong>Business use:</strong> Regional expansion, discount strategy review, margin optimisation</div>
+<p>Recommended canvas 1280 &times; 720 px.</p>
+<div class="visualcard"><div class="vc-head"><span><strong>KPI strip</strong> — Card (cardVisual)</span><span class="kbd">recommended: x 16, y 0, 720 × 160</span></div><div class="vc-body"><table class="datatable"><thead><tr><th>Field well</th><th>Field (exact name)</th></tr></thead><tbody><tr><td>Data</td><td><code>Sales[Total Sales]</code>, <code>Sales[Total Profit]</code>, <code>Sales[Distinct Orders]</code></td></tr></tbody></table></div></div>
+<div class="visualcard"><div class="vc-head"><span><strong>Orders by Region</strong> — Clustered column chart</span><span class="kbd">recommended: x 16, y 192, 400 × 240</span></div><div class="vc-body"><table class="datatable"><thead><tr><th>Field well</th><th>Field (exact name)</th></tr></thead><tbody><tr><td>Category (axis)</td><td><code>Geography[Region]</code></td></tr><tr><td>Y</td><td><code>Sales[Distinct Orders]</code></td></tr></tbody></table></div></div>
+<div class="visualcard"><div class="vc-head"><span><strong>Average Discount by Region</strong> — Clustered column chart</span><span class="kbd">recommended: x 440, y 192, 400 × 240</span></div><div class="vc-body"><table class="datatable"><thead><tr><th>Field well</th><th>Field (exact name)</th></tr></thead><tbody><tr><td>Category (axis)</td><td><code>Geography[Region]</code></td></tr><tr><td>Y</td><td><code>Sales[Avg Discount]</code></td></tr></tbody></table><p>Central's average discount (24.0%) is roughly double every other region's — pair this with the margin chart alongside for the discount-erodes-margin story.</p></div></div>
+<div class="visualcard"><div class="vc-head"><span><strong>Profit Margin % by Region</strong> — Clustered column chart</span><span class="kbd">recommended: x 864, y 192, 400 × 240</span></div><div class="vc-body"><table class="datatable"><thead><tr><th>Field well</th><th>Field (exact name)</th></tr></thead><tbody><tr><td>Category (axis)</td><td><code>Geography[Region]</code></td></tr><tr><td>Y</td><td><code>Sales[Profit Margin %]</code></td></tr></tbody></table></div></div>
+<div class="visualcard"><div class="vc-head"><span><strong>Sales by State</strong> — Clustered bar chart</span><span class="kbd">recommended: x 16, y 464, 1248 × 240</span></div><div class="vc-body"><table class="datatable"><thead><tr><th>Field well</th><th>Field (exact name)</th></tr></thead><tbody><tr><td>Category (axis)</td><td><code>Geography[State]</code></td></tr><tr><td>Y</td><td><code>Sales[Total Sales]</code></td></tr></tbody></table><p>Sort descending by <code>Sales[Total Sales]</code> (California leads at $457.7k). A filled map bound to <code>Geography[State]</code> is an acceptable alternative — the bar form is specified because 49 states compare more precisely on a common axis, and the Executive Summary already carries the map.</p></div></div>
+
+<h3>9.6 Page 6 — Operations &amp; Shipping Efficiency</h3><span class="badge tobuild">to be built</span>
+<div class="pagemeta"><strong>Key questions:</strong> <em>How do different shipping modes impact our business?</em> <em>Which shipping method is most cost-effective?</em> <em>Are we using the right logistics mix?</em><br><strong>Business use:</strong> Supply chain optimisation, logistics cost management, fulfilment strategy</div>
+<p>Recommended canvas 1280 &times; 720 px.</p>
+<div class="visualcard"><div class="vc-head"><span><strong>KPI strip</strong> — Card (cardVisual)</span><span class="kbd">recommended: x 16, y 0, 720 × 160</span></div><div class="vc-body"><table class="datatable"><thead><tr><th>Field well</th><th>Field (exact name)</th></tr></thead><tbody><tr><td>Data</td><td><code>Sales[Total Sales]</code>, <code>Sales[Total Quantity]</code>, <code>Sales[Order Lines]</code></td></tr></tbody></table></div></div>
+<div class="visualcard"><div class="vc-head"><span><strong>Orders by Shipping Mode</strong> — Clustered column chart</span><span class="kbd">recommended: x 16, y 192, 400 × 240</span></div><div class="vc-body"><table class="datatable"><thead><tr><th>Field well</th><th>Field (exact name)</th></tr></thead><tbody><tr><td>Category (axis)</td><td><code>'Ship Mode'[Ship Mode]</code></td></tr><tr><td>Y</td><td><code>Sales[Distinct Orders]</code></td></tr></tbody></table></div></div>
+<div class="visualcard"><div class="vc-head"><span><strong>Quantity by Shipping Mode</strong> — Clustered column chart</span><span class="kbd">recommended: x 440, y 192, 400 × 240</span></div><div class="vc-body"><table class="datatable"><thead><tr><th>Field well</th><th>Field (exact name)</th></tr></thead><tbody><tr><td>Category (axis)</td><td><code>'Ship Mode'[Ship Mode]</code></td></tr><tr><td>Y</td><td><code>Sales[Total Quantity]</code></td></tr></tbody></table><p>Same field mapping as the Executive Summary's ship-mode chart — acceptable duplication, as this page serves the operations audience in context.</p></div></div>
+<div class="visualcard"><div class="vc-head"><span><strong>Average Discount by Shipping Mode</strong> — Clustered column chart</span><span class="kbd">recommended: x 864, y 192, 400 × 240</span></div><div class="vc-body"><table class="datatable"><thead><tr><th>Field well</th><th>Field (exact name)</th></tr></thead><tbody><tr><td>Category (axis)</td><td><code>'Ship Mode'[Ship Mode]</code></td></tr><tr><td>Y</td><td><code>Sales[Avg Discount]</code></td></tr></tbody></table></div></div>
+<div class="visualcard"><div class="vc-head"><span><strong>Sales by Category &amp; Shipping Mode</strong> — Clustered column chart</span><span class="kbd">recommended: x 16, y 464, 1248 × 240</span></div><div class="vc-body"><table class="datatable"><thead><tr><th>Field well</th><th>Field (exact name)</th></tr></thead><tbody><tr><td>Category (axis)</td><td><code>Product[Category]</code></td></tr><tr><td>Series (legend)</td><td><code>'Ship Mode'[Ship Mode]</code></td></tr><tr><td>Y</td><td><code>Sales[Total Sales]</code></td></tr></tbody></table></div></div>
+
+<h3>9.7 Page 7 — Profitability Deep Dive</h3><span class="badge tobuild">to be built</span>
+<div class="pagemeta"><strong>Key questions:</strong> <em>What is driving our profit margins?</em> <em>How does discounting affect profitability?</em> <em>Are margins trending up or down?</em><br><strong>Business use:</strong> Pricing strategy, discount policy review, profitability forecasting</div>
+<p>Recommended canvas 1280 &times; 720 px. This page absorbs the as-built <em>Profit margin over
+time</em> line chart from the project's current trends page (§9.3).</p>
+<div class="visualcard"><div class="vc-head"><span><strong>KPI strip</strong> — Card (cardVisual)</span><span class="kbd">recommended: x 16, y 0, 720 × 160</span></div><div class="vc-body"><table class="datatable"><thead><tr><th>Field well</th><th>Field (exact name)</th></tr></thead><tbody><tr><td>Data</td><td><code>Sales[Total Profit]</code>, <code>Sales[Profit Margin %]</code>, <code>Sales[Avg Discount]</code></td></tr></tbody></table></div></div>
+<div class="visualcard"><div class="vc-head"><span><strong>Profit Margin % by Category</strong> — Clustered bar chart</span><span class="kbd">recommended: x 16, y 192, 608 × 240</span></div><div class="vc-body"><table class="datatable"><thead><tr><th>Field well</th><th>Field (exact name)</th></tr></thead><tbody><tr><td>Category (axis)</td><td><code>Product[Category]</code></td></tr><tr><td>Y</td><td><code>Sales[Profit Margin %]</code></td></tr></tbody></table><p>The winners/losers view: Technology 17.4%, Office Supplies 17.0%, Furniture 2.5% (§11.2).</p></div></div>
+<div class="visualcard"><div class="vc-head"><span><strong>Profit vs Discount by Sub-Category</strong> — Scatter chart</span><span class="kbd">recommended: x 656, y 192, 608 × 240</span></div><div class="vc-body"><table class="datatable"><thead><tr><th>Field well</th><th>Field (exact name)</th></tr></thead><tbody><tr><td>Values (details)</td><td><code>Product[Sub-Category]</code></td></tr><tr><td>X axis</td><td><code>Sales[Avg Discount]</code></td></tr><tr><td>Y axis</td><td><code>Sales[Total Profit]</code></td></tr><tr><td>Size</td><td><code>Sales[Total Sales]</code></td></tr></tbody></table><p>Seventeen points, one per sub-category — enough grain to show the relationship (heavily discounted Tables at 26.1% average discount sit deepest in loss) without overplotting. Add a constant line at y&nbsp;=&nbsp;0 to separate profit from loss.</p></div></div>
+<div class="visualcard"><div class="vc-head"><span><strong>Profit Trend Over Time</strong> — Line chart</span><span class="kbd">absorbed; recommended: x 16, y 464, 1248 × 240</span></div><div class="vc-body"><table class="datatable"><thead><tr><th>Field well</th><th>Field (exact name)</th></tr></thead><tbody><tr><td>Category (axis)</td><td><code>Date[Date]</code> &mdash; built-in Date Hierarchy: Year, Quarter, Month, Day</td></tr><tr><td>Y</td><td><code>Sales[Total Profit]</code></td></tr><tr><td>Secondary/tooltip</td><td><code>Sales[Profit Margin %]</code> (carried over from the as-built margin-trend chart, originally x 576, y 384, 704 × 336)</td></tr></tbody></table><p>Expand to Month level by default to expose the seasonal pattern the guide asks for.</p></div></div>
+
+</section>
+<section id="crosspage"><h2><span class="secnum">10</span>Cross-Page Requirements</h2>
+<ul>
+<li><strong>Slicers.</strong> The only slicers (<code>Geography[Region]</code> basic list;
+<code>Date[Date]</code> between-range) live on the Executive Summary page and are <strong>not
+synchronised</strong> to the other pages — no sync-slicer groups are defined in the report.</li>
+<li><strong>Filters.</strong> There are no report-level, page-level or visual-level filters anywhere
+in the built definition; the pages to be built add only the two visual-level Top&nbsp;N filters
+specified in §9.4. The report shows the full 2014&ndash;2017 dataset unless a slicer is applied.</li>
+<li><strong>Theme.</strong> The report applies the built-in <strong>AccessibleDefault</strong> custom
+theme over base theme <code>CY26SU05</code>; no bespoke theme JSON ships with the project.</li>
+<li><strong>Canvas.</strong> All pages are 1280 &times; 720 (16:9), layout optimisation
+<code>None</code>.</li>
+</ul>
+<div class="callout amber"><div class="callout-title">&#9888;&#65039; Open item — global filtering intent</div><div>The Dashboard Guide places the Region and Date slicers on the Executive Summary only, and the built report defines no sync groups. With seven pages, unsynchronised slicers mean pages 2–7 always show the full 2014–2017 dataset. If the slicers are meant to control the whole report, enable slicer sync (View &rarr; Sync slicers) for both across all pages; this remains a business decision to confirm, recorded here rather than invented.</div></div>
+<div class="callout amber"><div class="callout-title">&#9888;&#65039; Correction to the Dashboard Guide — cross-filtering scope</div><div>The guide states that clicking visuals cross-filters <em>across pages</em>. Power BI cross-highlighting operates within a page only; carrying a selection between pages requires synced slicers or drill-through. The interactive behaviour specified here is therefore: cross-highlighting within each page, plus (pending the decision above) synced slicers for report-wide filtering.</div></div>
+</section>
+<section id="validation"><h2><span class="secnum">11</span>Validation Benchmarks</h2>
+<p>After first refresh, the unfiltered model should reproduce these figures exactly (computed
+programmatically from the seed dataset). Any deviation means the warehouse load, the connection, or
+the model differs from what is documented here.</p>
+<h3>11.1 Whole-model benchmarks</h3>
+<table class="datatable"><thead><tr><th>Measure</th><th>Expected value (unfiltered)</th></tr></thead><tbody><tr><td><code>Total Sales</code></td><td>$2,297,201 (2,297,200.86)</td></tr><tr><td><code>Total Profit</code></td><td>$286,397 (286,397.02)</td></tr><tr><td><code>Total Quantity</code></td><td>37,873</td></tr><tr><td><code>Order Lines</code></td><td>9,994</td></tr><tr><td><code>Distinct Orders</code></td><td>5,010</td></tr><tr><td><code>Profit Margin %</code></td><td>12.5% (0.12467)</td></tr><tr><td><code>Avg Discount</code></td><td>15.6% (0.15621)</td></tr></tbody></table>
+<table class="datatable"><thead><tr><th>Total Sales by Region</th><th>Value</th></tr></thead><tbody><tr><td>West</td><td>$725,457.82</td></tr><tr><td>East</td><td>$678,781.24</td></tr><tr><td>Central</td><td>$501,239.89</td></tr><tr><td>South</td><td>$391,721.90</td></tr></tbody></table>
+<table class="datatable"><thead><tr><th>Total Sales by Category</th><th>Value</th></tr></thead><tbody><tr><td>Technology</td><td>$836,154.03</td></tr><tr><td>Furniture</td><td>$741,999.80</td></tr><tr><td>Office Supplies</td><td>$719,047.03</td></tr></tbody></table>
+<table class="datatable"><thead><tr><th>Total Sales by Segment</th><th>Value</th></tr></thead><tbody><tr><td>Consumer</td><td>$1,161,401.34</td></tr><tr><td>Corporate</td><td>$706,146.37</td></tr><tr><td>Home Office</td><td>$429,653.15</td></tr></tbody></table>
+<table class="datatable"><thead><tr><th>Total Sales by Year</th><th>Value</th></tr></thead><tbody><tr><td>2014</td><td>$484,247.50</td></tr><tr><td>2015</td><td>$470,532.51</td></tr><tr><td>2016</td><td>$609,205.60</td></tr><tr><td>2017</td><td>$733,215.26</td></tr></tbody></table>
+<h3>11.2 Benchmarks for the pages to be built (§9.3–9.7)</h3>
+<table class="datatable"><thead><tr><th>Region</th><th>Distinct Orders</th><th>Total Quantity</th><th>Avg Discount</th><th>Profit Margin %</th></tr></thead><tbody><tr><td>West</td><td>1,611</td><td>12,266</td><td>10.9%</td><td>14.9%</td></tr><tr><td>East</td><td>1,401</td><td>10,618</td><td>14.5%</td><td>13.5%</td></tr><tr><td>Central</td><td>1,176</td><td>8,780</td><td>24.0%</td><td>7.9%</td></tr><tr><td>South</td><td>822</td><td>6,209</td><td>14.7%</td><td>11.9%</td></tr></tbody></table>
+<table class="datatable"><thead><tr><th>Category</th><th>Total Profit</th><th>Profit Margin %</th></tr></thead><tbody><tr><td>Technology</td><td>$145,454.95</td><td>17.4%</td></tr><tr><td>Office Supplies</td><td>$122,490.80</td><td>17.0%</td></tr><tr><td>Furniture</td><td>$18,451.27</td><td>2.5%</td></tr></tbody></table>
+<table class="datatable"><thead><tr><th>Sub-Category extremes by Total Profit</th><th>Value</th></tr></thead><tbody><tr><td>Top 5: Copiers</td><td>$55,617.82</td></tr><tr><td>Phones</td><td>$44,515.73</td></tr><tr><td>Accessories</td><td>$41,936.64</td></tr><tr><td>Paper</td><td>$34,053.57</td></tr><tr><td>Binders</td><td>$30,221.76</td></tr><tr><td>Bottom 5: Tables</td><td>&minus;$17,725.48</td></tr><tr><td>Bookcases</td><td>&minus;$3,472.56</td></tr><tr><td>Supplies</td><td>&minus;$1,189.10</td></tr><tr><td>Fasteners</td><td>$949.52</td></tr><tr><td>Machines</td><td>$3,384.76</td></tr></tbody></table>
+<table class="datatable"><thead><tr><th>Ship Mode</th><th>Distinct Orders</th><th>Total Quantity</th><th>Avg Discount</th></tr></thead><tbody><tr><td>Standard Class</td><td>2,994</td><td>22,797</td><td>16.0%</td></tr><tr><td>Second Class</td><td>964</td><td>7,423</td><td>13.9%</td></tr><tr><td>First Class</td><td>788</td><td>5,693</td><td>16.5%</td></tr><tr><td>Same Day</td><td>264</td><td>1,960</td><td>15.2%</td></tr></tbody></table>
+<table class="datatable"><thead><tr><th>Top 5 states by Total Sales</th><th>Value</th></tr></thead><tbody><tr><td>California</td><td>$457,687.63</td></tr><tr><td>New York</td><td>$310,876.27</td></tr><tr><td>Texas</td><td>$170,188.05</td></tr><tr><td>Washington</td><td>$138,641.27</td></tr><tr><td>Pennsylvania</td><td>$116,511.91</td></tr></tbody></table>
+</section>
+<section id="checklist"><h2><span class="secnum">12</span>Implementation Notes / Checklist</h2>
+<ol class="checklist">
+<li><strong>Build the warehouse.</strong> Run <code>postgres/run_all.sql</code> against PostgreSQL to
+create and load <code>dw_superstore</code> (staging &rarr; dimensions &rarr; calendar &rarr; fact). Confirm
+row counts: fact 9,994; customer 794; product 1,894; geography 632; ship mode 4; date 1,458.</li>
+<li><strong>Install Npgsql</strong> (GAC install) if Power BI Desktop prompts for the PostgreSQL
+provider.</li>
+<li><strong>Open the project.</strong> Open <code>SuperstoreDW.pbip</code> in Power BI Desktop (2024+ build
+with PBIP preview features enabled). If server/database differ, edit the single line in
+<code>SemanticModel/definition/expressions.tmdl</code> (§6.1) or via Transform data &rarr; DbSource.</li>
+<li><strong>Refresh</strong> (Home &rarr; Refresh) — Import mode pulls all six tables.</li>
+<li><strong>Verify the model:</strong> 6 visible tables, 5 star relationships (§4.3), 7 measures on
+<code>Sales</code> (§8), surrogate keys and base numeric columns hidden.</li>
+<li><strong>Verify the built pages</strong> against §9.1&ndash;9.2 — field mappings by exact name.
+The PBIR definitions were authored to spec but not validated in Desktop in the source environment;
+§9 is the recovery reference if any visual fails to load.</li>
+<li><strong>Rename and retitle:</strong> rename the built pages to <em>Customer Segmentation &amp;
+Volume</em> and <em>Sales Performance &amp; Trends</em> per the guide, and set titles on every
+visual.</li>
+<li><strong>Rework page 3</strong> (§9.3): keep the sales-trend line chart as the Monthly Sales
+Trend, move the margin-trend chart to page 7, and add the KPI strip and the two by-region columns.</li>
+<li><strong>Build pages 4&ndash;7</strong> in order (§9.4&ndash;9.7) — every visual uses existing
+columns and the seven global measures only; the two Top&nbsp;N views on page&nbsp;4 use visual-level
+Top&nbsp;N filters, not new DAX.</li>
+<li><strong>Validate the numbers</strong> against §11.1 (whole model) and §11.2 (per new page)
+before circulating.</li>
+<li><strong>Close the open items:</strong> decide on slicer sync across the seven pages (§10);
+optionally replace the two implicit measures (§9.2) and adopt a <code>_Measures</code> table (§8).</li>
+<li><strong>Customise theme and publish:</strong> apply brand formatting if required (the report
+currently uses the AccessibleDefault theme) and publish to the Power BI Service for stakeholder
+access.</li>
+</ol>
+</section>
+</main>
+<footer>SuperstoreDW Sales Dashboard Specification &middot; v2.0 &middot; 5 July 2026 &middot;
+Generated from SuperstoreDW.pbip (TMDL semantic model, PBIR report definition), the sponsor-supplied
+Dashboard Guide, and programmatic inspection of the warehouse seed dataset.</footer>
+</div>
+</body>
+</html>
