@@ -8,7 +8,18 @@ Rendered architecture diagrams live in [`/architecture`](../architecture)
 history are preserved under [`/archive`](../archive) (e.g.
 `archive/Day 2/imgs/ERD.png`).
 
+## Power BI Dashboard Captures
 
- Power BI Reports live in [`/powerbi`](../powerbi) (`SuperstoreDW (1).png`,`SuperstoreDW (2).png`,`SuperstoreDW (3).png`,`SuperstoreDW (4).png`,`SuperstoreDW (5).png`,`SuperstoreDW (6).png`,`SuperstoreDW (7).png`)
-> Add Power BI / report screenshots here and reference them from the root README
-> to make the portfolio visual.
+Seven-page report visuals, embedded in the main README:
+
+| Page | Filename | Purpose |
+|------|----------|---------|
+| 1 | `../powerbi/SuperstoreDW (1).png` | Executive Summary — KPIs, regional map, sales by category |
+| 2 | `../powerbi/SuperstoreDW (2).png` | Customer Segmentation & Volume — segment and product mix |
+| 3 | `../powerbi/SuperstoreDW (3).png` | Sales Performance & Trends — regional sales and trend analysis |
+| 4 | `../powerbi/SuperstoreDW (4).png` | Product Profitability — category and sub-category performance |
+| 5 | `../powerbi/SuperstoreDW (5).png` | Regional Performance & Margins — region, discount, and margin breakdown |
+| 6 | `../powerbi/SuperstoreDW (6).png` | Operations & Shipping Efficiency — shipping mode analysis |
+| 7 | `../powerbi/SuperstoreDW (7).png` | Profitability Deep Dive — margin trends and discount impact |
+
+See [`/README.md`](../README.md#reporting-power-bi) for the complete reporting layer documentation and visuals.

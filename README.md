@@ -178,12 +178,135 @@ Full guide: **[docs/postgres.md](docs/postgres.md)** · folder: [`/postgres`](po
 
 ## Reporting (Power BI)
 
+### Overview
+
 A **Power BI Project** in [`/powerbi`](powerbi) (`SuperstoreDW.pbip`) delivers the
-reporting layer as version‑controlled text — a **TMDL** star‑schema semantic
-model (6 tables, 5 relationships, 7 DAX measures) and a **PBIR** *Sales Overview*
-report (KPI cards + sales by region / category / segment / year + a year slicer).
-Default source is **PostgreSQL / Import**; the [Power BI README](powerbi/README.md)
-covers enabling PBIP, refreshing, and repointing at SQL Server.
+reporting layer as **Git‑friendly, version‑controlled text** — a **TMDL** 
+star‑schema semantic model (6 tables, 5 relationships, 7 DAX measures) and a 
+**PBIR** multi‑page report. The PBIP format keeps the semantic model and report 
+definitions in human‑readable markup (not binary), integrating cleanly with the 
+SQL version control.
+
+**Default source:** PostgreSQL / Import mode against the `dw` schema of 
+`dw_superstore` on `localhost`. The model can be repointed to SQL Server by 
+editing one connection line (see [Power BI README](powerbi/README.md)).
+
+### What the Report Answers
+
+The **SuperstoreDW Sales Dashboard** addresses the core commercial questions every 
+retail business needs answered:
+
+| Business Question | Report Page(s) | What It Reveals |
+|---|---|---|
+| **Revenue health & profitability** | Executive Summary, Profitability Deep Dive | Total sales, profit, and margin trend; which product categories and regions drive profit vs. volume |
+| **Geographic performance** | Executive Summary, Regional Performance | Sales by region and state; which geographies are most profitable; regional margin variance |
+| **Customer mix & volume** | Customer Segmentation | Customer segment distribution; order count vs. line-item count; product mix by category and sub-category |
+| **Product strategy** | Product Profitability | High‑margin vs. loss‑making products; top and bottom performers by sub‑category; category profitability spread |
+| **Discount impact** | Regional Performance, Profitability Deep Dive | How discounting varies by region and product; the discount↔margin trade‑off |
+| **Shipping efficiency** | Operations & Shipping | Order and volume distribution across Standard/First Class/Same Day; discount and cost by shipping mode |
+| **Trends over time** | Sales Performance, Profitability Deep Dive | Revenue trajectory 2014–2017; profit margin evolution; seasonal and year‑over‑year patterns |
+
+### Semantic Model
+
+**Six tables** — the conformed star schema with surrogate keys, hidden to the 
+report layer:
+
+| Table | Type | Rows | Role | Joins |
+|---|---|---|---|---|
+| **Sales** | Fact | 9,994 | Order line items; additive measures | ← all dimensions |
+| **Customer** | Dimension | 794 | Customer IDs, names, segments | → fact |
+| **Product** | Dimension | 1,894 | Product IDs, names, categories, sub‑categories | → fact |
+| **Geography** | Dimension | 632 | Countries, regions, states, cities | → fact |
+| **Ship Mode** | Dimension | 4 | Standard Class, First Class, Second Class, Same Day | → fact |
+| **Date** | Dimension | 1,458 | Calendar 3 Jan 2014 – 30 Dec 2017; day/week/month/quarter/year attributes | → fact |
+
+**Five relationships** — all many‑to‑one (fact → dimension), single direction, 
+on integer surrogate keys.
+
+### Key Measures
+
+**Seven global DAX measures** on the `Sales` fact table, all reusable across 
+every page:
+
+| Measure | Formula | Business Value |
+|---|---|---|
+| **Total Sales** | `SUM(Sales[Sales Amount])` | Revenue ($) |
+| **Total Profit** | `SUM(Sales[Profit])` | Bottom‑line result ($) |
+| **Profit Margin %** | `DIVIDE([Total Profit], [Total Sales])` | Efficiency — what % of revenue becomes profit |
+| **Total Quantity** | `SUM(Sales[Quantity])` | Volume (units) |
+| **Avg Discount** | `AVERAGE(Sales[Discount])` | Average discount rate; tracked because it erodes margin |
+| **Order Lines** | `COUNTROWS(Sales)` | Operational load (transactions to fulfil) |
+| **Distinct Orders** | `DISTINCTCOUNT(Sales[Order ID])` | Customer transaction count (5,010 orders from 9,994 line items) |
+
+### Report Structure
+
+**Pages 1:**
+- **Executive Summary** — KPI cards (sales, profit, margin, quantity), regional 
+  map, sales by category and ship mode, region and date slicers.
+
+<p align="center">
+  <img src="powerbi/SuperstoreDW (1).png" alt="Executive Summary page — KPIs, regional map, sales by category and ship mode" width="760">
+</p>
+
+**Pages 2:**
+- **Customer Segmentation & Volume** — order/line KPIs, customer segment 
+  distribution, product count by category, orders by category and ship mode.
+
+<p align="center">
+  <img src="powerbi/SuperstoreDW (2).png" alt="Customer Segmentation & Volume page — segment distribution, product mix" width="760">
+</p>
+
+**Pages 3:**
+- **Sales Performance & Trends** — sales by region, quantity by region, monthly 
+  sales trend line.
+
+<p align="center">
+  <img src="powerbi/SuperstoreDW (3).png" alt="Sales Performance & Trends page — regional sales analysis and trend line" width="760">
+</p>
+
+**Pages 4:**
+- **Product Profitability** — sales/profit by category, top/bottom 5 
+  sub‑categories by profit.
+
+<p align="center">
+  <img src="powerbi/SuperstoreDW (4).png" alt="Product Profitability page — category and sub-category performance" width="760">
+</p>
+
+**Pages 5:**
+- **Regional Performance & Margins** — orders and avg discount by region, 
+  profit margin by region, state‑level sales.
+
+<p align="center">
+  <img src="powerbi/SuperstoreDW (5).png" alt="Regional Performance & Margins page — region comparison, discount and margin analysis" width="760">
+</p>
+
+**Pages 6:**
+- **Operations & Shipping Efficiency** — order/quantity by shipping mode, 
+  discount by mode, sales by category & ship mode cross‑tab.
+
+<p align="center">
+  <img src="powerbi/SuperstoreDW (6).png" alt="Operations & Shipping page — shipping mode analysis and logistics efficiency" width="760">
+</p>
+
+**Pages 7:**
+- **Profitability Deep Dive** — margin by category, profit vs. discount 
+  scatter (by sub‑category), profit trend over time.
+
+<p align="center">
+  <img src="powerbi/SuperstoreDW (7).png" alt="Profitability Deep Dive page — margin trends, discount impact, profit analysis" width="760">
+</p>
+
+### Connection & Refresh
+
+1. **Open** `SuperstoreDW.pbip` in Power BI Desktop (2024+ with PBIP preview enabled).
+2. **Set the source** (if not `localhost`/`dw_superstore`): edit 
+   `SemanticModel/definition/expressions.tmdl`, line 1 (`DbSource`).
+3. **Refresh** — Import mode pulls all six tables and caches them.
+4. **Verify** — visuals populate; benchmarks in the specification document 
+   validate the load (e.g. Total Sales should be $2,297,201).
+
+Full setup guide: **[Power BI README](powerbi/README.md)** · 
+Specification: **[SuperstoreDW Sales Dashboard Specification](powerbi/SuperstoreDW_Sales_Dashboard_Specification_v2.0.html)**.
 
 ## Migration notes (SQL Server → PostgreSQL)
 
